@@ -5,143 +5,263 @@
     "tagline": "Hospitalidad auténtica en el corazón de Puerto López"
   },
   "contact": {
-    "whatsapp": "+593990333411",
+    "whatsapp": "593990333411",
     "whatsappMessage": "Hola! Me gustaría reservar una habitación en Hostal Alcazaba",
-    "location": "A 3 cuadras del mercado, cerca de la playa y del centro de buceo",
-    "city": "Puerto López, Ecuador"
+    "location": "San Francisco y Rogerio Figueroa",
+    "details": "A 800m de la playa, 1km del mercado. Zona tranquila en las alturas con vista al mar",
+    "city": "Puerto López, Ecuador",
+    "checkin": "14:00 - 22:00",
+    "checkout": "05:00 - 12:00",
+    "security": "Puertas cerradas de 22:30 a 04:30"
+  },
+  "googleReviews": {
+    "rating": 4.6,
+    "totalReviews": 188
   },
   "usp": [
     {
       "id": 1,
       "title": "Accesibilidad Total",
-      "description": "Habitaciones accesibles para personas con movilidad reducida",
+      "description": "Habitaciones accesibles para personas con movilidad reducida con rampas PMR y ducha adaptada",
       "icon": "accessibility"
     },
     {
       "id": 2,
       "title": "Cocina Compartida Gratuita",
-      "description": "Espacios completamente equipados para preparar tus comidas",
+      "description": "Espacios completamente equipados: microondas, frigo, utensilios completos",
       "icon": "utensils"
     },
     {
       "id": 3,
-      "title": "Desayuno Fresco Incluido",
-      "description": "Inicia tu día con productos locales y frescos",
+      "title": "Desayuno Continental Incluido",
+      "description": "Inicia tu día con productos locales y frescos preparados con amor",
       "icon": "coffee"
     },
     {
       "id": 4,
-      "title": "Ubicación Privilegiada",
-      "description": "A pasos del mercado, playa y puntos de interés",
+      "title": "Vista Panorámica al Mar",
+      "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
       "icon": "map-pin"
     }
   ],
   "rooms": [
     {
-      "id": 1,
-      "type": "Habitación Matrimonial",
-      "description": "Espaciosa y cómoda para parejas, con todas las comodidades necesarias",
-      "capacity": "2 personas",
-      "amenities": ["Cama queen", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-      "price": "Desde $25/noche",
-      "image": "matrimonial"
+      "id": "habitacion-individual",
+      "type": "Habitación Individual",
+      "description": "Perfecta para viajeros solitarios que buscan comodidad y tranquilidad",
+      "capacity": "1 persona",
+      "amenities": ["Cama individual", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
+      "price": "Desde $20/noche",
+      "image": "individual",
+      "featured": false
     },
     {
-      "id": 2,
-      "type": "Habitación Accesible PMR",
-      "description": "Diseñada especialmente para garantizar comodidad y autonomía",
+      "id": "habitacion-matrimonial",
+      "type": "Habitación Doble / Matrimonial",
+      "description": "Espaciosa y cómoda para parejas, algunas con vista al mar y patio privado",
       "capacity": "2 personas",
-      "amenities": ["Acceso sin barreras", "Baño adaptado", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
+      "amenities": ["Cama matrimonial", "Vista al mar (algunas)", "Patio/Balcón", "Baño privado", "Wi-Fi gratuito", "Ventilador"],
+      "price": "Desde $25/noche",
+      "image": "matrimonial",
+      "featured": false
+    },
+    {
+      "id": "habitacion-accesible-pmr",
+      "type": "Habitación Accesible PMR",
+      "description": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras",
+      "capacity": "2 personas",
+      "amenities": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
       "price": "Desde $30/noche",
       "featured": true,
       "image": "accessible"
     },
     {
-      "id": 3,
-      "type": "Habitación para Grupos",
-      "description": "Ideal para familias o grupos de amigos viajeros",
-      "capacity": "4-6 personas",
-      "amenities": ["Literas cómodas", "Lockers individuales", "Baño compartido", "Wi-Fi gratuito", "Zona social"],
-      "price": "Desde $15/persona",
-      "image": "group"
+      "id": "habitacion-familiar",
+      "type": "Habitación Familiar",
+      "description": "Ideal para familias, con espacio generoso y configuración flexible",
+      "capacity": "4-5 personas",
+      "amenities": ["1 cama matrimonial", "2 literas", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
+      "price": "Desde $35/noche",
+      "image": "familiar",
+      "featured": false
+    },
+    {
+      "id": "cama-dormitorio",
+      "type": "Cama en Dormitorio Compartido",
+      "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales",
+      "capacity": "1 cama",
+      "amenities": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
+      "price": "Desde $12/persona",
+      "image": "dormitorio",
+      "featured": false
     }
   ],
   "tours": [
     {
-      "id": 1,
-      "name": "Observación de Ballenas",
+      "id": "observacion-ballenas",
+      "name": "Observación de Ballenas Jorobadas",
       "season": "Junio - Septiembre",
-      "description": "Vive la experiencia única de observar ballenas jorobadas en su hábitat natural. Un espectáculo impresionante de la naturaleza.",
+      "subtitle": "El espectáculo más impresionante del océano",
+      "description": "Vive la experiencia única de observar ballenas jorobadas en su hábitat natural. Un espectáculo impresionante de la naturaleza que te dejará sin aliento.",
       "duration": "3-4 horas",
-      "included": ["Guía certificado", "Equipo de seguridad", "Bebidas"],
+      "included": ["Guía certificado", "Equipo de seguridad", "Bebidas", "Chaleco salvavidas"],
       "price": "Desde $35",
       "image": "whales"
     },
     {
-      "id": 2,
+      "id": "isla-de-la-plata",
       "name": "Isla de la Plata",
       "subtitle": "El Galápagos del continente",
-      "description": "Explora esta isla única con fauna similar a Galápagos. Snorkel, senderismo y avistamiento de aves.",
-      "duration": "Día completo",
-      "included": ["Transporte marítimo", "Guía naturalista", "Snorkel", "Almuerzo"],
+      "description": "Explora esta isla única con fauna similar a Galápagos. Snorkel en aguas cristalinas, senderismo ecológico y avistamiento de aves exóticas.",
+      "duration": "Día completo (8-9 horas)",
+      "included": ["Transporte marítimo", "Guía naturalista certificado", "Equipo de snorkel", "Almuerzo incluido"],
       "price": "Desde $45",
       "image": "island"
     },
     {
-      "id": 3,
+      "id": "playa-los-frailes",
       "name": "Playa Los Frailes",
       "subtitle": "Una de las playas más bellas de Ecuador",
-      "description": "Arena blanca, aguas cristalinas y senderos naturales. Perfecta para relajarse y conectar con la naturaleza.",
-      "duration": "Medio día",
-      "included": ["Transporte", "Entrada al parque", "Guía opcional"],
+      "description": "Arena blanca, aguas cristalinas y senderos naturales. Perfecta para relajarse y conectar con la naturaleza en estado puro.",
+      "duration": "Medio día (4-5 horas)",
+      "included": ["Transporte", "Entrada al Parque Nacional", "Guía opcional"],
       "price": "Desde $20",
       "image": "beach"
+    },
+    {
+      "id": "tour-buceo",
+      "name": "Buceo en Arrecifes",
+      "subtitle": "Descubre el mundo submarino",
+      "description": "Explora los arrecifes de coral y la increíble vida marina de Puerto López. Para todos los niveles, desde principiantes hasta avanzados.",
+      "duration": "3-4 horas",
+      "included": ["Equipo completo de buceo", "Instructor certificado", "2 inmersiones", "Seguro"],
+      "price": "Desde $55",
+      "image": "diving"
     }
   ],
   "localGuide": {
     "title": "Parque Nacional Machalilla",
-    "description": "Ubicados en el corazón de la zona turística, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla.",
+    "description": "Ubicados en el corazón de la zona turística, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla y todas sus maravillas naturales.",
     "hours": "Horarios: 09:00 - 15:00",
     "tips": [
-      "Llega temprano para aprovechar al máximo tu visita",
-      "Lleva protector solar y sombrero",
-      "Respeta la flora y fauna local",
-      "Contrata guías certificados para una mejor experiencia"
+      "Llega temprano para aprovechar al máximo tu visita y evitar las horas de más calor",
+      "Lleva protector solar biodegradable, sombrero y agua suficiente",
+      "Respeta la flora y fauna local - no toques ni alimentes a los animales",
+      "Contrata guías certificados para una experiencia más enriquecedora y segura",
+      "La temporada de ballenas (Jun-Sep) requiere reserva anticipada"
     ]
   },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Gabriel",
+      "country": "Ecuador",
+      "rating": 5,
+      "text": "Todo estaba impecable, muy limpio y cómodo. Los anfitriones Oswaldo y María son de una amabilidad excepcional.",
+      "image": "G"
+    },
+    {
+      "id": 2,
+      "name": "Isabella",
+      "country": "Reino Unido",
+      "rating": 5,
+      "text": "Vista magnífica desde el techo y las hamacas. Me ayudaron a reservar el tour de ballenas, fue increíble.",
+      "image": "I"
+    },
+    {
+      "id": 3,
+      "name": "Lucas",
+      "country": "Francia",
+      "rating": 5,
+      "text": "Habitación con vista al mar espectacular. La cocina común es muy funcional y el recibimiento es cálido.",
+      "image": "L"
+    },
+    {
+      "id": 4,
+      "name": "Charline",
+      "country": "Bélgica",
+      "rating": 5,
+      "text": "Desayuno preparado con esmero, anfitriones súper disponibles. Uno se siente realmente bien aquí, calma garantizada.",
+      "image": "C"
+    },
+    {
+      "id": 5,
+      "name": "Guillermo",
+      "country": "Canadá",
+      "rating": 5,
+      "text": "Anfitriones muy acogedores, nos ayudaron con nuestras excursiones. Muy limpio y bien ubicado.",
+      "image": "G"
+    },
+    {
+      "id": 6,
+      "name": "Jorge",
+      "country": "Ecuador",
+      "rating": 5,
+      "text": "Tranquilidad absoluta y simpatía de los propietarios. Conocen perfectamente la región y sus secretos.",
+      "image": "J"
+    }
+  ],
   "faq": [
     {
       "id": 1,
       "question": "¿El desayuno está incluido?",
-      "answer": "Sí, incluimos un desayuno continental fresco todos los días con productos locales, frutas de temporada, pan casero, café y jugo natural."
+      "answer": "Sí, incluimos un desayuno continental fresco todos los días con productos locales, frutas de temporada, pan casero, café ecuatoriano y jugo natural. Preparado con amor por nuestros anfitriones."
     },
     {
       "id": 2,
       "question": "¿Tienen habitaciones con accesibilidad?",
-      "answer": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida, con baños adaptados y acceso sin barreras."
+      "answer": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida (PMR), con rampas de acceso, baños adaptados con ducha sin escalón y ubicadas en planta baja."
     },
     {
       "id": 3,
       "question": "¿Puedo cocinar mis propias comidas?",
-      "answer": "Sí, tenemos una cocina compartida completamente equipada y gratuita para todos nuestros huéspedes. Incluye refrigerador, estufa, microondas y utensilios."
+      "answer": "Sí, tenemos una cocina compartida completamente equipada y gratuita para todos nuestros huéspedes. Incluye refrigerador, estufa, microondas y todos los utensilios necesarios."
     },
     {
       "id": 4,
       "question": "¿Cómo llego desde el terminal de buses?",
-      "answer": "Estamos a solo 5 minutos caminando del terminal. Al salir, dirígete hacia el mercado municipal y estaremos a 3 cuadras. También podemos enviarte la ubicación exacta por WhatsApp."
+      "answer": "Estamos a 5-8 minutos caminando del terminal. Nuestra ubicación en San Francisco y Rogerio Figueroa es fácil de encontrar. También podemos enviarte la ubicación exacta por WhatsApp o coordinar recogida si llegas de noche."
     },
     {
       "id": 5,
       "question": "¿Organizan tours a las islas y playas?",
-      "answer": "Sí, te ayudamos a coordinar tours de observación de ballenas, Isla de la Plata, Playa Los Frailes y más. Trabajamos con operadores certificados y de confianza."
+      "answer": "Sí, te ayudamos a coordinar todos los tours: observación de ballenas (Jun-Sep), Isla de la Plata, Playa Los Frailes, buceo y más. Trabajamos con operadores certificados y de total confianza."
     },
     {
       "id": 6,
       "question": "¿Cuál es la mejor temporada para ver ballenas?",
-      "answer": "La temporada de ballenas jorobadas es de junio a septiembre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas."
+      "answer": "La temporada de ballenas jorobadas es de junio a septiembre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas. ¡Recomendamos reservar con anticipación!"
+    },
+    {
+      "id": 7,
+      "question": "¿Cuáles son los horarios de check-in y check-out?",
+      "answer": "Check-in: 14:00 - 22:00 | Check-out: 05:00 - 12:00. Por seguridad, las puertas se cierran de 22:30 a 04:30. Si llegas fuera de horario, contáctanos por WhatsApp para coordinar."
+    },
+    {
+      "id": 8,
+      "question": "¿Aceptan tarjetas de crédito?",
+      "answer": "El pago es principalmente en efectivo (dólares americanos). Te recomendamos traer cash desde Montañita o Guayaquil, ya que los cajeros en Puerto López pueden tener disponibilidad limitada."
     }
   ],
-  "gallery": {
-    "categories": ["Habitaciones", "Áreas Comunes", "Tours", "Alrededores"]
+  "amenities": {
+    "restaurant": "Restaurant Alcazaba en el lugar (cocina local, desayuno continental muy apreciado)",
+    "commonAreas": [
+      "Cocina compartida totalmente equipada (Microondas, frigo, estufa)",
+      "Jardín interior tropical",
+      "Terraza panorámica para el atardecer",
+      "Hamacas en el techo con vista al mar"
+    ],
+    "services": [
+      "Wi-Fi gratuito de alta velocidad",
+      "Estacionamiento gratuito",
+      "Recepción 24h/24",
+      "Organización de excursiones",
+      "Información turística personalizada"
+    ]
+  },
+  "policies": {
+    "pets": "No se admiten animales",
+    "smoking": "Prohibido fumar en las habitaciones",
+    "parties": "Fiestas no permitidas - zona tranquila"
   }
 }
