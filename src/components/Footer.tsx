@@ -2,11 +2,21 @@ import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 
 export default function Footer() {
-  const handleWhatsApp = () => {
+  const handleWhatsApp = (phoneNumber: string) => {
     window.open(
-      `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(hotelData.contact.whatsappMessage)}`,
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(hotelData.contact.whatsappMessage)}`,
       '_blank'
     );
+  };
+
+  const handleEmail = () => {
+    const subject = encodeURIComponent('Consulta sobre Hostal Alcazaba');
+    const body = encodeURIComponent(hotelData.contact.whatsappMessage);
+    window.location.href = `mailto:${hotelData.contact.email}?subject=${subject}&body=${body}`;
+  };
+
+  const handleLocation = () => {
+    window.open(hotelData.contact.locationUrl, '_blank');
   };
 
   return (
@@ -73,25 +83,53 @@ export default function Footer() {
               <span>Contacto</span>
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin size={20} className="text-[#C28E5E] flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-gray-300">{hotelData.contact.location}</p>
-                  <p className="text-gray-400 text-sm">{hotelData.contact.city}</p>
-                </div>
-              </li>
               <li>
                 <button
-                  onClick={handleWhatsApp}
-                  className="flex items-center space-x-3 text-gray-300 hover:text-[#C28E5E] transition-colors duration-200"
+                  onClick={handleLocation}
+                  className="flex items-start space-x-3 text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 text-left w-full"
                 >
-                  <Phone size={20} className="text-[#C28E5E] flex-shrink-0" />
-                  <span>{hotelData.contact.whatsapp}</span>
+                  <MapPin size={20} className="text-[#C28E5E] flex-shrink-0 mt-1" />
+                  <div>
+                    <p>{hotelData.contact.location}</p>
+                    <p className="text-gray-400 text-sm">{hotelData.contact.city}</p>
+                  </div>
                 </button>
               </li>
-              <li className="flex items-center space-x-3 text-gray-300">
-                <Mail size={20} className="text-[#C28E5E] flex-shrink-0" />
-                <span>info@hostalalcazaba.com</span>
+              
+              <li>
+                <button
+                  onClick={() => handleWhatsApp(hotelData.contact.whatsapp)}
+                  className="flex items-center space-x-3 text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 w-full text-left"
+                >
+                  <Phone size={20} className="text-[#C28E5E] flex-shrink-0" />
+                  <div>
+                    <p className="text-sm text-gray-400">María</p>
+                    <p>+{hotelData.contact.whatsapp}</p>
+                  </div>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => handleWhatsApp(hotelData.contact.whatsappOswaldo)}
+                  className="flex items-center space-x-3 text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 w-full text-left"
+                >
+                  <Phone size={20} className="text-[#C28E5E] flex-shrink-0" />
+                  <div>
+                    <p className="text-sm text-gray-400">Oswaldo</p>
+                    <p>+{hotelData.contact.whatsappOswaldo}</p>
+                  </div>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={handleEmail}
+                  className="flex items-center space-x-3 text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 w-full text-left"
+                >
+                  <Mail size={20} className="text-[#C28E5E] flex-shrink-0" />
+                  <span className="break-all">{hotelData.contact.email}</span>
+                </button>
               </li>
             </ul>
           </div>
@@ -104,9 +142,15 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center space-x-6">
-              <button className="text-gray-400 hover:text-[#C28E5E] transition-colors duration-200">
+              <a 
+                href={hotelData.contact.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#C28E5E] transition-colors duration-200"
+                aria-label="Facebook"
+              >
                 <Facebook size={24} />
-              </button>
+              </a>
               <button className="text-gray-400 hover:text-[#C28E5E] transition-colors duration-200">
                 <Instagram size={24} />
               </button>

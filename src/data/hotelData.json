@@ -6,13 +6,17 @@
   },
   "contact": {
     "whatsapp": "593990333411",
+    "whatsappOswaldo": "593988650782",
     "whatsappMessage": "Hola! Me gustaría reservar una habitación en Hostal Alcazaba",
+    "email": "hotelalcazaba@hotmail.com",
+    "facebook": "https://www.facebook.com/hostalalcazaba",
     "location": "San Francisco y Rogerio Figueroa",
+    "locationUrl": "https://www.google.com/maps/search/?api=1&query=San+Francisco+y+Rogerio+Figueroa+Puerto+López+Ecuador",
     "details": "A 800m de la playa, 1km del mercado. Zona tranquila en las alturas con vista al mar",
     "city": "Puerto López, Ecuador",
     "checkin": "14:00 - 22:00",
     "checkout": "05:00 - 12:00",
-    "security": "Puertas cerradas de 22:30 a 04:30"
+    "security": "Puertas cerradas de 22:30 a 05:00"
   },
   "googleReviews": {
     "rating": 4.6,
@@ -23,25 +27,29 @@
       "id": 1,
       "title": "Accesibilidad Total",
       "description": "Habitaciones accesibles para personas con movilidad reducida con rampas PMR y ducha adaptada",
-      "icon": "accessibility"
+      "icon": "accessibility",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
     },
     {
       "id": 2,
       "title": "Cocina Compartida Gratuita",
       "description": "Espacios completamente equipados: microondas, frigo, utensilios completos",
-      "icon": "utensils"
+      "icon": "utensils",
+      "image": "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
     },
     {
       "id": 3,
-      "title": "Desayuno Continental Incluido",
-      "description": "Inicia tu día con productos locales y frescos preparados con amor",
-      "icon": "coffee"
+      "title": "Estacionamiento Gratuito",
+      "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
+      "icon": "parking",
+      "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=80"
     },
     {
       "id": 4,
       "title": "Vista Panorámica al Mar",
       "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
-      "icon": "map-pin"
+      "icon": "map-pin",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
     }
   ],
   "rooms": [
@@ -51,8 +59,7 @@
       "description": "Perfecta para viajeros solitarios que buscan comodidad y tranquilidad",
       "capacity": "1 persona",
       "amenities": ["Cama individual", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
-      "price": "Desde $20/noche",
-      "image": "individual",
+      "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
       "featured": false
     },
     {
@@ -61,8 +68,7 @@
       "description": "Espaciosa y cómoda para parejas, algunas con vista al mar y patio privado",
       "capacity": "2 personas",
       "amenities": ["Cama matrimonial", "Vista al mar (algunas)", "Patio/Balcón", "Baño privado", "Wi-Fi gratuito", "Ventilador"],
-      "price": "Desde $25/noche",
-      "image": "matrimonial",
+      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80",
       "featured": false
     },
     {
@@ -71,9 +77,8 @@
       "description": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras",
       "capacity": "2 personas",
       "amenities": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
-      "price": "Desde $30/noche",
       "featured": true,
-      "image": "accessible"
+      "image": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80"
     },
     {
       "id": "habitacion-familiar",
@@ -81,8 +86,7 @@
       "description": "Ideal para familias, con espacio generoso y configuración flexible",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
-      "price": "Desde $35/noche",
-      "image": "familiar",
+      "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80",
       "featured": false
     },
     {
@@ -91,8 +95,7 @@
       "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales",
       "capacity": "1 cama",
       "amenities": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
-      "price": "Desde $12/persona",
-      "image": "dormitorio",
+      "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
       "featured": false
     }
   ],
@@ -105,8 +108,7 @@
       "description": "Vive la experiencia única de observar ballenas jorobadas en su hábitat natural. Un espectáculo impresionante de la naturaleza que te dejará sin aliento.",
       "duration": "3-4 horas",
       "included": ["Guía certificado", "Equipo de seguridad", "Bebidas", "Chaleco salvavidas"],
-      "price": "Desde $35",
-      "image": "whales"
+      "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80"
     },
     {
       "id": "isla-de-la-plata",
@@ -115,8 +117,7 @@
       "description": "Explora esta isla única con fauna similar a Galápagos. Snorkel en aguas cristalinas, senderismo ecológico y avistamiento de aves exóticas.",
       "duration": "Día completo (8-9 horas)",
       "included": ["Transporte marítimo", "Guía naturalista certificado", "Equipo de snorkel", "Almuerzo incluido"],
-      "price": "Desde $45",
-      "image": "island"
+      "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80"
     },
     {
       "id": "playa-los-frailes",
@@ -125,8 +126,7 @@
       "description": "Arena blanca, aguas cristalinas y senderos naturales. Perfecta para relajarse y conectar con la naturaleza en estado puro.",
       "duration": "Medio día (4-5 horas)",
       "included": ["Transporte", "Entrada al Parque Nacional", "Guía opcional"],
-      "price": "Desde $20",
-      "image": "beach"
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80"
     },
     {
       "id": "tour-buceo",
@@ -135,8 +135,16 @@
       "description": "Explora los arrecifes de coral y la increíble vida marina de Puerto López. Para todos los niveles, desde principiantes hasta avanzados.",
       "duration": "3-4 horas",
       "included": ["Equipo completo de buceo", "Instructor certificado", "2 inmersiones", "Seguro"],
-      "price": "Desde $55",
-      "image": "diving"
+      "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80"
+    },
+    {
+      "id": "tour-personalizado",
+      "name": "Tour Personalizado",
+      "subtitle": "Diseñamos tu aventura ideal",
+      "description": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única.",
+      "duration": "Según tus necesidades",
+      "included": ["Itinerario personalizado", "Guía exclusivo", "Transporte privado", "Actividades a tu medida"],
+      "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80"
     }
   ],
   "localGuide": {
@@ -204,18 +212,18 @@
   "faq": [
     {
       "id": 1,
-      "question": "¿El desayuno está incluido?",
-      "answer": "Sí, incluimos un desayuno continental fresco todos los días con productos locales, frutas de temporada, pan casero, café ecuatoriano y jugo natural. Preparado con amor por nuestros anfitriones."
-    },
-    {
-      "id": 2,
       "question": "¿Tienen habitaciones con accesibilidad?",
       "answer": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida (PMR), con rampas de acceso, baños adaptados con ducha sin escalón y ubicadas en planta baja."
     },
     {
-      "id": 3,
+      "id": 2,
       "question": "¿Puedo cocinar mis propias comidas?",
       "answer": "Sí, tenemos una cocina compartida completamente equipada y gratuita para todos nuestros huéspedes. Incluye refrigerador, estufa, microondas y todos los utensilios necesarios."
+    },
+    {
+      "id": 3,
+      "question": "¿Tienen estacionamiento?",
+      "answer": "Sí, contamos con estacionamiento gratuito y seguro dentro de la residencia para todos nuestros huéspedes. No necesitas reservar espacio, siempre hay disponibilidad."
     },
     {
       "id": 4,
@@ -244,7 +252,7 @@
     }
   ],
   "amenities": {
-    "restaurant": "Restaurant Alcazaba en el lugar (cocina local, desayuno continental muy apreciado)",
+    "restaurant": "Restaurant Alcazaba en el lugar - cocina local auténtica",
     "commonAreas": [
       "Cocina compartida totalmente equipada (Microondas, frigo, estufa)",
       "Jardín interior tropical",

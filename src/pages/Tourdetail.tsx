@@ -22,7 +22,7 @@ export default function TourDetail({ tourId, onClose }: TourDetailProps) {
 
 ${tour.season ? `📌 Temporada: ${tour.season}` : ''}
 
-¿Cuál es la disponibilidad y el precio total para ${participants} ${participants === 1 ? 'persona' : 'personas'}?`;
+¿Cuál es la disponibilidad y el precio para ${participants} ${participants === 1 ? 'persona' : 'personas'}?`;
 
     window.open(
       `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(message)}`,
@@ -60,10 +60,13 @@ ${tour.season ? `📌 Temporada: ${tour.season}` : ''}
           <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
             
             {/* Hero Image */}
-            <div className="relative aspect-[21/9] bg-gradient-to-br from-[#C28E5E] to-[#1A2F4B] overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-semibold">
-                [Imagen Destacada - {tour.name}]
-              </div>
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <img
+                src={tour.image}
+                alt={tour.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/60 to-transparent"></div>
               
               {tour.season && (
                 <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-md text-white px-6 py-3 rounded-full border border-white/30">
@@ -98,25 +101,6 @@ ${tour.season ? `📌 Temporada: ${tour.season}` : ''}
                     <p className="font-['Lato'] text-xl text-gray-700 leading-relaxed">
                       {tour.description}
                     </p>
-                  </div>
-
-                  {/* Image Gallery */}
-                  <div className="grid sm:grid-cols-3 gap-4">
-                    <div className="aspect-square bg-gradient-to-br from-[#A67347] to-[#8B5E3C] rounded-2xl relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-sm">
-                        [Galería 1]
-                      </div>
-                    </div>
-                    <div className="aspect-square bg-gradient-to-br from-[#1A2F4B] to-[#0F1F35] rounded-2xl relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-sm">
-                        [Galería 2]
-                      </div>
-                    </div>
-                    <div className="aspect-square bg-gradient-to-br from-[#C28E5E] to-[#A67347] rounded-2xl relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-sm">
-                        [Galería 3]
-                      </div>
-                    </div>
                   </div>
 
                   <div>
@@ -169,9 +153,11 @@ ${tour.season ? `📌 Temporada: ${tour.season}` : ''}
                   <div className="sticky top-24 bg-gradient-to-br from-[#1A2F4B] to-[#243A56] text-white p-8 rounded-3xl shadow-2xl">
                     
                     <div className="mb-8">
-                      <p className="font-['Lato'] text-lg text-white/80 mb-2">Precio por persona</p>
-                      <p className="font-['Playfair_Display'] text-4xl font-bold text-[#C28E5E]">
-                        {tour.price}
+                      <h3 className="font-['Playfair_Display'] text-2xl font-bold mb-2">
+                        Reserva esta Experiencia
+                      </h3>
+                      <p className="font-['Lato'] text-white/80">
+                        Consulta disponibilidad y tarifas
                       </p>
                     </div>
 
@@ -229,7 +215,7 @@ ${tour.season ? `📌 Temporada: ${tour.season}` : ''}
                     </button>
 
                     <p className="font-['Lato'] text-xs text-white/60 text-center mt-4">
-                      Tours operados por guías certificados • Confirma disponibilidad
+                      Tours operados por guías certificados • Te cotizaremos la mejor tarifa
                     </p>
                   </div>
                 </div>

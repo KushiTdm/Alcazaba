@@ -24,7 +24,7 @@ export default function RoomDetail({ roomId, onClose }: RoomDetailProps) {
 
 👥 Número de huéspedes: ${guests}
 
-¿Cuál es la disponibilidad y el precio total?`;
+¿Cuál es la disponibilidad y el precio?`;
 
     window.open(
       `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(message)}`,
@@ -71,23 +71,19 @@ export default function RoomDetail({ roomId, onClose }: RoomDetailProps) {
           {/* Content */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
             
-            {/* Image Gallery */}
-            <div className="grid md:grid-cols-2 gap-2 p-2">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#C28E5E] to-[#1A2F4B] rounded-2xl relative overflow-hidden col-span-2 md:col-span-1 md:row-span-2">
-                <div className="absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold">
-                  [Imagen Principal - {room.type}]
+            {/* Image */}
+            <div className="aspect-[21/9] relative overflow-hidden">
+              <img
+                src={room.image}
+                alt={room.type}
+                className="w-full h-full object-cover"
+              />
+              {room.featured && (
+                <div className="absolute top-6 right-6 bg-[#C28E5E] text-white px-6 py-3 rounded-full flex items-center space-x-2 shadow-lg">
+                  <Check size={20} />
+                  <span className="font-['Lato'] font-semibold text-lg">Habitación Destacada</span>
                 </div>
-              </div>
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#A67347] to-[#8B5E3C] rounded-2xl relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold">
-                  [Imagen 2]
-                </div>
-              </div>
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#1A2F4B] to-[#0F1F35] rounded-2xl relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold">
-                  [Imagen 3]
-                </div>
-              </div>
+              )}
             </div>
 
             {/* Details */}
@@ -97,13 +93,6 @@ export default function RoomDetail({ roomId, onClose }: RoomDetailProps) {
                 {/* Left Column - Room Info */}
                 <div className="lg:col-span-2 space-y-8">
                   
-                  {room.featured && (
-                    <div className="inline-flex items-center space-x-2 bg-[#C28E5E] text-white px-4 py-2 rounded-full">
-                      <Check size={18} />
-                      <span className="font-['Lato'] font-semibold">Habitación Destacada</span>
-                    </div>
-                  )}
-
                   <div>
                     <h1 className="font-['Playfair_Display'] text-4xl sm:text-5xl font-bold text-[#1A2F4B] mb-4">
                       {room.type}
@@ -146,11 +135,11 @@ export default function RoomDetail({ roomId, onClose }: RoomDetailProps) {
                       </li>
                       <li className="flex items-start space-x-2">
                         <Check size={18} className="text-[#C28E5E] flex-shrink-0 mt-1" />
-                        <span><strong>Desayuno continental incluido</strong></span>
+                        <span><strong>Cocina compartida gratuita</strong></span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <Check size={18} className="text-[#C28E5E] flex-shrink-0 mt-1" />
-                        <span><strong>Cocina compartida gratuita</strong></span>
+                        <span><strong>Estacionamiento gratuito</strong></span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <Check size={18} className="text-[#C28E5E] flex-shrink-0 mt-1" />
@@ -165,9 +154,11 @@ export default function RoomDetail({ roomId, onClose }: RoomDetailProps) {
                   <div className="sticky top-24 bg-gradient-to-br from-[#1A2F4B] to-[#243A56] text-white p-8 rounded-3xl shadow-2xl">
                     
                     <div className="mb-8">
-                      <p className="font-['Lato'] text-lg text-white/80 mb-2">Precio por noche</p>
-                      <p className="font-['Playfair_Display'] text-4xl font-bold text-[#C28E5E]">
-                        {room.price}
+                      <h3 className="font-['Playfair_Display'] text-2xl font-bold mb-2">
+                        Reserva tu Estadía
+                      </h3>
+                      <p className="font-['Lato'] text-white/80">
+                        Consulta disponibilidad y tarifas
                       </p>
                     </div>
 
@@ -228,11 +219,11 @@ export default function RoomDetail({ roomId, onClose }: RoomDetailProps) {
                       onClick={handleWhatsAppReservation}
                       className="w-full bg-[#C28E5E] text-white py-4 rounded-full font-['Lato'] font-bold text-lg hover:bg-[#A67347] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                     >
-                      RESERVAR POR WHATSAPP
+                      CONSULTAR POR WHATSAPP
                     </button>
 
                     <p className="font-['Lato'] text-xs text-white/60 text-center mt-4">
-                      Respuesta inmediata • Pago en efectivo en el hostal
+                      Respuesta inmediata • Te cotizaremos la mejor tarifa
                     </p>
                   </div>
                 </div>

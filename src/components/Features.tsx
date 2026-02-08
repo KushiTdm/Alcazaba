@@ -1,18 +1,31 @@
-import { Accessibility, Utensils, Coffee, MapPin } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import hotelData from '../data/hotelData.json';
 
-const iconMap = {
-  accessibility: Accessibility,
-  utensils: Utensils,
-  coffee: Coffee,
-  'map-pin': MapPin,
-};
-
 export default function Features() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-20 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2]">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#1A2F4B] mb-4">
             ¿Por Qué Elegirnos?
           </h2>
@@ -23,31 +36,44 @@ export default function Features() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {hotelData.usp.map((feature, index) => {
-            const Icon = iconMap[feature.icon as keyof typeof iconMap];
             const isLarge = index === 0 || index === 3;
+            const delay = index * 150;
 
             return (
               <div
                 key={feature.id}
-                className={`group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${
+                className={`group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
                   isLarge ? 'md:col-span-1 lg:row-span-2' : ''
-                }`}
+                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${delay}ms` }}
               >
-                <div className="flex flex-col h-full space-y-4">
-                  <div className="bg-gradient-to-br from-[#C28E5E] to-[#1A2F4B] w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={32} />
+                <div className="flex flex-col h-full">
+                  {/* Image */}
+                  <div className={`relative overflow-hidden ${isLarge ? 'h-64 lg:h-80' : 'h-48'}`}>
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/80 via-[#1A2F4B]/40 to-transparent"></div>
+                    
+                    {/* Title overlay on image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl font-bold text-white leading-tight">
+                        {feature.title}
+                      </h3>
+                    </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#1A2F4B] leading-tight">
-                    {feature.title}
-                  </h3>
+                  {/* Content */}
+                  <div className="p-6 flex-grow flex flex-col">
+                    <p className="text-gray-600 leading-relaxed flex-grow">
+                      {feature.description}
+                    </p>
 
-                  <p className="text-gray-600 leading-relaxed flex-grow">
-                    {feature.description}
-                  </p>
-
-                  <div className="pt-4">
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-24 transition-all duration-300"></div>
+                    <div className="pt-4 mt-auto">
+                      <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-24 transition-all duration-300"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -55,7 +81,7 @@ export default function Features() {
           })}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#C28E5E] rounded-3xl p-8 sm:p-12 text-white shadow-2xl">
+        <div className={`mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#C28E5E] rounded-3xl p-8 sm:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h3 className="text-3xl sm:text-4xl font-bold">
               ¿Listo para tu próxima aventura?

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Star, ChevronDown } from 'lucide-react';
+import { Star, ChevronDown } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 
 export default function Hero() {
@@ -101,7 +101,7 @@ export default function Hero() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
           style={{
             backgroundImage: 'url(/images/hero-mirador.webp)',
-            filter: 'brightness(0.7)',
+            filter: 'brightness(1)',
           }}
         >
           {/* Gradient Overlay */}
@@ -154,20 +154,6 @@ export default function Hero() {
             >
               {hotelData.branding.tagline}
             </p>
-
-            {/* Location Badge - Slide from bottom */}
-            <div 
-              className={`inline-flex items-start space-x-3 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 max-w-lg mx-auto transition-all duration-1000 delay-1100 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <MapPin className="text-[#C28E5E] flex-shrink-0 mt-1" size={28} />
-              <div className="text-left">
-                <p className="font-['Lato'] font-semibold text-lg mb-1">Ubicación Privilegiada</p>
-                <p className="font-['Lato'] text-white/80 text-base">{hotelData.contact.location}</p>
-                <p className="font-['Lato'] text-[#C28E5E] text-sm mt-1">{hotelData.contact.details}</p>
-              </div>
-            </div>
 
             {/* CTA Buttons - Slide from bottom with stagger */}
             <div 
