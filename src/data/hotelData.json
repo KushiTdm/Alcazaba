@@ -1,0 +1,147 @@
+{
+  "branding": {
+    "name": "Hostal Alcazaba & Lobo Marino",
+    "slogan": "Tu experiencia está garantizada",
+    "tagline": "Hospitalidad auténtica en el corazón de Puerto López"
+  },
+  "contact": {
+    "whatsapp": "+593990333411",
+    "whatsappMessage": "Hola! Me gustaría reservar una habitación en Hostal Alcazaba",
+    "location": "A 3 cuadras del mercado, cerca de la playa y del centro de buceo",
+    "city": "Puerto López, Ecuador"
+  },
+  "usp": [
+    {
+      "id": 1,
+      "title": "Accesibilidad Total",
+      "description": "Habitaciones accesibles para personas con movilidad reducida",
+      "icon": "accessibility"
+    },
+    {
+      "id": 2,
+      "title": "Cocina Compartida Gratuita",
+      "description": "Espacios completamente equipados para preparar tus comidas",
+      "icon": "utensils"
+    },
+    {
+      "id": 3,
+      "title": "Desayuno Fresco Incluido",
+      "description": "Inicia tu día con productos locales y frescos",
+      "icon": "coffee"
+    },
+    {
+      "id": 4,
+      "title": "Ubicación Privilegiada",
+      "description": "A pasos del mercado, playa y puntos de interés",
+      "icon": "map-pin"
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "type": "Habitación Matrimonial",
+      "description": "Espaciosa y cómoda para parejas, con todas las comodidades necesarias",
+      "capacity": "2 personas",
+      "amenities": ["Cama queen", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+      "price": "Desde $25/noche",
+      "image": "matrimonial"
+    },
+    {
+      "id": 2,
+      "type": "Habitación Accesible PMR",
+      "description": "Diseñada especialmente para garantizar comodidad y autonomía",
+      "capacity": "2 personas",
+      "amenities": ["Acceso sin barreras", "Baño adaptado", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
+      "price": "Desde $30/noche",
+      "featured": true,
+      "image": "accessible"
+    },
+    {
+      "id": 3,
+      "type": "Habitación para Grupos",
+      "description": "Ideal para familias o grupos de amigos viajeros",
+      "capacity": "4-6 personas",
+      "amenities": ["Literas cómodas", "Lockers individuales", "Baño compartido", "Wi-Fi gratuito", "Zona social"],
+      "price": "Desde $15/persona",
+      "image": "group"
+    }
+  ],
+  "tours": [
+    {
+      "id": 1,
+      "name": "Observación de Ballenas",
+      "season": "Junio - Septiembre",
+      "description": "Vive la experiencia única de observar ballenas jorobadas en su hábitat natural. Un espectáculo impresionante de la naturaleza.",
+      "duration": "3-4 horas",
+      "included": ["Guía certificado", "Equipo de seguridad", "Bebidas"],
+      "price": "Desde $35",
+      "image": "whales"
+    },
+    {
+      "id": 2,
+      "name": "Isla de la Plata",
+      "subtitle": "El Galápagos del continente",
+      "description": "Explora esta isla única con fauna similar a Galápagos. Snorkel, senderismo y avistamiento de aves.",
+      "duration": "Día completo",
+      "included": ["Transporte marítimo", "Guía naturalista", "Snorkel", "Almuerzo"],
+      "price": "Desde $45",
+      "image": "island"
+    },
+    {
+      "id": 3,
+      "name": "Playa Los Frailes",
+      "subtitle": "Una de las playas más bellas de Ecuador",
+      "description": "Arena blanca, aguas cristalinas y senderos naturales. Perfecta para relajarse y conectar con la naturaleza.",
+      "duration": "Medio día",
+      "included": ["Transporte", "Entrada al parque", "Guía opcional"],
+      "price": "Desde $20",
+      "image": "beach"
+    }
+  ],
+  "localGuide": {
+    "title": "Parque Nacional Machalilla",
+    "description": "Ubicados en el corazón de la zona turística, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla.",
+    "hours": "Horarios: 09:00 - 15:00",
+    "tips": [
+      "Llega temprano para aprovechar al máximo tu visita",
+      "Lleva protector solar y sombrero",
+      "Respeta la flora y fauna local",
+      "Contrata guías certificados para una mejor experiencia"
+    ]
+  },
+  "faq": [
+    {
+      "id": 1,
+      "question": "¿El desayuno está incluido?",
+      "answer": "Sí, incluimos un desayuno continental fresco todos los días con productos locales, frutas de temporada, pan casero, café y jugo natural."
+    },
+    {
+      "id": 2,
+      "question": "¿Tienen habitaciones con accesibilidad?",
+      "answer": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida, con baños adaptados y acceso sin barreras."
+    },
+    {
+      "id": 3,
+      "question": "¿Puedo cocinar mis propias comidas?",
+      "answer": "Sí, tenemos una cocina compartida completamente equipada y gratuita para todos nuestros huéspedes. Incluye refrigerador, estufa, microondas y utensilios."
+    },
+    {
+      "id": 4,
+      "question": "¿Cómo llego desde el terminal de buses?",
+      "answer": "Estamos a solo 5 minutos caminando del terminal. Al salir, dirígete hacia el mercado municipal y estaremos a 3 cuadras. También podemos enviarte la ubicación exacta por WhatsApp."
+    },
+    {
+      "id": 5,
+      "question": "¿Organizan tours a las islas y playas?",
+      "answer": "Sí, te ayudamos a coordinar tours de observación de ballenas, Isla de la Plata, Playa Los Frailes y más. Trabajamos con operadores certificados y de confianza."
+    },
+    {
+      "id": 6,
+      "question": "¿Cuál es la mejor temporada para ver ballenas?",
+      "answer": "La temporada de ballenas jorobadas es de junio a septiembre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas."
+    }
+  ],
+  "gallery": {
+    "categories": ["Habitaciones", "Áreas Comunes", "Tours", "Alrededores"]
+  }
+}
