@@ -68,7 +68,7 @@
       "description": "Espaciosa y cómoda para parejas, algunas con vista al mar y patio privado",
       "capacity": "2 personas",
       "amenities": ["Cama matrimonial", "Vista al mar (algunas)", "Patio/Balcón", "Baño privado", "Wi-Fi gratuito", "Ventilador"],
-      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80",
+      "image": "/images/rooms/Matrimonial.jpeg",
       "featured": false
     },
     {
@@ -82,11 +82,11 @@
     },
     {
       "id": "habitacion-familiar",
-      "type": "Habitación Familiar",
+      "type": "Departamento",
       "description": "Ideal para familias, con espacio generoso y configuración flexible",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
-      "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80",
+      "image": "/images/rooms/Departamento.jpeg",
       "featured": false
     },
     {
@@ -117,7 +117,7 @@
       "description": "Explora esta isla única con fauna similar a Galápagos. Snorkel en aguas cristalinas, senderismo ecológico y avistamiento de aves exóticas.",
       "duration": "Día completo (8-9 horas)",
       "included": ["Transporte marítimo", "Guía naturalista certificado", "Equipo de snorkel", "Almuerzo incluido"],
-      "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80"
+      "image": "/images/tours/Piqueros.jpg"
     },
     {
       "id": "playa-los-frailes",
@@ -228,7 +228,7 @@
     {
       "id": 4,
       "question": "¿Cómo llego desde el terminal de buses?",
-      "answer": "Estamos a 5-8 minutos caminando del terminal. Nuestra ubicación en San Francisco y Rogerio Figueroa es fácil de encontrar. También podemos enviarte la ubicación exacta por WhatsApp o coordinar recogida si llegas de noche."
+      "answer": "Estamos a 5 minutos del terminal en vehículo . Nuestra ubicación en San Francisco y Rogerio Figueroa es fácil de encontrar. También podemos enviarte la ubicación exacta por WhatsApp o coordinar recogida si llegas de noche."
     },
     {
       "id": 5,
@@ -243,7 +243,7 @@
     {
       "id": 7,
       "question": "¿Cuáles son los horarios de check-in y check-out?",
-      "answer": "Check-in: 14:00 - 22:00 | Check-out: 05:00 - 12:00. Por seguridad, las puertas se cierran de 22:30 a 04:30. Si llegas fuera de horario, contáctanos por WhatsApp para coordinar."
+      "answer": "Check-in: 14:00 - 22:00 | Check-out: 05:00 - 12:00. Por seguridad, las puertas se cierran de 22:30 a 05:00. Si llegas fuera de horario, contáctanos por WhatsApp para coordinar."
     },
     {
       "id": 8,
