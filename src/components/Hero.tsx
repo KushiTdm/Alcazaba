@@ -142,10 +142,10 @@ export default function Hero() {
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
             >
-              <span className="block">Hostal</span>
-              <span className="block">Alcazaba</span>
-              <span className="block text-[#C28E5E]">& Lobo</span>
-              <span className="block text-[#C28E5E]">Marino</span>
+              <span className="block">Hostal Alcazaba</span>
+              <span className="block text-[#C28E5E]">&</span>
+              <span className="block text-[#C28E5E]">Lobo Marino</span>
+
             </h1>
 
             {/* Slogan */}

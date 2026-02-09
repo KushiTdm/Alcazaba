@@ -27,10 +27,10 @@
   "usp": [
     {
       "id": 1,
-      "title": "Accesibilidad Total",
-      "description": "Habitaciones accesibles para personas con movilidad reducida con rampas PMR y ducha adaptada",
-      "icon": "accessibility",
-      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+      "title": "Vista Panorámica al Mar",
+      "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
+      "icon": "map-pin",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
     },
     {
       "id": 2,
@@ -45,13 +45,6 @@
       "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
       "icon": "parking",
       "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=80"
-    },
-    {
-      "id": 4,
-      "title": "Vista Panorámica al Mar",
-      "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
-      "icon": "map-pin",
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
     }
   ],
   "rooms": [
@@ -70,7 +63,7 @@
       "description": "Espaciosa y cómoda para parejas, algunas con vista al mar y patio privado",
       "capacity": "2 personas",
       "amenities": ["Cama matrimonial", "Vista al mar (algunas)", "Patio/Balcón", "Baño privado", "Wi-Fi gratuito", "Ventilador"],
-      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80",
+      "image": "/public/images/rooms/Matrimonial.jpeg",
       "featured": false
     },
     {
@@ -88,7 +81,7 @@
       "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
-      "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80",
+      "image": "/public/images/rooms/Departamento.jpeg",
       "featured": false
     },
     {
