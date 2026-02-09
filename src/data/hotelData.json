@@ -58,7 +58,7 @@
     {
       "id": "habitacion-individual",
       "type": "Habitación Individual",
-      "description": "Perfecta para viajeros solitarios que buscan comodidad y tranquilidad",
+      "description": "Perfecta para viajeros solitarios que buscan comodidad y tranquilidad en Puerto López",
       "capacity": "1 persona",
       "amenities": ["Cama individual", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
       "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
@@ -76,7 +76,7 @@
     {
       "id": "habitacion-accesible-pmr",
       "type": "Habitación Accesible PMR",
-      "description": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras",
+      "description": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras arquitectónicas",
       "capacity": "2 personas",
       "amenities": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
       "featured": true,
@@ -84,8 +84,8 @@
     },
     {
       "id": "departamento",
-      "type": "Departamento",
-      "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada",
+      "type": "Departamento Familiar",
+      "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
       "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80",
@@ -94,7 +94,7 @@
     {
       "id": "cama-dormitorio",
       "type": "Cama en Dormitorio Compartido",
-      "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales",
+      "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales que exploran Ecuador",
       "capacity": "1 cama",
       "amenities": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
       "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
@@ -107,16 +107,15 @@
       "name": "Isla de la Plata + Avistamiento de Ballenas",
       "season": "Junio - Octubre",
       "subtitle": "El Galápagos del continente con ballenas jorobadas",
-      "description": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa piqueros de patas azules, piqueros nazca, fragatas, tortugas Carey y practica snorkel en aguas cristalinas.",
+      "description": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa piqueros de patas azules, piqueros nazca, fragatas, tortugas Carey y practica snorkel en aguas cristalinas del Parque Nacional Machalilla.",
       "duration": "Día completo (09:00 - 17:00)",
-      "price": "$45 por persona",
       "included": [
-        "Guía bilingüe (inglés/español)",
+        "Guía bilingüe certificado (inglés/español)",
         "Lunch completo (frutas, sandwiches, bebidas)",
-        "Equipo de snorkeling",
+        "Equipo de snorkeling profesional",
         "Embarcación equipada con salvavidas",
-        "Transporte marítimo",
-        "Impuestos"
+        "Transporte marítimo desde Puerto López",
+        "Entrada al Parque Nacional Machalilla"
       ],
       "itinerary": [
         "09:00 - Salida desde Puerto López",
@@ -142,14 +141,14 @@
       "id": "avistamiento-ballenas-snorkel",
       "name": "Avistamiento de Ballenas + Snorkel Costa",
       "season": "Junio - Octubre",
-      "subtitle": "Ballenas y snorkel en el Parque Nacional Machalilla",
-      "description": "Tour de 3 horas para observar ballenas jorobadas y practicar snorkel en la Isla Salango. Perfecto para quienes buscan una experiencia más corta pero igualmente emocionante.",
+      "subtitle": "Ballenas jorobadas y snorkel en el Parque Nacional Machalilla",
+      "description": "Tour de 3 horas para observar ballenas jorobadas y practicar snorkel en la Isla Salango. Perfecto para quienes buscan una experiencia más corta pero igualmente emocionante. Avistamiento garantizado al 100%.",
       "duration": "3 horas",
-      "price": "$26 por persona",
       "included": [
         "Snacks y bebidas",
-        "Equipo de snorkel",
+        "Equipo de snorkel completo",
         "Embarcación equipada con salvavidas",
+        "Guía certificado",
         "Impuestos y transporte"
       ],
       "departures": [
@@ -157,10 +156,10 @@
         "Salida tarde: 14:00 - 17:00"
       ],
       "highlights": [
-        "Observación de ballenas jorobadas",
+        "Observación garantizada de ballenas jorobadas",
         "Snorkel en Isla Salango",
         "Arrecifes coralinos",
-        "Tortugas, morenas, estrellas de mar",
+        "Tortugas marinas, morenas, estrellas de mar",
         "Gran variedad de peces tropicales"
       ],
       "note": "Descuentos disponibles para grupos",
@@ -170,19 +169,19 @@
       "id": "buceo-isla-plata",
       "name": "Buceo Isla de la Plata + Ballenas",
       "season": "Junio - Octubre",
-      "subtitle": "Buceo profesional con avistamiento de ballenas",
-      "description": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, combinado con avistamiento de ballenas jorobadas. Para buceadores certificados.",
+      "subtitle": "Buceo profesional con avistamiento de ballenas jorobadas",
+      "description": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, combinado con avistamiento de ballenas jorobadas. Para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla.",
       "duration": "Día completo",
       "included": [
         "Equipo completo de buceo profesional",
-        "Instructor certificado",
-        "2 inmersiones",
+        "Instructor certificado PADI",
+        "2 inmersiones profundas",
         "Transporte marítimo",
         "Lunch",
-        "Seguro",
-        "Avistamiento de ballenas"
+        "Seguro de buceo",
+        "Avistamiento de ballenas jorobadas"
       ],
-      "requirements": "Certificación de buceo requerida",
+      "requirements": "Certificación de buceo PADI o equivalente requerida",
       "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80"
     },
     {
@@ -190,23 +189,22 @@
       "name": "Paseo Costero Isla Salango",
       "season": "Noviembre - Mayo",
       "subtitle": "Snorkel y naturaleza en temporada baja",
-      "description": "Tour costero 100% garantizado en los alrededores de la Isla de Salango. Ideal para la temporada sin ballenas. Snorkel, observación de fauna marina y exploración costera con guías expertos.",
+      "description": "Tour costero 100% garantizado en los alrededores de la Isla de Salango. Ideal para la temporada sin ballenas. Snorkel, observación de fauna marina y exploración costera con guías expertos del Parque Nacional Machalilla.",
       "duration": "3 horas 10 minutos",
-      "price": "$16 por persona",
       "included": [
         "Snacks y bebidas",
-        "Equipo de snorkel",
+        "Equipo de snorkel completo",
         "Embarcación equipada con salvavidas",
-        "Guía experimentado"
+        "Guía experimentado certificado"
       ],
       "highlights": [
-        "Observación de piqueros",
-        "Lobos marinos y tortugas",
+        "Observación de piqueros de patas azules",
+        "Lobos marinos y tortugas marinas",
         "Tour por la costa de Isla Salango",
         "Snorkel en aguas cristalinas",
         "Buceo de superficie"
       ],
-      "note": "Descuentos disponibles para grupos. Tours 100% garantizados.",
+      "note": "Descuentos disponibles para grupos. Tours 100% garantizados todo el año.",
       "image": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1200&q=80"
     },
     {
@@ -214,17 +212,16 @@
       "name": "Pesca Deportiva de Marlín y Dorado",
       "season": "Todo el año (especies varían)",
       "subtitle": "Aventura de pesca en alta mar",
-      "description": "Experiencia de pesca deportiva en yate de 11 metros, navegando 45 millas de la costa. Captura marlín, dorado, wahoo y picudo según temporada. Peces de hasta 4.5 metros de longitud. Satisfacción y adrenalina garantizadas.",
+      "description": "Experiencia de pesca deportiva en yate de 11 metros, navegando 45 millas de la costa de Puerto López. Captura marlín, dorado, wahoo y picudo según temporada. Peces de hasta 4.5 metros de longitud. Satisfacción y adrenalina garantizadas.",
       "duration": "Día completo (05:00 - 17:00)",
-      "price": "$750 charter privado (máximo 5 pax)",
       "included": [
         "Yate 11 metros con 2 motores ecológicos",
-        "Chalecos salvavidas",
+        "Chalecos salvavidas certificados",
         "Cañas de pesca profesionales",
-        "GPS y sonda",
+        "GPS y sonda de pesca",
         "Cinturón y silla de pesca",
-        "Hielera",
-        "Desayuno y almuerzo"
+        "Hielera para conservar capturas",
+        "Desayuno y almuerzo completo"
       ],
       "species": [
         "Marlín/Picudo (Jun-Ago, Oct-Mar)",
@@ -236,7 +233,7 @@
         "06:30 - Inicio de pesca (navegación 1h30)",
         "17:00 - Fin del tour"
       ],
-      "boat": "Yate 11 metros, 3 metros de manga, 2 motores fuera de borda ecológicos",
+      "boat": "Yate 11 metros, 3 metros de manga, 2 motores fuera de borda ecológicos 4 tiempos",
       "image": "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=1200&q=80"
     },
     {
@@ -244,47 +241,46 @@
       "name": "Guayacán de los Monos",
       "season": "Todo el año",
       "subtitle": "Trekking y observación de fauna silvestre",
-      "description": "Caminata ecológica para observar monos aulladores en su hábitat natural. Explora la vegetación nativa, mariposas tropicales y gran variedad de aves en un ambiente único del bosque ecuatoriano.",
+      "description": "Caminata ecológica para observar monos aulladores en su hábitat natural. Explora la vegetación nativa, mariposas tropicales y gran variedad de aves en un ambiente único del bosque ecuatoriano cerca de Puerto López.",
       "duration": "Medio día (08:30 - 14:30)",
-      "price": "$35 por persona (mínimo 2 pax)",
       "included": [
-        "Guía especializado",
-        "Almuerzo",
+        "Guía especializado en fauna",
+        "Almuerzo típico ecuatoriano",
         "Botas de trekking",
         "Caballo (opcional)"
       ],
       "highlights": [
-        "Monos aulladores",
-        "Vegetación nativa",
+        "Monos aulladores en estado silvestre",
+        "Vegetación nativa del bosque seco",
         "Mariposas tropicales",
-        "Gran variedad de pájaros"
+        "Gran variedad de pájaros endémicos"
       ],
       "note": "NO incluye traslado desde Puerto López",
-      "departure": "08:30 desde Puerto López",
+      "departure": "08:30 desde Puerto López (mínimo 2 personas)",
       "image": "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=1200&q=80"
     },
     {
       "id": "playa-los-frailes",
       "name": "Playa Los Frailes",
       "subtitle": "Una de las playas más bellas de Ecuador",
-      "description": "Arena blanca, aguas cristalinas y senderos naturales del Parque Nacional Machalilla. Perfecta para relajarse y conectar con la naturaleza en estado puro. Considerada una de las joyas del litoral ecuatoriano.",
+      "description": "Arena blanca, aguas cristalinas y senderos naturales del Parque Nacional Machalilla. Perfecta para relajarse y conectar con la naturaleza en estado puro. Considerada una de las joyas del litoral ecuatoriano y playa más limpia del país.",
       "duration": "Medio día (4-5 horas)",
       "included": [
-        "Transporte",
+        "Transporte desde Puerto López",
         "Entrada al Parque Nacional Machalilla",
-        "Guía (opcional)"
+        "Guía naturalista (opcional)"
       ],
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80"
     },
     {
       "id": "tour-personalizado",
       "name": "Tour Personalizado",
-      "subtitle": "Diseñamos tu aventura ideal",
-      "description": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única en Puerto López y alrededores.",
+      "subtitle": "Diseñamos tu aventura ideal en Puerto López",
+      "description": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única en Puerto López y el Parque Nacional Machalilla.",
       "duration": "Según tus necesidades",
       "included": [
         "Itinerario personalizado",
-        "Guía exclusivo",
+        "Guía exclusivo certificado",
         "Transporte privado",
         "Actividades a tu medida"
       ],
@@ -293,14 +289,14 @@
   ],
   "localGuide": {
     "title": "Parque Nacional Machalilla",
-    "description": "Ubicados en el corazón de la zona turística, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla y todas sus maravillas naturales. Operadores certificados con guías experimentados.",
+    "description": "Ubicados en el corazón de la zona turística de Puerto López, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla y todas sus maravillas naturales. Operadores certificados con guías experimentados.",
     "hours": "Horarios: 09:00 - 15:00",
     "tips": [
       "Llega temprano para aprovechar al máximo tu visita y evitar las horas de más calor",
       "Lleva protector solar biodegradable, sombrero y agua suficiente",
       "Respeta la flora y fauna local - no toques ni alimentes a los animales",
       "Contrata guías certificados para una experiencia más enriquecedora y segura",
-      "La temporada de ballenas (Jun-Oct) requiere reserva anticipada",
+      "La temporada de ballenas jorobadas (Jun-Oct) requiere reserva anticipada",
       "Descuentos disponibles para grupos en la mayoría de tours"
     ]
   },
@@ -357,7 +353,7 @@
   "faq": [
     {
       "id": 1,
-      "question": "¿Tienen habitaciones con accesibilidad?",
+      "question": "¿Tienen habitaciones con accesibilidad para personas con movilidad reducida?",
       "answer": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida (PMR), con rampas de acceso, baños adaptados con ducha sin escalón y ubicadas en planta baja."
     },
     {
@@ -367,23 +363,23 @@
     },
     {
       "id": 3,
-      "question": "¿Tienen estacionamiento?",
+      "question": "¿Tienen estacionamiento gratuito?",
       "answer": "Sí, contamos con estacionamiento gratuito y seguro dentro de la residencia para todos nuestros huéspedes. No necesitas reservar espacio, siempre hay disponibilidad."
     },
     {
       "id": 4,
-      "question": "¿Cómo llego desde el terminal de buses?",
+      "question": "¿Cómo llego desde el terminal de buses de Puerto López?",
       "answer": "Estamos a 5 minutos del terminal en vehículo. Nuestra ubicación en San Francisco y Rogerio Figueroa es fácil de encontrar. También podemos enviarte la ubicación exacta por WhatsApp o coordinar recogida si llegas de noche."
     },
     {
       "id": 5,
-      "question": "¿Organizan tours a las islas y playas?",
-      "answer": "Sí, somos operadores certificados con Tours Lobo Marino. Organizamos todos los tours: observación de ballenas (Jun-Oct), Isla de la Plata, buceo, pesca deportiva, Playa Los Frailes y más. Descuentos disponibles para grupos."
+      "question": "¿Organizan tours a la Isla de la Plata y observación de ballenas?",
+      "answer": "Sí, somos operadores certificados con Tours Lobo Marino. Organizamos todos los tours: observación de ballenas jorobadas (Jun-Oct), Isla de la Plata, buceo, pesca deportiva, Playa Los Frailes y más. Descuentos disponibles para grupos."
     },
     {
       "id": 6,
-      "question": "¿Cuál es la mejor temporada para ver ballenas?",
-      "answer": "La temporada de ballenas jorobadas es de junio a octubre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas. ¡Recomendamos reservar con anticipación!"
+      "question": "¿Cuál es la mejor temporada para ver ballenas jorobadas en Puerto López?",
+      "answer": "La temporada de ballenas jorobadas es de junio a octubre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas. Las ballenas vienen desde la Antártica para reproducirse en las aguas cálidas del Parque Nacional Machalilla. ¡Recomendamos reservar con anticipación!"
     },
     {
       "id": 7,
@@ -393,7 +389,7 @@
     {
       "id": 8,
       "question": "¿Hay descuentos para grupos en los tours?",
-      "answer": "Sí, ofrecemos descuentos especiales para grupos en la mayoría de nuestros tours. Contáctanos por WhatsApp para obtener una cotización personalizada según el tamaño de tu grupo."
+      "answer": "Sí, ofrecemos descuentos especiales para grupos en la mayoría de nuestros tours al Parque Nacional Machalilla. Contáctanos por WhatsApp para obtener una cotización personalizada según el tamaño de tu grupo."
     }
   ],
   "amenities": {
@@ -413,7 +409,7 @@
     ]
   },
   "policies": {
-    "pets": "Se aceptan mascortas bajo solicitud",
+    "pets": "Se aceptan mascotas bajo solicitud",
     "smoking": "Prohibido fumar en las habitaciones",
     "parties": "Fiestas no permitidas - zona tranquila"
   }

@@ -3,52 +3,57 @@ import hotelData from '../data/hotelData.json';
 
 export default function LocalGuide() {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#1A2F4B] to-[#C28E5E]">
+    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#1A2F4B] to-[#C28E5E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-white space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Content */}
+          <div className="text-white space-y-6 order-2 lg:order-1">
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full w-fit">
               <Compass size={20} />
-              <span className="font-semibold">Guía Local</span>
+              <span className="font-['Lato'] font-semibold text-sm sm:text-base">Guía Local</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-              {hotelData.localGuide.title}
-            </h2>
+            <div>
+              <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+                {hotelData.localGuide.title}
+              </h2>
+              <div className="w-12 h-1 bg-white/40 rounded-full mb-6"></div>
+            </div>
 
-            <p className="text-xl opacity-95 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
               {hotelData.localGuide.description}
             </p>
 
-            <div className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
-              <Clock size={24} className="flex-shrink-0" />
-              <span className="text-lg font-semibold">{hotelData.localGuide.hours}</span>
+            <div className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm p-4 rounded-xl w-fit">
+              <Clock size={22} className="flex-shrink-0" />
+              <span className="font-['Lato'] font-semibold text-sm sm:text-base">{hotelData.localGuide.hours}</span>
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
+          {/* Right - Tips Card */}
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl order-1 lg:order-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="bg-[#C28E5E] w-12 h-12 rounded-xl flex items-center justify-center">
+              <div className="bg-[#C28E5E] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lightbulb size={24} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1A2F4B]">Consejos del Local</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1A2F4B]">Consejos del Local</h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {hotelData.localGuide.tips.map((tip, index) => (
                 <div
                   key={index}
-                  className="flex items-start space-x-3 p-4 bg-gradient-to-br from-[#F9F7F2] to-white rounded-2xl hover:shadow-md transition-shadow duration-200"
+                  className="flex items-start space-x-3 p-3 sm:p-4 bg-gradient-to-br from-[#F9F7F2] to-white rounded-xl hover:shadow-md transition-shadow duration-200"
                 >
-                  <div className="bg-[#C28E5E] text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                  <div className="bg-[#C28E5E] text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
                     {index + 1}
                   </div>
-                  <p className="text-gray-700 leading-relaxed pt-0.5">{tip}</p>
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed pt-0.5">{tip}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-200">
+            <div className="mt-6 pt-6 border-t border-gray-200">
               <button
                 onClick={() => {
                   window.open(
@@ -56,7 +61,7 @@ export default function LocalGuide() {
                     '_blank'
                   );
                 }}
-                className="w-full bg-[#1A2F4B] text-white py-4 rounded-full font-bold text-lg hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg"
+                className="w-full bg-[#1A2F4B] text-white py-3 sm:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] sm:min-h-auto"
               >
                 Planifica tu Visita
               </button>

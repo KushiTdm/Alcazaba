@@ -3,6 +3,7 @@ import hotelData from '../data/hotelData.json';
 
 export default function Features() {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -23,57 +24,59 @@ export default function Features() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] overflow-hidden">
+    <section ref={sectionRef} className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1A2F4B] mb-4">
-            ¿Por Qué Elegirnos?
+        
+        {/* Header */}
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+          <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A2F4B] mb-3 sm:mb-4">
+            ¿Por Qué Elegimos?
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comodidades pensadas para hacer de tu estadía una experiencia memorable
+          <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full mx-auto mb-6"></div>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
+            Comodidades pensadas para hacer de tu estadía una experiencia inolvidable
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Grid Layout - Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {hotelData.usp.map((feature, index) => {
-            const isLarge = index === 0 || index === 3;
             const delay = index * 150;
 
             return (
               <div
                 key={feature.id}
-                className={`group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
-                  isLarge ? 'md:col-span-1 lg:row-span-2' : ''
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${delay}ms` }}
+                onMouseEnter={() => setActiveIndex(index)}
+                className={`group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full ${
+                  isVisible ? `opacity-100 translate-y-0 animate-fadeInUp` : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${delay}ms`, animationDelay: `${delay}ms` }}
               >
-                <div className="flex flex-col h-full">
-                  {/* Image */}
-                  <div className={`relative overflow-hidden ${isLarge ? 'h-64 lg:h-80' : 'h-48'}`}>
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/80 via-[#1A2F4B]/40 to-transparent"></div>
-                    
-                    {/* Title overlay on image */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white leading-tight">
-                        {feature.title}
-                      </h3>
-                    </div>
+                {/* Image Container */}
+                <div className="relative overflow-hidden h-40 sm:h-48 lg:h-56">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 via-[#1A2F4B]/40 to-transparent"></div>
+                  
+                  {/* Title on Image */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                      {feature.title}
+                    </h3>
                   </div>
+                </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex-grow flex flex-col">
-                    <p className="text-gray-600 leading-relaxed flex-grow">
-                      {feature.description}
-                    </p>
+                {/* Content */}
+                <div className="p-4 sm:p-6 flex flex-col h-48 sm:h-auto">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow">
+                    {feature.description}
+                  </p>
 
-                    <div className="pt-4 mt-auto">
-                      <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-24 transition-all duration-300"></div>
-                    </div>
+                  <div className="pt-4 mt-auto">
+                    <div className="w-12 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-20 transition-all duration-300"></div>
                   </div>
                 </div>
               </div>
@@ -81,12 +84,13 @@ export default function Features() {
           })}
         </div>
 
-        <div className={`mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#C28E5E] rounded-3xl p-8 sm:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h3 className="text-3xl sm:text-4xl font-bold">
+        {/* CTA Section */}
+        <div className={`bg-gradient-to-r from-[#1A2F4B] to-[#C28E5E] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
+            <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
               ¿Listo para tu próxima aventura?
             </h3>
-            <p className="text-xl opacity-95">
+            <p className="text-base sm:text-lg opacity-95 px-2">
               Reserva ahora y disfruta de la mejor hospitalidad en Puerto López
             </p>
             <button
@@ -96,13 +100,29 @@ export default function Features() {
                   '_blank'
                 );
               }}
-              className="bg-white text-[#1A2F4B] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#F9F7F2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform inline-block"
+              className="bg-white text-[#1A2F4B] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-['Lato'] font-bold text-base sm:text-lg hover:bg-[#F9F7F2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-block mt-2"
             >
               RESERVAR AHORA
             </button>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }

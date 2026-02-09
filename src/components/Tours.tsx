@@ -6,6 +6,9 @@ import TourDetail from '../pages/Tourdetail';
 export default function Tours() {
   const [selectedTour, setSelectedTour] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -25,139 +28,133 @@ export default function Tours() {
     return () => observer.disconnect();
   }, []);
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % hotelData.tours.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + hotelData.tours.length) % hotelData.tours.length);
+  };
+
+  // Handle touch events for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      nextSlide();
+    }
+    if (touchStart - touchEnd < -75) {
+      prevSlide();
+    }
+  };
+
+  // Auto-play carousel on mobile
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth < 768) {
+        nextSlide();
+      }
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-      <section ref={sectionRef} id="tours" className="py-24 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] relative overflow-hidden">
+      <section ref={sectionRef} id="tours" className="py-16 md:py-24 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#C28E5E]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1A2F4B]/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
-            <div className="inline-flex items-center space-x-2 bg-white px-6 py-2 rounded-full shadow-md mb-6">
-              <Waves className="text-[#C28E5E]" size={20} />
-              <span className="font-['Lato'] text-[#1A2F4B] font-semibold">EXPERIENCIAS</span>
+          <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+            <div className="inline-flex items-center space-x-2 bg-white px-4 md:px-6 py-2 rounded-full shadow-md mb-4 md:mb-6">
+              <Waves className="text-[#C28E5E]" size={18} />
+              <span className="font-['Lato'] text-[#1A2F4B] font-semibold text-sm md:text-base">EXPERIENCIAS</span>
             </div>
             
-            <h2 className="font-['Playfair_Display'] text-5xl sm:text-6xl font-bold text-[#1A2F4B] mb-6">
+            <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A2F4B] mb-4 md:mb-6 px-4">
               Tours y Aventuras
             </h2>
             
-            <p className="font-['Lato'] text-xl text-gray-600 max-w-3xl mx-auto">
-              Descubre la magia del Parque Nacional Machalilla con nuestros tours recomendados. Experiencias únicas que te conectarán con la naturaleza.
+            <p className="font-['Lato'] text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              Descubre la magia del Parque Nacional Machalilla con nuestros tours recomendados
             </p>
           </div>
 
-          <div className="space-y-8">
+          {/* Mobile Carousel (< md) */}
+          <div className="md:hidden relative">
+            <div 
+              className="overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div 
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {hotelData.tours.map((tour) => (
+                  <div
+                    key={tour.id}
+                    className="w-full flex-shrink-0 px-4"
+                  >
+                    <TourCard tour={tour} onSelect={setSelectedTour} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation dots for mobile */}
+            <div className="flex justify-center gap-2 mt-6 flex-wrap px-4">
+              {hotelData.tours.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentIndex 
+                      ? 'w-8 h-2 bg-[#C28E5E]' 
+                      : 'w-2 h-2 bg-gray-300'
+                  }`}
+                  aria-label={`Ir a tour ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Layout (>= md) */}
+          <div className="hidden md:block space-y-8">
             {hotelData.tours.map((tour, index) => {
               const delay = index * 200;
               return (
                 <div
                   key={tour.id}
-                  onClick={() => setSelectedTour(tour.id)}
-                  className={`group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 cursor-pointer transform hover:-translate-y-1 ${
-                    index % 2 === 0 ? 'lg:mr-12' : 'lg:ml-12'
-                  } ${isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index % 2 === 0 ? '-translate-x-10' : 'translate-x-10'}`}`}
+                  className={`transition-all duration-700 ${
+                    isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index % 2 === 0 ? '-translate-x-10' : 'translate-x-10'}`
+                  }`}
                   style={{ transitionDelay: `${delay}ms` }}
                 >
-                  <div className="grid lg:grid-cols-2 gap-0">
-                    
-                    {/* Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative`}>
-                      <div className="aspect-[4/3] lg:aspect-auto lg:h-full relative overflow-hidden">
-                        <img
-                          src={tour.image}
-                          alt={tour.name}
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
-                        
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-8">
-                          <div className="flex items-center space-x-2 text-white">
-                            <span className="font-['Lato'] font-semibold text-lg">Explorar este tour</span>
-                            <ArrowRight size={24} className="transform group-hover:translate-x-2 transition-transform duration-300" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className={`p-8 lg:p-12 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                      <div className="space-y-6">
-                        
-                        {tour.season && (
-                          <div className="inline-flex items-center space-x-2 bg-[#C28E5E] text-white px-4 py-2 rounded-full">
-                            <span className="font-['Lato'] font-semibold">{tour.season}</span>
-                          </div>
-                        )}
-
-                        <div>
-                          <h3 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-[#1A2F4B] mb-3">
-                            {tour.name}
-                          </h3>
-
-                          {tour.subtitle && (
-                            <p className="font-['Lato'] text-xl text-[#C28E5E] font-semibold italic mb-4">
-                              {tour.subtitle}
-                            </p>
-                          )}
-
-                          <p className="font-['Lato'] text-gray-600 leading-relaxed text-lg">
-                            {tour.description}
-                          </p>
-                        </div>
-
-                        <div className="flex items-center space-x-2 text-[#1A2F4B]">
-                          <Clock size={20} className="text-[#C28E5E]" />
-                          <span className="font-['Lato'] font-semibold">{tour.duration}</span>
-                        </div>
-
-                        {/* Included items - show first 3 */}
-                        <div className="space-y-2">
-                          <p className="font-['Lato'] font-semibold text-[#1A2F4B] text-sm">Incluye:</p>
-                          {tour.included.slice(0, 3).map((item, idx) => (
-                            <div key={idx} className="flex items-center space-x-2">
-                              <Check size={18} className="text-[#C28E5E] flex-shrink-0" />
-                              <span className="font-['Lato'] text-gray-700">{item}</span>
-                            </div>
-                          ))}
-                          {tour.included.length > 3 && (
-                            <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium ml-6">
-                              +{tour.included.length - 3} servicios más incluidos
-                            </p>
-                          )}
-                        </div>
-
-                        <div className="pt-6 border-t border-gray-200">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedTour(tour.id);
-                            }}
-                            className="bg-[#1A2F4B] text-white px-8 py-3 rounded-full font-['Lato'] font-semibold hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105 flex items-center space-x-2"
-                          >
-                            <span>Más Información</span>
-                            <ArrowRight size={18} />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={index % 2 === 1} />
                 </div>
               );
             })}
           </div>
 
           {/* Bottom Info */}
-          <div className={`mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-8 sm:p-12 text-white shadow-2xl transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h3 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold">
+          <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-6">
+              <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
                 ¿Necesitas ayuda para elegir?
               </h3>
-              <p className="font-['Lato'] text-xl text-white/90">
-                Nuestros anfitriones conocen perfectamente la región y te ayudarán a planificar la experiencia perfecta según tus intereses.
+              <p className="font-['Lato'] text-base md:text-xl text-white/90">
+                Nuestros anfitriones conocen perfectamente la región y te ayudarán a planificar la experiencia perfecta
               </p>
               <button
                 onClick={() => {
@@ -166,7 +163,7 @@ export default function Tours() {
                     '_blank'
                   );
                 }}
-                className="bg-[#C28E5E] text-white px-10 py-4 rounded-full font-['Lato'] font-bold text-lg hover:bg-[#A67347] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+                className="bg-[#C28E5E] text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-['Lato'] font-bold text-base md:text-lg hover:bg-[#A67347] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 CONSULTAR POR WHATSAPP
               </button>
@@ -183,5 +180,117 @@ export default function Tours() {
         />
       )}
     </>
+  );
+}
+
+// Tour Card Component
+interface TourCardProps {
+  tour: {
+    id: string;
+    name: string;
+    season?: string;
+    subtitle?: string;
+    description: string;
+    duration: string;
+    included: string[];
+    image: string;
+  };
+  onSelect: (id: string) => void;
+  isAlternate?: boolean;
+}
+
+function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
+  return (
+    <div
+      onClick={() => onSelect(tour.id)}
+      className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 cursor-pointer transform hover:-translate-y-1 h-full"
+    >
+      <div className="grid md:grid-cols-2 gap-0 h-full">
+        
+        {/* Image */}
+        <div className={`${isAlternate ? 'md:order-2' : ''} relative`}>
+          <div className="aspect-[4/3] md:aspect-auto md:h-full relative overflow-hidden min-h-[250px] md:min-h-[400px]">
+            <img
+              src={tour.image}
+              alt={`${tour.name} - Tour en Parque Nacional Machalilla Puerto López Ecuador`}
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+            
+            {/* Season badge */}
+            {tour.season && (
+              <div className="absolute top-4 left-4 bg-[#C28E5E] text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg">
+                <span className="font-['Lato'] font-semibold text-xs md:text-sm">{tour.season}</span>
+              </div>
+            )}
+            
+            {/* Hover Overlay - Hidden on mobile */}
+            <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 items-end justify-center pb-8">
+              <div className="flex items-center space-x-2 text-white">
+                <span className="font-['Lato'] font-semibold text-base md:text-lg">Explorar este tour</span>
+                <ArrowRight size={20} className="transform group-hover:translate-x-2 transition-transform duration-300 md:w-6 md:h-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className={`p-6 md:p-8 lg:p-12 flex flex-col justify-center ${isAlternate ? 'md:order-1' : ''}`}>
+          <div className="space-y-4 md:space-y-6">
+            
+            <div>
+              <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A2F4B] mb-2 md:mb-3 line-clamp-2">
+                {tour.name}
+              </h3>
+
+              {tour.subtitle && (
+                <p className="font-['Lato'] text-lg md:text-xl text-[#C28E5E] font-semibold italic mb-3 md:mb-4 line-clamp-2">
+                  {tour.subtitle}
+                </p>
+              )}
+
+              <p className="font-['Lato'] text-gray-600 leading-relaxed text-sm md:text-base lg:text-lg line-clamp-3 md:line-clamp-none">
+                {tour.description}
+              </p>
+            </div>
+
+            <div className="flex items-center space-x-2 text-[#1A2F4B]">
+              <Clock size={18} className="text-[#C28E5E] md:w-5 md:h-5" />
+              <span className="font-['Lato'] font-semibold text-sm md:text-base">{tour.duration}</span>
+            </div>
+
+            {/* Included items - show first 3 */}
+            <div className="space-y-2">
+              <p className="font-['Lato'] font-semibold text-[#1A2F4B] text-xs md:text-sm">Incluye:</p>
+              {tour.included.slice(0, 3).map((item, idx) => (
+                <div key={idx} className="flex items-start space-x-2">
+                  <Check size={16} className="text-[#C28E5E] flex-shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" />
+                  <span className="font-['Lato'] text-gray-700 text-sm md:text-base line-clamp-1">{item}</span>
+                </div>
+              ))}
+              {tour.included.length > 3 && (
+                <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium ml-6">
+                  +{tour.included.length - 3} servicios más incluidos
+                </p>
+              )}
+            </div>
+
+            <div className="pt-4 md:pt-6 border-t border-gray-200">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSelect(tour.id);
+                }}
+                className="bg-[#1A2F4B] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-['Lato'] font-semibold text-sm md:text-base hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105 flex items-center space-x-2 w-full md:w-auto justify-center"
+              >
+                <span>Más Información</span>
+                <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
