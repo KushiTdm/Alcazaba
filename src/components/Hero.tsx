@@ -124,7 +124,7 @@ export default function Hero() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
           style={{
-            backgroundImage: 'url(/images/hero-mirador.webp)',
+            backgroundImage: 'url(/images/hero-mirador2.jpeg)',
           }}
         >
           {/* Multi-layer Gradients */}

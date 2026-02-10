@@ -38,50 +38,52 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Grid Layout - Responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
-          {hotelData.usp.map((feature, index) => {
-            const delay = index * 150;
+        {/* Grid Layout - 3 Cartes Centrées */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {hotelData.usp.map((feature, index) => {
+              const delay = index * 150;
 
-            return (
-              <div
-                key={feature.id}
-                onMouseEnter={() => setActiveIndex(index)}
-                className={`group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full ${
-                  isVisible ? `opacity-100 translate-y-0 animate-fadeInUp` : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${delay}ms`, animationDelay: `${delay}ms` }}
-              >
-                {/* Image Container */}
-                <div className="relative overflow-hidden h-40 sm:h-48 lg:h-56">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 via-[#1A2F4B]/40 to-transparent"></div>
-                  
-                  {/* Title on Image */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
-                      {feature.title}
-                    </h3>
+              return (
+                <div
+                  key={feature.id}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  className={`group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full ${
+                    isVisible ? `opacity-100 translate-y-0 animate-fadeInUp` : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${delay}ms`, animationDelay: `${delay}ms` }}
+                >
+                  {/* Image Container */}
+                  <div className="relative overflow-hidden h-48 sm:h-56 lg:h-64">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 via-[#1A2F4B]/40 to-transparent"></div>
+                    
+                    {/* Title on Image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+                        {feature.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5 sm:p-6 lg:p-8 flex flex-col">
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed flex-grow">
+                      {feature.description}
+                    </p>
+
+                    <div className="pt-4 mt-auto">
+                      <div className="w-12 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-20 transition-all duration-300"></div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-4 sm:p-6 flex flex-col h-48 sm:h-auto">
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow">
-                    {feature.description}
-                  </p>
-
-                  <div className="pt-4 mt-auto">
-                    <div className="w-12 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-20 transition-all duration-300"></div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
         {/* CTA Section */}

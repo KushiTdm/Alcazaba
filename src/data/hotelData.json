@@ -27,27 +27,20 @@
   "usp": [
     {
       "id": 1,
-      "title": "Accesibilidad Total",
-      "description": "Habitaciones accesibles para personas con movilidad reducida con rampas PMR y ducha adaptada",
-      "icon": "accessibility",
-      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
-    },
-    {
-      "id": 2,
       "title": "Cocina Compartida Gratuita",
       "description": "Espacios completamente equipados: microondas, frigo, utensilios completos",
       "icon": "utensils",
       "image": "/images/features/cucina.jpeg"
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Estacionamiento Gratuito",
       "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
       "icon": "parking",
       "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=80"
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "Vista Panorámica al Mar",
       "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
       "icon": "map-pin",
