@@ -129,17 +129,20 @@ export default function Tours() {
             </div>
           </div>
 
-          {/* Desktop Layout (>= md) */}
+          {/* Desktop Layout (>= md) with 3D animations */}
           <div className="hidden md:block space-y-8">
             {hotelData.tours.map((tour, index) => {
-              const delay = index * 200;
+              const delay = index * 100; // Réduit de 200ms à 100ms
               return (
                 <div
                   key={tour.id}
                   className={`transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index % 2 === 0 ? '-translate-x-10' : 'translate-x-10'}`
+                    isVisible ? 'opacity-100 translate-x-0 scale-100 tour-card-3d' : `opacity-0 ${index % 2 === 0 ? '-translate-x-10' : 'translate-x-10'} scale-95`
                   }`}
-                  style={{ transitionDelay: `${delay}ms` }}
+                  style={{ 
+                    transitionDelay: `${delay}ms`,
+                    animationDelay: `${delay}ms`
+                  }}
                 >
                   <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={index % 2 === 1} />
                 </div>
@@ -148,7 +151,7 @@ export default function Tours() {
           </div>
 
           {/* Bottom Info */}
-          <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-6">
               <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
                 ¿Necesitas ayuda para elegir?
@@ -179,6 +182,65 @@ export default function Tours() {
           onClose={() => setSelectedTour(null)} 
         />
       )}
+
+      {/* 3D Animation Styles */}
+      <style>{`
+        @keyframes float3D {
+          0%, 100% {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+          }
+          25% {
+            transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) translateZ(10px);
+          }
+          50% {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+          }
+          75% {
+            transform: perspective(1000px) rotateX(-2deg) rotateY(1deg) translateZ(10px);
+          }
+        }
+
+        @keyframes slideIn3D {
+          from {
+            opacity: 0;
+            transform: perspective(1000px) rotateY(-15deg) translateX(-100px) translateZ(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: perspective(1000px) rotateY(0deg) translateX(0) translateZ(0);
+          }
+        }
+
+        @keyframes slideInAlt3D {
+          from {
+            opacity: 0;
+            transform: perspective(1000px) rotateY(15deg) translateX(100px) translateZ(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: perspective(1000px) rotateY(0deg) translateX(0) translateZ(0);
+          }
+        }
+
+        .tour-card-3d {
+          transform-style: preserve-3d;
+          animation: float3D 6s ease-in-out infinite;
+        }
+
+        .tour-card-3d:nth-child(odd) {
+          animation: slideIn3D 0.8s ease-out forwards, float3D 6s ease-in-out infinite 0.8s;
+        }
+
+        .tour-card-3d:nth-child(even) {
+          animation: slideInAlt3D 0.8s ease-out forwards, float3D 6s ease-in-out infinite 0.8s;
+        }
+
+        .tour-card-3d:hover {
+          animation-play-state: paused;
+          transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(20px) scale(1.02);
+          transition: transform 0.4s ease-out;
+        }
+      `}</style>
     </>
   );
 }
