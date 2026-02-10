@@ -27,17 +27,17 @@
   "usp": [
     {
       "id": 1,
-      "title": "Vista Panorámica al Mar",
-      "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
-      "icon": "map-pin",
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
+      "title": "Accesibilidad Total",
+      "description": "Habitaciones accesibles para personas con movilidad reducida con rampas PMR y ducha adaptada",
+      "icon": "accessibility",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
     },
     {
       "id": 2,
       "title": "Cocina Compartida Gratuita",
       "description": "Espacios completamente equipados: microondas, frigo, utensilios completos",
       "icon": "utensils",
-      "image": "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
+      "image": "/images/features/cucina.jpeg"
     },
     {
       "id": 3,
@@ -45,25 +45,68 @@
       "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
       "icon": "parking",
       "image": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=80"
+    },
+    {
+      "id": 4,
+      "title": "Vista Panorámica al Mar",
+      "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
+      "icon": "map-pin",
+      "image": "/images/features/hamac.jpeg"
     }
   ],
   "rooms": [
     {
+      "id": "habitacion-matrimonial",
+      "type": "Habitación Matrimonial",
+      "description": "Cómoda y acogedora para parejas, con cama matrimonial de 2 plazas",
+      "capacity": "2 personas",
+      "amenities": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+      "image": "/images/rooms/Matrimonial.jpeg",
+      "featured": true
+    },
+    {
       "id": "habitacion-individual",
       "type": "Habitación Individual",
-      "description": "Perfecta para viajeros solitarios que buscan comodidad y tranquilidad en Puerto López",
+      "description": "Perfecta para viajeros solitarios, equipada con cama de 2 plazas para mayor comodidad",
       "capacity": "1 persona",
-      "amenities": ["Cama individual", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
+      "amenities": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
+      "image": "/images/rooms/habitacion-individual-hostal-puerto-lopez-ecuador.jpeg",
+      "featured": false
+    },
+    {
+      "id": "habitacion-doble",
+      "type": "Habitación Doble",
+      "description": "Espaciosa habitación con dos camas individuales, ideal para amigos o familia",
+      "capacity": "2 personas",
+      "amenities": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
       "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
       "featured": false
     },
     {
-      "id": "habitacion-matrimonial",
-      "type": "Habitación Doble / Matrimonial",
-      "description": "Espaciosa y cómoda para parejas, algunas con vista al mar y patio privado",
-      "capacity": "2 personas",
-      "amenities": ["Cama matrimonial", "Vista al mar (algunas)", "Patio/Balcón", "Baño privado", "Wi-Fi gratuito", "Ventilador"],
-      "image": "/public/images/rooms/Matrimonial.jpeg",
+      "id": "habitacion-triple",
+      "type": "Habitación Triple",
+      "description": "Perfecta para grupos pequeños o familias, con cama matrimonial y cama individual",
+      "capacity": "3 personas",
+      "amenities": ["1 cama matrimonial", "1 cama individual", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+      "image": "/images/rooms/triple.jpeg",
+      "featured": false
+    },
+    {
+      "id": "habitacion-cuadruple",
+      "type": "Habitación Cuádruple",
+      "description": "Amplia habitación familiar con dos camas de 2 plazas o cama matrimonial y litera",
+      "capacity": "4 personas",
+      "amenities": ["2 camas de 2 plazas (o 1 matrimonial + 1 litera)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio amplio"],
+      "image": "/images/rooms/cuadruple.jpeg",
+      "featured": false
+    },
+    {
+      "id": "habitacion-quintuple",
+      "type": "Habitación Quíntuple",
+      "description": "Ideal para grupos grandes o familias numerosas, con cama matrimonial y litera mixta triple",
+      "capacity": "5 personas",
+      "amenities": ["1 cama matrimonial", "1 litera mixta (3 personas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio generoso"],
+      "image": "/images/rooms/Quintuple.jpeg",
       "featured": false
     },
     {
@@ -72,8 +115,8 @@
       "description": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras arquitectónicas",
       "capacity": "2 personas",
       "amenities": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
-      "featured": true,
-      "image": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80"
+      "featured": false,
+      "image": "/images/rooms/habitacion-accesible-pmr-hostal-puerto-lopez.jpeg"
     },
     {
       "id": "departamento",
@@ -81,7 +124,7 @@
       "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
-      "image": "/public/images/rooms/Departamento.jpeg",
+      "image": "/images/rooms/Departamento.jpeg",
       "featured": false
     },
     {
@@ -90,7 +133,7 @@
       "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales que exploran Ecuador",
       "capacity": "1 cama",
       "amenities": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
-      "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
+      "image": "/images/rooms/dormitorio-compartido-hostal-economico-puerto-lopez.jpeg",
       "featured": false
     }
   ],
@@ -128,7 +171,7 @@
         "Snorkel con peces tropicales",
         "Arrecifes coralinos"
       ],
-      "image": "https://images.unsplash.com/photo-1583737209840-917718c9fd86?w=1200&q=80"
+      "image": "/images/tours/ballenas.jpeg"
     },
     {
       "id": "avistamiento-ballenas-snorkel",
