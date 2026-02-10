@@ -36,7 +36,6 @@ export default function Tours() {
     setCurrentIndex((prev) => (prev - 1 + hotelData.tours.length) % hotelData.tours.length);
   };
 
-  // Handle touch events for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
@@ -54,7 +53,6 @@ export default function Tours() {
     }
   };
 
-  // Auto-play carousel on mobile
   useEffect(() => {
     const interval = setInterval(() => {
       if (window.innerWidth < 768) {
@@ -68,7 +66,6 @@ export default function Tours() {
   return (
     <>
       <section ref={sectionRef} id="tours" className="py-16 md:py-24 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] relative overflow-hidden">
-        {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#C28E5E]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1A2F4B]/5 rounded-full blur-3xl"></div>
 
@@ -89,7 +86,7 @@ export default function Tours() {
             </p>
           </div>
 
-          {/* Mobile Carousel (< md) */}
+          {/* Mobile Carousel */}
           <div className="md:hidden relative">
             <div 
               className="overflow-hidden"
@@ -102,26 +99,20 @@ export default function Tours() {
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {hotelData.tours.map((tour) => (
-                  <div
-                    key={tour.id}
-                    className="w-full flex-shrink-0 px-4"
-                  >
+                  <div key={tour.id} className="w-full flex-shrink-0 px-4">
                     <TourCard tour={tour} onSelect={setSelectedTour} />
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Navigation dots for mobile */}
             <div className="flex justify-center gap-2 mt-6 flex-wrap px-4">
               {hotelData.tours.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`transition-all duration-300 rounded-full ${
-                    index === currentIndex 
-                      ? 'w-8 h-2 bg-[#C28E5E]' 
-                      : 'w-2 h-2 bg-gray-300'
+                    index === currentIndex ? 'w-8 h-2 bg-[#C28E5E]' : 'w-2 h-2 bg-gray-300'
                   }`}
                   aria-label={`Ir a tour ${index + 1}`}
                 />
@@ -129,29 +120,31 @@ export default function Tours() {
             </div>
           </div>
 
-          {/* Desktop Layout (>= md) with 3D animations */}
+          {/* Desktop Layout avec slides alternés */}
           <div className="hidden md:block space-y-8">
             {hotelData.tours.map((tour, index) => {
-              const delay = index * 100; // Réduit de 200ms à 100ms
+              const delay = index * 150;
+              const isEven = index % 2 === 0;
+              
               return (
                 <div
                   key={tour.id}
-                  className={`transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-x-0 scale-100 tour-card-3d' : `opacity-0 ${index % 2 === 0 ? '-translate-x-10' : 'translate-x-10'} scale-95`
+                  className={`transition-all duration-1000 ease-out ${
+                    isVisible 
+                      ? 'opacity-100 translate-x-0' 
+                      : `opacity-0 ${isEven ? '-translate-x-full' : 'translate-x-full'}`
                   }`}
                   style={{ 
-                    transitionDelay: `${delay}ms`,
-                    animationDelay: `${delay}ms`
+                    transitionDelay: `${delay}ms`
                   }}
                 >
-                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={index % 2 === 1} />
+                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={!isEven} />
                 </div>
               );
             })}
           </div>
 
-          {/* Bottom Info */}
-          <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-6">
               <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
                 ¿Necesitas ayuda para elegir?
@@ -175,72 +168,9 @@ export default function Tours() {
         </div>
       </section>
 
-      {/* Tour Detail Modal */}
       {selectedTour && (
-        <TourDetail 
-          tourId={selectedTour} 
-          onClose={() => setSelectedTour(null)} 
-        />
+        <TourDetail tourId={selectedTour} onClose={() => setSelectedTour(null)} />
       )}
-
-      {/* 3D Animation Styles */}
-      <style>{`
-        @keyframes float3D {
-          0%, 100% {
-            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
-          }
-          25% {
-            transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) translateZ(10px);
-          }
-          50% {
-            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
-          }
-          75% {
-            transform: perspective(1000px) rotateX(-2deg) rotateY(1deg) translateZ(10px);
-          }
-        }
-
-        @keyframes slideIn3D {
-          from {
-            opacity: 0;
-            transform: perspective(1000px) rotateY(-15deg) translateX(-100px) translateZ(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: perspective(1000px) rotateY(0deg) translateX(0) translateZ(0);
-          }
-        }
-
-        @keyframes slideInAlt3D {
-          from {
-            opacity: 0;
-            transform: perspective(1000px) rotateY(15deg) translateX(100px) translateZ(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: perspective(1000px) rotateY(0deg) translateX(0) translateZ(0);
-          }
-        }
-
-        .tour-card-3d {
-          transform-style: preserve-3d;
-          animation: float3D 6s ease-in-out infinite;
-        }
-
-        .tour-card-3d:nth-child(odd) {
-          animation: slideIn3D 0.8s ease-out forwards, float3D 6s ease-in-out infinite 0.8s;
-        }
-
-        .tour-card-3d:nth-child(even) {
-          animation: slideInAlt3D 0.8s ease-out forwards, float3D 6s ease-in-out infinite 0.8s;
-        }
-
-        .tour-card-3d:hover {
-          animation-play-state: paused;
-          transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(20px) scale(1.02);
-          transition: transform 0.4s ease-out;
-        }
-      `}</style>
     </>
   );
 }
@@ -265,11 +195,10 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
   return (
     <div
       onClick={() => onSelect(tour.id)}
-      className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 cursor-pointer transform hover:-translate-y-1 h-full"
+      className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:scale-[1.01] h-full"
     >
       <div className="grid md:grid-cols-2 gap-0 h-full">
         
-        {/* Image */}
         <div className={`${isAlternate ? 'md:order-2' : ''} relative`}>
           <div className="aspect-[4/3] md:aspect-auto md:h-full relative overflow-hidden min-h-[250px] md:min-h-[400px]">
             <img
@@ -280,14 +209,12 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
             
-            {/* Season badge */}
             {tour.season && (
               <div className="absolute top-4 left-4 bg-[#C28E5E] text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg">
                 <span className="font-['Lato'] font-semibold text-xs md:text-sm">{tour.season}</span>
               </div>
             )}
             
-            {/* Hover Overlay - Hidden on mobile */}
             <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 items-end justify-center pb-8">
               <div className="flex items-center space-x-2 text-white">
                 <span className="font-['Lato'] font-semibold text-base md:text-lg">Explorar este tour</span>
@@ -297,7 +224,6 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
           </div>
         </div>
 
-        {/* Content */}
         <div className={`p-6 md:p-8 lg:p-12 flex flex-col justify-center ${isAlternate ? 'md:order-1' : ''}`}>
           <div className="space-y-4 md:space-y-6">
             
@@ -322,7 +248,6 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
               <span className="font-['Lato'] font-semibold text-sm md:text-base">{tour.duration}</span>
             </div>
 
-            {/* Included items - show first 3 */}
             <div className="space-y-2">
               <p className="font-['Lato'] font-semibold text-[#1A2F4B] text-xs md:text-sm">Incluye:</p>
               {tour.included.slice(0, 3).map((item, idx) => (
