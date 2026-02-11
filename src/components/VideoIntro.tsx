@@ -14,13 +14,13 @@ export default function VideoIntro({ onComplete }: VideoIntroProps) {
     const video = videoRef.current;
     if (!video) return;
 
-    // Tenter de lire la vidéo automatiquement
+   
     const playPromise = video.play();
     
     if (playPromise !== undefined) {
       playPromise.catch(error => {
         console.log("Autoplay prevented:", error);
-        // Si l'autoplay est bloqué, passer directement au site
+        
         handleVideoEnd();
       });
     }
@@ -66,11 +66,14 @@ export default function VideoIntro({ onComplete }: VideoIntroProps) {
         muted
         playsInline
         preload="auto"
+        aria-label="Timelapse vue panoramique depuis le mirador Hostal Alcazaba Puerto López Ecuador"
+        title="Vue panoramique océan Pacifique - Hostal Alcazaba"
+        poster="/images/hero-mirador.webp" 
       >
         <source src="/videos/hero-timelipse.mp4" type="video/mp4" />
+        <track kind="descriptions" src="/videos/hero-timelipse-desc.vtt" srclang="es" label="Español" />
       </video>
-
-      {/* Overlay gradient subtil */}
+     
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none"></div>
 
       {/* Bouton Skip - Apparaît après 1 seconde */}
