@@ -128,13 +128,26 @@ export default function Hero({ startAnimation = false }: HeroProps) {
         id="inicio" 
         className="relative w-full min-h-screen flex flex-col justify-between items-center py-8 sm:py-0 sm:h-screen overflow-hidden"
       >
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
-          style={{
-            backgroundImage: 'url(/images/Hostal_Alcazaba-puerto_lopez.jpeg)',
-          }}
-        >
+        {/* Background Image - VERSION RESPONSIVE AMÉLIORÉE */}
+        <div className="absolute inset-0">
+          {/* Image desktop - cachée sur mobile */}
+          <div 
+            className="hidden sm:block absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
+            style={{
+              backgroundImage: 'url(/images/Hostal_Alcazaba-puerto_lopez.jpeg)',
+            }}
+          />
+          
+          {/* Image mobile - avec object-position optimisé */}
+          <img
+            src="/images/Hostal_Alcazaba-puerto_lopez.jpeg"
+            alt="Hostal Alcazaba Puerto López"
+            className="sm:hidden absolute inset-0 w-full h-full object-cover"
+            style={{ 
+              objectPosition: '75% 40%'
+            }}
+          />
+          
           {/* Multi-layer Gradients */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A2F4B]/75 via-[#1A2F4B]/55 to-[#1A2F4B]/90"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#1A2F4B]/70 via-transparent to-transparent"></div>

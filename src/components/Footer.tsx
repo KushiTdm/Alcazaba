@@ -167,12 +167,45 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-gray-400">
-            <p className="text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
+            <p className="text-gray-400 text-center md:text-left">
               © {new Date().getFullYear()} Hostal Alcazaba & Lobo Marino. Todos los derechos reservados.
             </p>
-            <p className="text-center">
-              Diseñado con atención al detalle para ofrecer la mejor experiencia. <a href='https://neuraweb.tech'>By NeuraWeb</a>
+            
+            {/* SEO-OPTIMIZED DEVELOPER CREDIT WITH LOGO */}
+            <div className="flex items-center space-x-2 text-gray-400">
+              <span className="hidden sm:inline">Desarrollo web profesional por</span>
+              <span className="sm:hidden">Diseño web por</span>
+              <a 
+                href="https://neuraweb.tech" 
+                target="_blank" 
+                rel="noopener noreferrer nofollow"
+                title="NeuraWeb - Desarrollo Web Ecuador | Diseño de Sitios Web Profesionales"
+                className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300 group"
+              >
+                <img 
+                  src="/images/neurawebW.webp" 
+                  alt="NeuraWeb - Agencia de Desarrollo Web Ecuador"
+                  className="h-6 sm:h-7 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          </div>
+          
+          {/* SEO FOOTER TEXT - Hidden but crawlable */}
+          <div className="mt-4 text-center">
+            <p className="text-xs text-gray-500">
+              Sitio web diseñado y desarrollado con tecnología React por{' '}
+              <a 
+                href="https://neuraweb.tech" 
+                target="_blank" 
+                rel="noopener noreferrer nofollow"
+                className="text-[#C28E5E]/70 hover:text-[#C28E5E] transition-colors duration-200"
+              >
+                NeuraWeb - Agencia de Desarrollo Web
+              </a>
+              {' '}especializada en sitios web para hoteles, hostales y turismo.
             </p>
           </div>
         </div>
