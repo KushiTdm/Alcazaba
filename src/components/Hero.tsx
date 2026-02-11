@@ -134,13 +134,13 @@ export default function Hero({ startAnimation = false }: HeroProps) {
           <div 
             className="hidden sm:block absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
             style={{
-              backgroundImage: 'url(/images/Hostal_Alcazaba-puerto_lopez.jpeg)',
+              backgroundImage: 'url(/images/Hostal_Alcazaba-puerto_lopez.webp)',
             }}
           />
           
           {/* Image mobile - avec object-position optimisé */}
           <img
-            src="/images/Hostal_Alcazaba-puerto_lopez.jpeg"
+            src="/images/Hostal_Alcazaba-puerto_lopez.webp"
             alt="Hostal Alcazaba Puerto López"
             className="sm:hidden absolute inset-0 w-full h-full object-cover"
             style={{ 

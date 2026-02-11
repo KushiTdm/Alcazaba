@@ -30,28 +30,28 @@
       "title": "Cocina Compartida Gratuita",
       "description": "Espacios completamente equipados: microondas, frigo, utensilios completos",
       "icon": "utensils",
-      "image": "/images/features/cucina.jpeg"
+      "image": "/images/features/cucina.webp"
     },
     {
       "id": 2,
       "title": "Estacionamiento Gratuito",
       "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
       "icon": "parking",
-      "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.jpeg"
+      "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.webp"
     },
     {
       "id": 3,
       "title": "Mirador con Vista al Mar en Puerto López",
       "description": "Disfruta de nuestro mirador con impresionante vista panorámica al océano Pacífico y a Puerto López",
       "icon": "camera",
-      "image": "/images/features/Mirador_hostal_alcazaba.jpeg"
+      "image": "/images/features/Mirador_hostal_alcazaba.webp"
     },
     {
       "id": 4,
       "title": "Vista Panorámica al Mar",
       "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
       "icon": "map-pin",
-      "image": "/images/features/hamac.jpeg"
+      "image": "/images/features/hamac.webp"
     }
   ],
   "rooms": [
@@ -61,7 +61,7 @@
       "description": "Perfecta para viajeros solitarios, equipada con cama de 2 plazas para mayor comodidad",
       "capacity": "1 persona",
       "amenities": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
-      "image": "/images/rooms/individual.jpeg",
+      "image": "/images/rooms/individual.webp",
       "featured": false
     },
     {
@@ -70,7 +70,7 @@
       "description": "Cómoda y acogedora para parejas, con cama matrimonial de 2 plazas",
       "capacity": "2 personas",
       "amenities": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-      "image": "/images/rooms/Matrimonial.jpg",
+      "image": "/images/rooms/Matrimonial.webp",
       "featured": true
     },
     {
@@ -79,7 +79,7 @@
       "description": "Espaciosa habitación con dos camas individuales, ideal para amigos o familia",
       "capacity": "2 personas",
       "amenities": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-      "image": "/images/rooms/habitacion_doble-hostal_alcazaba-puerto_lopez.jpeg",
+      "image": "/images/rooms/habitacion_doble-hostal_alcazaba-puerto_lopez.webp",
       "featured": false
     },
     {
@@ -88,7 +88,7 @@
       "description": "Perfecta para grupos pequeños o familias, con cama matrimonial y cama individual",
       "capacity": "3 personas",
       "amenities": ["1 cama matrimonial", "1 cama individual", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-      "image": "/images/rooms/triple.jpeg",
+      "image": "/images/rooms/triple.webp",
       "featured": false
     },
     {
@@ -97,7 +97,7 @@
       "description": "Amplia habitación familiar con dos camas de 2 plazas o cama matrimonial y litera",
       "capacity": "4 personas",
       "amenities": ["2 camas de 2 plazas (o 1 matrimonial + 1 litera)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio amplio"],
-      "image": "/images/rooms/cuadruple.jpeg",
+      "image": "/images/rooms/cuadruple.webp",
       "featured": false
     },
     {
@@ -106,7 +106,7 @@
       "description": "Ideal para grupos grandes o familias numerosas, con cama matrimonial y litera mixta triple",
       "capacity": "5 personas",
       "amenities": ["1 cama matrimonial", "1 litera mixta (3 personas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio generoso"],
-      "image": "/images/rooms/Quintuple.jpeg",
+      "image": "/images/rooms/Quintuple.webp",
       "featured": false
     },
     {
@@ -116,7 +116,7 @@
       "capacity": "2 personas",
       "amenities": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
       "featured": false,
-      "image": "/images/rooms/habitacion-accesible-pmr-hostal-puerto-lopez.jpeg"
+      "image": "/images/rooms/habitacion-accesible-pmr-hostal-puerto-lopez.webp"
     },
     {
       "id": "departamento",
@@ -124,7 +124,7 @@
       "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa. Disponible para alquiler semanal o mensual",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
-      "image": "/images/rooms/Departamento.jpeg",
+      "image": "/images/rooms/Departamento.webp",
       "featured": false
     },
     {
@@ -133,7 +133,7 @@
       "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales que exploran Ecuador",
       "capacity": "1 cama",
       "amenities": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
-      "image": "/images/rooms/dormitorio-compartido-hostal-economico-puerto-lopez.jpeg",
+      "image": "/images/rooms/dormitorio-compartido-hostal-economico-puerto-lopez.webp",
       "featured": false
     }
   ],
@@ -171,7 +171,7 @@
         "Snorkel con peces tropicales",
         "Arrecifes coralinos"
       ],
-      "image": "/images/tours/avistamiento-ballenas-snorkel-puerto-lopez.png"
+      "image": "/images/tours/avistamiento-ballenas-snorkel-puerto-lopez.webp"
     },
     {
       "id": "avistamiento-ballenas-snorkel",
@@ -199,7 +199,7 @@
         "Gran variedad de peces tropicales"
       ],
       "note": "Descuentos disponibles para grupos",
-      "image": "/images/tours/ballenas.jpeg"
+      "image": "/images/tours/ballenas.webp"
     },
     {
       "id": "buceo-isla-plata",
@@ -218,7 +218,7 @@
         "Avistamiento de ballenas jorobadas"
       ],
       "requirements": "Certificación de buceo PADI o equivalente requerida",
-      "image": "/images/tours/buceo-isla-plata-parque-nacional-machalilla.jpeg"
+      "image": "/images/tours/buceo-isla-plata-parque-nacional-machalilla.webp"
     },
     {
       "id": "paseo-costero-salango",
@@ -241,7 +241,7 @@
         "Buceo de superficie"
       ],
       "note": "Descuentos disponibles para grupos. Tours 100% garantizados todo el año.",
-      "image": "/images/tours/paseo-costero-salango.jpeg"
+      "image": "/images/tours/paseo-costero-salango.webp"
     },
     {
       "id": "pesca-deportiva",
@@ -270,7 +270,7 @@
         "17:00 - Fin del tour"
       ],
       "boat": "Yate 11 metros, 3 metros de manga, 2 motores fuera de borda ecológicos 4 tiempos",
-      "image": "/images/tours/pesca-deportiva-marlin-puerto-lopez-ecuador.jpeg"
+      "image": "/images/tours/pesca-deportiva-marlin-puerto-lopez-ecuador.webp"
     },
     {
       "id": "guayacan-monos",
@@ -293,7 +293,7 @@
       ],
       "note": "NO incluye traslado desde Puerto López",
       "departure": "08:30 desde Puerto López (mínimo 2 personas)",
-      "image": "/images/tours/guayacan-monos.jpeg"
+      "image": "/images/tours/guayacan-monos.webp"
     },
     {
       "id": "agua-blanca",
@@ -319,7 +319,7 @@
         "Turismo comunitario sostenible"
       ],
       "note": "Tour operado por la comunidad local. Apoya directamente a las familias de Agua Blanca.",
-      "image": "/images/tours/Cultura_ancestral_Mantena-aguas_termales_curativas.jpeg"
+      "image": "/images/tours/Cultura_ancestral_Mantena-aguas_termales_curativas.webp"
     },
     {
       "id": "playa-los-frailes",
@@ -332,7 +332,7 @@
         "Entrada al Parque Nacional Machalilla",
         "Guía naturalista (opcional)"
       ],
-      "image": "/images/tours/playa-los-frailes-puerto-lopez-ecuador-mejores-playas.jpeg"
+      "image": "/images/tours/playa-los-frailes-puerto-lopez-ecuador-mejores-playas.webp"
     },
     {
       "id": "tour-personalizado",
@@ -346,7 +346,7 @@
         "Transporte privado",
         "Actividades a tu medida"
       ],
-      "image": "/images/tours/tour-personalizado-puerto-lopez.jpeg"
+      "image": "/images/tours/tour-personalizado-puerto-lopez.webp"
     }
   ],
   "localGuide": {

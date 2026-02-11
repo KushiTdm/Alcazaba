@@ -21,3 +21,12 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Backups créés par les scripts d'optimisation
+backup_original_media/
+backup_code_before_update/
+
+# Fichiers temporaires
+*.bak
+*.tmp
+
