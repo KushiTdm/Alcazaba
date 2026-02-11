@@ -177,40 +177,44 @@ export default function Footer() {
               © {new Date().getFullYear()} Hostal Alcazaba & Lobo Marino. Todos los derechos reservados.
             </p>
             
-            {/* SEO-OPTIMIZED DEVELOPER CREDIT WITH LOGO */}
+            {/* OPTIMIZED DEVELOPER CREDIT - 100% SEO FRIENDLY */}
             <div className="flex items-center space-x-2 text-gray-400">
-              <span className="hidden sm:inline">Desarrollo web profesional por</span>
-              <span className="sm:hidden">Diseño web por</span>
+              <span className="hidden sm:inline">Desarrollo web por</span>
+              <span className="sm:hidden">Diseño por</span>
               <a 
                 href="https://neuraweb.tech" 
                 target="_blank" 
-                rel="noopener noreferrer nofollow"
-                title="NeuraWeb - Desarrollo Web Ecuador | Diseño de Sitios Web Profesionales"
-                className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300 group"
+                rel="noopener noreferrer"
+                title="NeuraWeb - Agencia de Desarrollo Web en Guayaquil, Ecuador"
+                className="inline-flex items-center space-x-2 text-[#C28E5E]/80 hover:text-[#C28E5E] transition-all duration-300 group font-medium"
               >
                 <img 
                   src="/images/neurawebW.webp" 
-                  alt="NeuraWeb - Agencia de Desarrollo Web Ecuador"
-                  className="h-6 sm:h-7 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  alt="NeuraWeb"
+                  className="h-6 sm:h-7 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
+                  width="auto"
+                  height="28"
                 />
+                <span className="text-sm group-hover:underline">NeuraWeb</span>
               </a>
             </div>
           </div>
           
-          {/* SEO FOOTER TEXT - Hidden but crawlable */}
-          <div className="mt-4 text-center">
-            <p className="text-xs text-gray-500">
-              Sitio web diseñado y desarrollado con tecnología React por{' '}
+          {/* NATURAL SEO FOOTER - Visible & Adds Real Value */}
+          <div className="mt-6 pt-6 border-t border-white/10 text-center">
+            <p className="text-xs text-gray-400 leading-relaxed max-w-4xl mx-auto">
+              Sitio web diseñado y optimizado para convertir visitantes en huéspedes. 
+              ¿Necesitas un sitio web profesional para tu hotel o negocio turístico?{' '}
               <a 
                 href="https://neuraweb.tech" 
                 target="_blank" 
-                rel="noopener noreferrer nofollow"
-                className="text-[#C28E5E]/70 hover:text-[#C28E5E] transition-colors duration-200"
+                rel="noopener noreferrer"
+                className="text-[#C28E5E] hover:text-[#C28E5E]/80 transition-colors duration-200 font-medium underline"
               >
-                NeuraWeb - Agencia de Desarrollo Web
+                Conoce NeuraWeb
               </a>
-              {' '}especializada en sitios web para hoteles, hostales y turismo.
+              {' '}— Especialistas en desarrollo web para el sector turístico en Ecuador.
             </p>
           </div>
         </div>
