@@ -124,7 +124,7 @@ export default function Hero() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
           style={{
-            backgroundImage: 'url(/images/hero-mirador2.jpeg)',
+            backgroundImage: 'url(/images/hostal_Alcazaba_building2.jpeg)',
           }}
         >
           {/* Multi-layer Gradients */}
@@ -147,15 +147,6 @@ export default function Hero() {
               <span className="block text-[#C28E5E]">Lobo Marino</span>
 
             </h1>
-
-            {/* Slogan */}
-            <p 
-              className={`font-['Lato'] text-base sm:text-xl md:text-2xl lg:text-3xl font-light italic text-[#C28E5E] transition-all duration-1000 delay-700 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              Tu experiencia está garantizada
-            </p>
 
             {/* Description */}
             <p 
