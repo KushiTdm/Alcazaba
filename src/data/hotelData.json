@@ -241,7 +241,7 @@
         "Buceo de superficie"
       ],
       "note": "Descuentos disponibles para grupos. Tours 100% garantizados todo el año.",
-      "image": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1200&q=80"
+      "image": "/images/tours/paseo-costero-salango.jpeg"
     },
     {
       "id": "pesca-deportiva",
@@ -293,7 +293,7 @@
       ],
       "note": "NO incluye traslado desde Puerto López",
       "departure": "08:30 desde Puerto López (mínimo 2 personas)",
-      "image": "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=1200&q=80"
+      "image": "/images/tours/guayacan-monos.jpeg"
     },
     {
       "id": "agua-blanca",
@@ -346,7 +346,7 @@
         "Transporte privado",
         "Actividades a tu medida"
       ],
-      "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80"
+      "image": "/images/tours/tour-personalizado-puerto-lopez.jpeg"
     }
   ],
   "localGuide": {
