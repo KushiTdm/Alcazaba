@@ -2,14 +2,22 @@ import { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 
-export default function Hero() {
+interface HeroProps {
+  startAnimation?: boolean;
+}
+
+export default function Hero({ startAnimation = false }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsVisible(true), 100);
+    if (startAnimation) {
+      setTimeout(() => setIsVisible(true), 100);
+    }
+  }, [startAnimation]);
 
+  useEffect(() => {
     const handleScroll = () => {
       setShowNavbar(window.scrollY > window.innerHeight * 0.7);
     };
@@ -118,13 +126,13 @@ export default function Hero() {
       {/* Full-screen Hero */}
       <section 
         id="inicio" 
-        className="relative w-full min-h-screen flex flex-col justify-center items-center py-24 sm:py-0 sm:h-screen overflow-hidden"
+        className="relative w-full min-h-screen flex flex-col justify-between items-center py-8 sm:py-0 sm:h-screen overflow-hidden"
       >
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
           style={{
-            backgroundImage: 'url(/images/hostal_Alcazaba_building2.jpeg)',
+            backgroundImage: 'url(/images/Hostal_Alcazaba-puerto_lopez.jpeg)',
           }}
         >
           {/* Multi-layer Gradients */}
@@ -132,25 +140,36 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#1A2F4B]/70 via-transparent to-transparent"></div>
         </div>
 
-        {/* Content Container */}
+        {/* Top Spacer - Mobile only */}
+        <div className="sm:hidden h-16"></div>
+
+        {/* Content Container - Centré verticalement */}
         <div className="relative w-full px-4 sm:px-6 lg:px-8 flex items-center justify-center flex-1 z-10">
-          <div className="w-full max-w-4xl text-center text-white space-y-4 sm:space-y-6 md:space-y-8">
+          <div className="w-full max-w-4xl text-center text-white space-y-3 sm:space-y-6 md:space-y-8">
             
             {/* Main Title */}
             <h1 
-              className={`font-['Playfair_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight sm:leading-tight md:leading-tight transition-all duration-1000 delay-500 ${
+              className={`font-['Playfair_Display'] text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight sm:leading-tight md:leading-tight transition-all duration-1000 delay-500 ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
             >
               <span className="block">Hostal Alcazaba</span>
               <span className="block text-[#C28E5E]">&</span>
               <span className="block text-[#C28E5E]">Lobo Marino</span>
-
             </h1>
+
+            {/* Slogan */}
+            <p 
+              className={`font-['Lato'] text-lg sm:text-xl md:text-2xl lg:text-3xl font-light italic text-[#C28E5E] transition-all duration-1000 delay-700 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}
+            >
+              Tu experiencia está garantizada
+            </p>
 
             {/* Description */}
             <p 
-              className={`font-['Lato'] text-xs sm:text-sm md:text-base lg:text-lg text-white/95 max-w-3xl mx-auto leading-relaxed px-2 transition-all duration-1000 delay-900 ${
+              className={`font-['Lato'] text-sm sm:text-sm md:text-base lg:text-lg text-white/95 max-w-3xl mx-auto leading-relaxed px-2 transition-all duration-1000 delay-900 ${
                 isVisible ? 'opacity-100' : 'opacity-0'
               }`}
             >
@@ -159,13 +178,13 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div 
-              className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 sm:pt-6 md:pt-8 w-full px-2 relative z-30 transition-all duration-1000 delay-[1300ms] ${
+              className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 sm:pt-6 md:pt-8 w-full px-2 relative z-30 transition-all duration-1000 delay-[1300ms] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
               <button
                 onClick={handleWhatsApp}
-                className="group relative bg-[#C28E5E] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-base md:text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(194,142,94,0.5)] hover:scale-105 active:scale-95 w-full sm:w-auto min-h-[44px] sm:min-h-auto touch-manipulation"
+                className="group relative bg-[#C28E5E] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-base md:text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(194,142,94,0.5)] hover:scale-105 active:scale-95 w-full sm:w-auto min-h-[48px] sm:min-h-auto touch-manipulation"
               >
                 <span className="relative z-10">RESERVAR AHORA</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#A67347] to-[#C28E5E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -173,7 +192,7 @@ export default function Hero() {
               
               <a
                 href="#habitaciones"
-                className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#1A2F4B] transition-all duration-300 text-center backdrop-blur-sm active:scale-95 w-full sm:w-auto min-h-[44px] sm:min-h-auto touch-manipulation"
+                className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#1A2F4B] transition-all duration-300 text-center backdrop-blur-sm active:scale-95 w-full sm:w-auto min-h-[48px] sm:min-h-auto touch-manipulation"
               >
                 VER HABITACIONES
               </a>
@@ -181,21 +200,24 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll Indicator - Hidden on mobile */}
-        <button
-          onClick={scrollToContent}
-          className={`hidden sm:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white transition-all duration-1000 delay-[1500ms] flex-col items-center z-10 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className="flex flex-col items-center space-y-2 animate-bounce">
-            <span className="font-['Lato'] text-xs uppercase tracking-wider">Descubre más</span>
-            <ChevronDown size={28} />
-          </div>
-        </button>
+        {/* Bottom section - Scroll indicator et espacement */}
+        <div className="relative z-10 w-full pb-8 sm:pb-12">
+          {/* Scroll Indicator - Hidden on mobile */}
+          <button
+            onClick={scrollToContent}
+            className={`hidden sm:flex mx-auto text-white/80 hover:text-white transition-all duration-1000 delay-[1500ms] flex-col items-center ${
+              isVisible ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <div className="flex flex-col items-center space-y-2 animate-bounce">
+              <span className="font-['Lato'] text-xs uppercase tracking-wider">Descubre más</span>
+              <ChevronDown size={28} />
+            </div>
+          </button>
+        </div>
 
         {/* Decorative gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-white via-white/80 to-transparent z-5"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-white via-white/80 to-transparent z-5"></div>
       </section>
 
       <style>{`

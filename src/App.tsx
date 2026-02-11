@@ -12,11 +12,14 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const [introCompleted, setIntroCompleted] = useState(false);
+  const [startHeroAnimation, setStartHeroAnimation] = useState(false);
 
   const handleIntroComplete = () => {
     setShowIntro(false);
-    setIntroCompleted(true);
+    // Petit délai pour que le fade-out soit complètement terminé
+    setTimeout(() => {
+      setStartHeroAnimation(true);
+    }, 100);
   };
 
   return (
@@ -25,7 +28,7 @@ function App() {
       
       <div className="min-h-screen bg-white">
         <main>
-          <Hero key={introCompleted ? 'intro-done' : 'intro-pending'} />
+          <Hero startAnimation={startHeroAnimation} />
           <Features />
           <Rooms />
           <Tours />
