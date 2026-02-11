@@ -52,7 +52,7 @@ export default function Footer() {
                   <Facebook size={24} />
                 </a>
                 <a 
-                  href={`https://instagram.com/${hotelData.contact.instagramHostal}`}
+                  href={`https://instagram.com/hostal.alcazaba`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#833AB4] hover:opacity-90 p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"

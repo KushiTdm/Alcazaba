@@ -72,7 +72,7 @@
       "description": "Espaciosa habitación con dos camas individuales, ideal para amigos o familia",
       "capacity": "2 personas",
       "amenities": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-      "image": "/images/rooms/Matrimonial.jpeg",
+      "image": "/images/rooms/habitacion_doble-hostal_alcazaba-puerto_lopez.jpeg",
       "featured": false
     },
     {
@@ -271,7 +271,7 @@
       "season": "Todo el año",
       "subtitle": "Trekking y observación de fauna silvestre",
       "description": "Caminata ecológica para observar monos aulladores en su hábitat natural. Explora la vegetación nativa, mariposas tropicales y gran variedad de aves en un ambiente único del bosque ecuatoriano cerca de Puerto López.",
-      "duration": "Medio día (08:30 - 14:30)",
+      "duration": "08:30 - 14:30",
       "included": [
         "Guía especializado en fauna",
         "Almuerzo típico ecuatoriano",
@@ -287,6 +287,32 @@
       "note": "NO incluye traslado desde Puerto López",
       "departure": "08:30 desde Puerto López (mínimo 2 personas)",
       "image": "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=1200&q=80"
+    },
+    {
+      "id": "agua-blanca",
+      "name": "Comunidad Agua Blanca",
+      "season": "Todo el año",
+      "subtitle": "Cultura ancestral Manteña y aguas termales curativas",
+      "description": "Sumérgete en la historia precolombina visitando el museo arqueológico de la cultura Manteña. Recorre senderos entre tumbas ancestrales de más de 3000 años de antigüedad, relájate en las piscinas de aguas azufradas naturales y rejuvenece tu piel con los poderes curativos del lodo volcánico. Una experiencia única que combina cultura, historia y bienestar natural en el corazón del Parque Nacional Machalilla.",
+      "duration": "Medio día (4-5 horas)",
+      "included": [
+        "Visita guiada al museo arqueológico Manteña",
+        "Recorrido por senderos de tumbas ancestrales",
+        "Acceso a piscinas de agua azufrada natural",
+        "Tratamiento con lodo volcánico termal",
+        "Guía comunitario experto en historia local",
+        "Entrada a la comunidad Agua Blanca"
+      ],
+      "highlights": [
+        "Museo arqueológico con piezas de la cultura Manteña",
+        "Tumbas ancestrales de más de 3000 años",
+        "Piscinas termales de agua azufrada (propiedades curativas)",
+        "Lodo volcánico rejuvenecedor para la piel",
+        "Bosque seco tropical único",
+        "Turismo comunitario sostenible"
+      ],
+      "note": "Tour operado por la comunidad local. Apoya directamente a las familias de Agua Blanca.",
+      "image": "/images/tours/Cultura_ancestral_Mantena-aguas_termales_curativas.jpeg"
     },
     {
       "id": "playa-los-frailes",

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import VideoIntro from './components/VideoIntro';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import About from './components/About';
 import Rooms from './components/Rooms';
 import Tours from './components/Tours';
 import LocalGuide from './components/LocalGuide';
@@ -30,6 +31,7 @@ function App() {
         <main>
           <Hero startAnimation={startHeroAnimation} />
           <Features />
+          <About />
           <Rooms />
           <Tours />
           <LocalGuide />

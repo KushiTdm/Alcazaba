@@ -88,7 +88,7 @@ export default function Rooms() {
             <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full mx-auto mb-6"></div>
             
             <p className="font-['Lato'] text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
-              Espacios diseñados para tu comodidad, desde individuales hasta familiares
+              Cómodas habitaciones para un descanso confortable.
             </p>
           </div>
 
