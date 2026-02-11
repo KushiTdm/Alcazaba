@@ -40,7 +40,7 @@ export default function Features() {
 
         {/* Grid Layout - 3 Cartes Centrées */}
         <div className="max-w-5xl mx-auto mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {hotelData.usp.map((feature, index) => {
               const delay = index * 150;
 

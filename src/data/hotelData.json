@@ -37,10 +37,17 @@
       "title": "Estacionamiento Gratuito",
       "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
       "icon": "parking",
-      "image": "/images/parking-hostal_alcazamba-puerto_lopez.jpg"
+      "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.jpeg"
     },
     {
       "id": 3,
+      "title": "Mirador con Vista al Mar en Puerto López",
+      "description": "Disfruta de nuestro mirador con impresionante vista panorámica al océano Pacífico y a Puerto López",
+      "icon": "camera",
+      "image": "/images/features/Mirador_hostal_alcazaba.jpeg"
+    },
+    {
+      "id": 4,
       "title": "Vista Panorámica al Mar",
       "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
       "icon": "map-pin",
@@ -49,6 +56,15 @@
   ],
   "rooms": [
     {
+      "id": "habitacion-individual",
+      "type": "Habitación Individual",
+      "description": "Perfecta para viajeros solitarios, equipada con cama de 2 plazas para mayor comodidad",
+      "capacity": "1 persona",
+      "amenities": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
+      "image": "/images/rooms/individual.jpeg",
+      "featured": false
+    },
+    {
       "id": "habitacion-matrimonial",
       "type": "Habitación Matrimonial",
       "description": "Cómoda y acogedora para parejas, con cama matrimonial de 2 plazas",
@@ -56,15 +72,6 @@
       "amenities": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
       "image": "/images/rooms/Matrimonial.jpg",
       "featured": true
-    },
-    {
-      "id": "habitacion-individual",
-      "type": "Habitación Individual",
-      "description": "Perfecta para viajeros solitarios, equipada con cama de 2 plazas para mayor comodidad",
-      "capacity": "1 persona",
-      "amenities": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
-      "image": "/images/rooms/habitacion-individual-hostal-puerto-lopez-ecuador.jpeg",
-      "featured": false
     },
     {
       "id": "habitacion-doble",
@@ -114,7 +121,7 @@
     {
       "id": "departamento",
       "type": "Departamento Familiar",
-      "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa",
+      "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa. Disponible para alquiler semanal o mensual",
       "capacity": "4-5 personas",
       "amenities": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
       "image": "/images/rooms/Departamento.jpeg",
@@ -133,10 +140,10 @@
   "tours": [
     {
       "id": "isla-plata-ballenas",
-      "name": "Isla de la Plata + Avistamiento de Ballenas",
-      "season": "Junio - Octubre",
+      "name": "Isla de la Plata + Avistamiento de Ballenas(Junio - Octubre)",
+      "season": "Todo el año",
       "subtitle": "El Galápagos del continente con ballenas jorobadas",
-      "description": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa piqueros de patas azules, piqueros nazca, fragatas, tortugas Carey y practica snorkel en aguas cristalinas del Parque Nacional Machalilla.",
+      "description": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa aves marinas como piqueros de patas azules, piqueros nazca y fragatas, además de lobos marinos y tortugas Carey, y practica snorkel en aguas cristalinas del Parque Nacional Machalilla.",
       "duration": "Día completo (09:00 - 17:00)",
       "included": [
         "Guía bilingüe certificado (inglés/español)",
@@ -164,7 +171,7 @@
         "Snorkel con peces tropicales",
         "Arrecifes coralinos"
       ],
-      "image": "/images/tours/ballenas.jpeg"
+      "image": "/images/tours/avistamiento-ballenas-snorkel-puerto-lopez.png"
     },
     {
       "id": "avistamiento-ballenas-snorkel",
@@ -192,12 +199,12 @@
         "Gran variedad de peces tropicales"
       ],
       "note": "Descuentos disponibles para grupos",
-      "image": "/images/tours/avistamiento-ballenas-snorkel-puerto-lopez.png"
+      "image": "/images/tours/ballenas.jpeg"
     },
     {
       "id": "buceo-isla-plata",
-      "name": "Buceo Isla de la Plata + Ballenas",
-      "season": "Junio - Octubre",
+      "name": "Buceo Isla de la Plata + Ballenas(Junio - Octubre)",
+      "season": "Todo el año",
       "subtitle": "Buceo profesional con avistamiento de ballenas jorobadas",
       "description": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, combinado con avistamiento de ballenas jorobadas. Para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla.",
       "duration": "Día completo",
@@ -218,7 +225,7 @@
       "name": "Paseo Costero Isla Salango",
       "season": "Noviembre - Mayo",
       "subtitle": "Snorkel y naturaleza en temporada baja",
-      "description": "Tour costero 100% garantizado en los alrededores de la Isla de Salango. Ideal para la temporada sin ballenas. Snorkel, observación de fauna marina y exploración costera con guías expertos del Parque Nacional Machalilla.",
+      "description": "Tour costero 100% garantizado en los alrededores de la Isla de Salango. Ideal para la temporada sin ballenas. Snorkel, observación de aves marinas y lobos marinos, fauna marina y exploración costera con guías expertos del Parque Nacional Machalilla.",
       "duration": "3 horas 10 minutos",
       "included": [
         "Snacks y bebidas",
