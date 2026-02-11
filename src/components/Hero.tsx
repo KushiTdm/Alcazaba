@@ -173,17 +173,8 @@ export default function Hero({ startAnimation = false }: HeroProps) {
 
             {/* Slogan */}
             <p 
-              className={`font-['Lato'] text-lg sm:text-xl md:text-2xl lg:text-3xl font-light italic text-[#C28E5E] transition-all duration-1000 delay-700 ${
+              className={`font-['Lato'] text-lg sm:text-xl md:text-2xl lg:text-3xl font-light italic text-white/95 transition-all duration-1000 delay-700 ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              Tu experiencia está garantizada
-            </p>
-
-            {/* Description */}
-            <p 
-              className={`font-['Lato'] text-sm sm:text-sm md:text-base lg:text-lg text-white/95 max-w-3xl mx-auto leading-relaxed px-2 transition-all duration-1000 delay-900 ${
-                isVisible ? 'opacity-100' : 'opacity-0'
               }`}
             >
               Hospitalidad auténtica y familiar en Puerto López
@@ -230,7 +221,8 @@ export default function Hero({ startAnimation = false }: HeroProps) {
         </div>
 
         {/* Decorative gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-white via-white/80 to-transparent z-5"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-5"></div>
+
       </section>
 
       <style>{`

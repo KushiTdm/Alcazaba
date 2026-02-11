@@ -71,7 +71,7 @@ export default function VideoIntro({ onComplete }: VideoIntroProps) {
         poster="/images/hero-mirador.webp" 
       >
         <source src="/videos/hero-timelipse.mp4" type="video/mp4" />
-        <track kind="descriptions" src="/videos/hero-timelipse-desc.vtt" srclang="es" label="Español" />
+        <track kind="descriptions" src="/videos/hero-timelipse-desc.vtt" srcLang="es" label="Español" />
       </video>
      
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none"></div>
@@ -82,7 +82,7 @@ export default function VideoIntro({ onComplete }: VideoIntroProps) {
         className={`absolute bottom-8 right-8 z-10 bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-full border border-white/30 hover:bg-white/20 transition-all duration-300 flex items-center space-x-2 group animate-fadeIn`}
         style={{ animationDelay: '1s' }}
       >
-        <span className="font-['Lato'] font-medium">Passer l'intro</span>
+        <span className="font-['Lato'] font-medium">Omitir introducción</span>
         <ChevronDown 
           size={20} 
           className="transform rotate-[-90deg] group-hover:translate-x-1 transition-transform"

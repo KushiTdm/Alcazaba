@@ -30,6 +30,11 @@ export default function Footer() {
               Hostal Alcazaba
               <span className="block text-[#C28E5E]">& Lobo Marino</span>
             </h3>
+                <img 
+                  src="/images/LoDi-logos.png" 
+                  alt="Hostal Alcazaba & Lobo Marino" 
+                  className="h-16 sm:h-20 mb-4"
+                />
             <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
               {hotelData.branding.tagline}
             </p>
