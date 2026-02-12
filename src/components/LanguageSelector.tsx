@@ -12,7 +12,7 @@ interface LanguageOption {
 const languages: LanguageOption[] = [
   { code: 'es', name: 'Spanish', flag: '🇪🇸', nativeName: 'Español' },
   { code: 'en', name: 'English', flag: '🇬🇧', nativeName: 'English' },
-  { code: 'fr', name: 'French', flag: '🇫🇷', nativeName: 'Français' },
+  //{ code: 'fr', name: 'French', flag: '🇫🇷', nativeName: 'Français' },
 ];
 
 export default function LanguageSelector() {
