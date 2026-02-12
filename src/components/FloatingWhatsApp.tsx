@@ -2,14 +2,25 @@ import { MessageCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import hotelData from '../data/hotelData.json';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
+
+type Lang = 'es' | 'en' | 'fr';
+
+function tr(field: any, lang: Lang): string {
+  if (typeof field === 'string') return field;
+  if (field && typeof field === 'object') return field[lang] ?? field['es'] ?? '';
+  return '';
+}
 
 export default function FloatingWhatsApp() {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  const lang = language as Lang;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleWhatsApp = () => {
     window.open(
-      `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(hotelData.contact.whatsappMessage)}`,
+      `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(tr(hotelData.contact.whatsappMessage, lang))}`,
       '_blank'
     );
   };
@@ -63,18 +74,10 @@ export default function FloatingWhatsApp() {
 
       <style>{`
         @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        .animate-slideUp {
-          animation: slideUp 0.3s ease-out;
-        }
+        .animate-slideUp { animation: slideUp 0.3s ease-out; }
       `}</style>
     </>
   );

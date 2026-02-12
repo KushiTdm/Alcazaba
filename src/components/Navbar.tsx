@@ -1,8 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslation } from '../hooks/useTranslation';
+
+type Lang = 'es' | 'en' | 'fr';
+
+function tr(field: any, lang: Lang): string {
+  if (typeof field === 'string') return field;
+  if (field && typeof field === 'object') return field[lang] ?? field['es'] ?? '';
+  return '';
+}
 
 export default function Navbar() {
+  const { language } = useLanguage();
+  const { t } = useTranslation();
+  const lang = language as Lang;
+
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -15,15 +29,15 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#habitaciones', label: 'Habitaciones' },
-    { href: '#tours', label: 'Tours' },
-    { href: '#contacto', label: 'Contacto' },
+    { href: '#inicio', label: t('nav.rooms') },
+    { href: '#habitaciones', label: t('nav.rooms') },
+    { href: '#tours', label: t('nav.tours') },
+    { href: '#contacto', label: t('nav.contact') },
   ];
 
   const handleWhatsApp = () => {
     window.open(
-      `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(hotelData.contact.whatsappMessage)}`,
+      `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent(tr(hotelData.contact.whatsappMessage, lang))}`,
       '_blank'
     );
   };
@@ -61,7 +75,7 @@ export default function Navbar() {
               onClick={handleWhatsApp}
               className="bg-[#C28E5E] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#1A2F4B] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              RESERVAR
+              {t('nav.reserve')}
             </button>
           </div>
 
@@ -92,7 +106,7 @@ export default function Navbar() {
               onClick={handleWhatsApp}
               className="w-full bg-[#C28E5E] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A2F4B] transition-all duration-300 shadow-lg mt-4"
             >
-              RESERVAR AHORA
+              {t('nav.reserve')}
             </button>
           </div>
         </div>

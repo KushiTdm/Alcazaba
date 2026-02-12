@@ -2,9 +2,20 @@ import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
+
+type Lang = 'es' | 'en' | 'fr';
+
+function tr(field: any, lang: Lang): string {
+  if (typeof field === 'string') return field;
+  if (field && typeof field === 'object') return field[lang] ?? field['es'] ?? '';
+  return '';
+}
 
 export default function FAQ() {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  const lang = language as Lang;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleQuestion = (index: number) => {
@@ -38,7 +49,7 @@ export default function FAQ() {
                 className="w-full px-6 sm:px-8 py-6 flex items-center justify-between text-left hover:bg-[#F9F7F2] transition-colors duration-200"
               >
                 <span className="text-lg sm:text-xl font-semibold text-[#1A2F4B] pr-4">
-                  {item.question}
+                  {tr(item.question, lang)}
                 </span>
                 <ChevronDown
                   size={24}
@@ -54,7 +65,7 @@ export default function FAQ() {
                 }`}
               >
                 <div className="px-6 sm:px-8 pb-6 text-gray-600 leading-relaxed text-base sm:text-lg">
-                  {item.answer}
+                  {tr(item.answer, lang)}
                 </div>
               </div>
             </div>

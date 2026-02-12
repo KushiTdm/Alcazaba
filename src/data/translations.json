@@ -31,7 +31,7 @@
     "about": {
       "subtitle": "NUESTRA HISTORIA",
       "title": "Conoce a Nuestros Anfitriones",
-      "hosts": "María & Oswaldo",
+      "hosts": "María y Oswaldo",
       "role": "Anfitriones y Propietarios",
       "missionTitle": "Una Familia, Una Misión",
       "paragraph1": "Lo que nos hace diferentes es compartir un ambiente familiar y auténtico. No somos un hotel más, somos una familia que abre las puertas de su hogar.",
@@ -48,7 +48,7 @@
       "value4Title": "Servicio con Alma",
       "value4Desc": "Nuestro objetivo es servir, no solo vender. Tu experiencia está garantizada",
       "ctaTitle": "Ven y Sé Parte de Nuestra Familia",
-      "ctaSubtitle": "No eres solo un número de reserva. Eres una persona con sueños, historias e ilusiones. Queremos conocerte y hacer que tu visita a Puerto López sea inolvidable.",
+      "ctaSubtitle": "No eres solo un número de reserva. Eres una persone con sueños, historias e ilusiones. Queremos conocerte y hacer que tu visita a Puerto López sea inolvidable.",
       "ctaButton": "CONÓCENOS PERSONALMENTE"
     },
     "rooms": {
@@ -71,6 +71,7 @@
       "includes": "Incluye:",
       "moreServices": "servicios más incluidos",
       "moreInfo": "Más Información",
+      "exploreText": "Explorar este tour",
       "ctaTitle": "¿Necesitas ayuda para elegir?",
       "ctaSubtitle": "Nuestros anfitriones conocen perfectamente la región y te ayudarán a planificar la experiencia perfecta",
       "ctaButton": "CONSULTAR POR WHATSAPP"
@@ -221,6 +222,7 @@
       "includes": "Includes:",
       "moreServices": "more services included",
       "moreInfo": "More Information",
+      "exploreText": "Explore this tour",
       "ctaTitle": "Need help choosing?",
       "ctaSubtitle": "Our hosts know the region perfectly and will help you plan the perfect experience",
       "ctaButton": "CONTACT VIA WHATSAPP"
@@ -371,6 +373,7 @@
       "includes": "Inclus :",
       "moreServices": "services supplémentaires inclus",
       "moreInfo": "Plus d'Informations",
+      "exploreText": "Explorer cette excursion",
       "ctaTitle": "Besoin d'aide pour choisir ?",
       "ctaSubtitle": "Nos hôtes connaissent parfaitement la région et vous aideront à planifier l'expérience parfaite",
       "ctaButton": "CONTACTER PAR WHATSAPP"

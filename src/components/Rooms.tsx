@@ -3,9 +3,33 @@ import { Users, Check, Star, ArrowRight, ChevronLeft, ChevronRight } from 'lucid
 import hotelData from '../data/hotelData.json';
 import RoomDetail from '../pages/Roomdetail';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
+
+type Lang = 'es' | 'en' | 'fr';
+
+// NOTE: Tours.tsx also needs the same tr/trArr helpers and useLanguage applied to TourCard.
+// Helper to resolve a multilingual field
+function tr(field: any, lang: Lang): string {
+  if (typeof field === 'string') return field;
+  if (field && typeof field === 'object') return field[lang] ?? field['es'] ?? '';
+  return '';
+}
+
+// Helper to resolve a multilingual array field
+function trArr(field: any, lang: Lang): string[] {
+  if (Array.isArray(field)) return field;
+  if (field && typeof field === 'object') {
+    const arr = field[lang] ?? field['es'];
+    if (Array.isArray(arr)) return arr;
+  }
+  return [];
+}
 
 export default function Rooms() {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  const lang = language as Lang;
+
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -94,9 +118,8 @@ export default function Rooms() {
             </p>
           </div>
 
-          {/* Carousel - OPTIMIZED FOR MOBILE */}
+          {/* Carousel */}
           <div className="relative px-0 sm:px-12 mb-8 sm:mb-12">
-            {/* Navigation Buttons - Hidden on mobile */}
             {!isMobile && (
               <>
                 <button
@@ -117,95 +140,99 @@ export default function Rooms() {
               </>
             )}
 
-            {/* Carousel Grid */}
             <div className="overflow-hidden">
               <div className={`grid gap-4 sm:gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-3'}`}>
-                {visibleRooms.map((room, index) => (
-                  <div
-                    key={`${room.id}-${currentIndex}-${index}`}
-                    className={`transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
+                {visibleRooms.map((room, index) => {
+                  const roomType = tr(room.type, lang);
+                  const roomDescription = tr(room.description, lang);
+                  const roomCapacity = tr((room as any).capacityLabel ?? room.capacity, lang);
+                  const roomAmenities = trArr(room.amenities, lang);
+
+                  return (
                     <div
-                      onClick={() => setSelectedRoom(room.id)}
-                      className={`group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 h-full ${
-                        room.featured ? 'p-1 bg-gradient-to-br from-[#C28E5E] via-[#D4A574] to-[#C28E5E]' : ''
-                      }`}
+                      key={`${room.id}-${currentIndex}-${index}`}
+                      className={`transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      style={{ transitionDelay: `${index * 100}ms` }}
                     >
-                      {/* Inner container */}
-                      <div className="bg-white rounded-[20px] sm:rounded-[26px] overflow-hidden h-full flex flex-col">
-                        {room.featured && (
-                          <div className="absolute top-4 right-4 z-10 bg-[#C28E5E] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center space-x-1 shadow-lg">
-                            <Star size={14} fill="white" />
-                            <span className="font-['Lato'] font-semibold text-xs sm:text-sm">{t('rooms.featured')}</span>
-                          </div>
-                        )}
-
-                        {/* Image */}
-                        <div className="aspect-[4/3] relative overflow-hidden">
-                          <img
-                            src={room.image}
-                            alt={room.type}
-                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
-                          
-                          {/* Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-4 sm:pb-6">
-                            <div className="flex items-center space-x-2 text-white">
-                              <span className="font-['Lato'] font-semibold text-sm sm:text-base">{t('rooms.viewDetails')}</span>
-                              <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform duration-300" />
+                      <div
+                        onClick={() => setSelectedRoom(room.id)}
+                        className={`group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 h-full ${
+                          room.featured ? 'p-1 bg-gradient-to-br from-[#C28E5E] via-[#D4A574] to-[#C28E5E]' : ''
+                        }`}
+                      >
+                        <div className="bg-white rounded-[20px] sm:rounded-[26px] overflow-hidden h-full flex flex-col">
+                          {room.featured && (
+                            <div className="absolute top-4 right-4 z-10 bg-[#C28E5E] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center space-x-1 shadow-lg">
+                              <Star size={14} fill="white" />
+                              <span className="font-['Lato'] font-semibold text-xs sm:text-sm">{t('rooms.featured')}</span>
                             </div>
-                          </div>
-                        </div>
+                          )}
 
-                        {/* Content */}
-                        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 flex-grow flex flex-col">
-                          <div>
-                            <h3 className="font-['Playfair_Display'] text-lg sm:text-xl font-bold text-[#1A2F4B] mb-1 sm:mb-2">
-                              {room.type}
-                            </h3>
-                            <div className="flex items-center space-x-2 text-gray-600 mb-2">
-                              <Users size={16} className="text-[#C28E5E]" />
-                              <span className="font-['Lato'] font-medium text-sm">{room.capacity}</span>
-                            </div>
-                            <p className="font-['Lato'] text-gray-600 text-xs sm:text-sm leading-relaxed line-clamp-2">
-                              {room.description}
-                            </p>
-                          </div>
-
-                          {/* Amenities - 2-3 max */}
-                          <div className="space-y-1.5">
-                            {room.amenities.slice(0, 2).map((amenity, idx) => (
-                              <div key={idx} className="flex items-center space-x-2">
-                                <Check size={14} className="text-[#C28E5E] flex-shrink-0" />
-                                <span className="font-['Lato'] text-xs sm:text-sm text-gray-700">{amenity}</span>
+                          {/* Image */}
+                          <div className="aspect-[4/3] relative overflow-hidden">
+                            <img
+                              src={room.image}
+                              alt={roomType}
+                              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                            
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-4 sm:pb-6">
+                              <div className="flex items-center space-x-2 text-white">
+                                <span className="font-['Lato'] font-semibold text-sm sm:text-base">{t('rooms.viewDetails')}</span>
+                                <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform duration-300" />
                               </div>
-                            ))}
-                            {room.amenities.length > 2 && (
-                              <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium">
-                                +{room.amenities.length - 2} {t('rooms.moreAmenities')}
-                              </p>
-                            )}
+                            </div>
                           </div>
 
-                          {/* CTA */}
-                          <div className="pt-3 sm:pt-4 border-t border-gray-200 mt-auto">
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setSelectedRoom(room.id);
-                              }}
-                              className="w-full bg-[#1A2F4B] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-['Lato'] font-semibold text-xs sm:text-sm hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105 min-h-[40px] sm:min-h-auto"
-                            >
-                              {t('rooms.seeMore')}
-                            </button>
+                          {/* Content */}
+                          <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 flex-grow flex flex-col">
+                            <div>
+                              <h3 className="font-['Playfair_Display'] text-lg sm:text-xl font-bold text-[#1A2F4B] mb-1 sm:mb-2">
+                                {roomType}
+                              </h3>
+                              <div className="flex items-center space-x-2 text-gray-600 mb-2">
+                                <Users size={16} className="text-[#C28E5E]" />
+                                <span className="font-['Lato'] font-medium text-sm">{roomCapacity}</span>
+                              </div>
+                              <p className="font-['Lato'] text-gray-600 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                                {roomDescription}
+                              </p>
+                            </div>
+
+                            {/* Amenities */}
+                            <div className="space-y-1.5">
+                              {roomAmenities.slice(0, 2).map((amenity, idx) => (
+                                <div key={idx} className="flex items-center space-x-2">
+                                  <Check size={14} className="text-[#C28E5E] flex-shrink-0" />
+                                  <span className="font-['Lato'] text-xs sm:text-sm text-gray-700">{amenity}</span>
+                                </div>
+                              ))}
+                              {roomAmenities.length > 2 && (
+                                <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium">
+                                  +{roomAmenities.length - 2} {t('rooms.moreAmenities')}
+                                </p>
+                              )}
+                            </div>
+
+                            {/* CTA */}
+                            <div className="pt-3 sm:pt-4 border-t border-gray-200 mt-auto">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setSelectedRoom(room.id);
+                                }}
+                                className="w-full bg-[#1A2F4B] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-['Lato'] font-semibold text-xs sm:text-sm hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105 min-h-[40px] sm:min-h-auto"
+                              >
+                                {t('rooms.seeMore')}
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
@@ -268,17 +295,9 @@ export default function Rooms() {
 const styleSheet = document.createElement("style");
 styleSheet.textContent = `
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  .animate-fadeInUp {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
+  .animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
 `;
 document.head.appendChild(styleSheet);

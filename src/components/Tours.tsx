@@ -3,9 +3,30 @@ import { Clock, Check, ArrowRight, Waves } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import TourDetail from '../pages/Tourdetail';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
+
+type Lang = 'es' | 'en' | 'fr';
+
+function tr(field: any, lang: Lang): string {
+  if (typeof field === 'string') return field;
+  if (field && typeof field === 'object') return field[lang] ?? field['es'] ?? '';
+  return '';
+}
+
+function trArr(field: any, lang: Lang): string[] {
+  if (Array.isArray(field)) return field;
+  if (field && typeof field === 'object') {
+    const arr = field[lang] ?? field['es'];
+    if (Array.isArray(arr)) return arr;
+  }
+  return [];
+}
 
 export default function Tours() {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  const lang = language as Lang;
+
   const [selectedTour, setSelectedTour] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,21 +68,14 @@ export default function Tours() {
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 75) {
-      nextSlide();
-    }
-    if (touchStart - touchEnd < -75) {
-      prevSlide();
-    }
+    if (touchStart - touchEnd > 75) nextSlide();
+    if (touchStart - touchEnd < -75) prevSlide();
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (window.innerWidth < 768) {
-        nextSlide();
-      }
+      if (window.innerWidth < 768) nextSlide();
     }, 6000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -102,7 +116,7 @@ export default function Tours() {
               >
                 {hotelData.tours.map((tour) => (
                   <div key={tour.id} className="w-full flex-shrink-0 px-4">
-                    <TourCard tour={tour} onSelect={setSelectedTour} t={t} />
+                    <TourCard tour={tour} onSelect={setSelectedTour} t={t} lang={lang} />
                   </div>
                 ))}
               </div>
@@ -122,7 +136,7 @@ export default function Tours() {
             </div>
           </div>
 
-          {/* Desktop Layout avec slides alternés */}
+          {/* Desktop Layout */}
           <div className="hidden md:block space-y-8">
             {hotelData.tours.map((tour, index) => {
               const delay = index * 150;
@@ -136,11 +150,9 @@ export default function Tours() {
                       ? 'opacity-100 translate-x-0' 
                       : `opacity-0 ${isEven ? '-translate-x-full' : 'translate-x-full'}`
                   }`}
-                  style={{ 
-                    transitionDelay: `${delay}ms`
-                  }}
+                  style={{ transitionDelay: `${delay}ms` }}
                 >
-                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={!isEven} t={t} />
+                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={!isEven} t={t} lang={lang} />
                 </div>
               );
             })}
@@ -179,22 +191,21 @@ export default function Tours() {
 
 // Tour Card Component
 interface TourCardProps {
-  tour: {
-    id: string;
-    name: string;
-    season?: string;
-    subtitle?: string;
-    description: string;
-    duration: string;
-    included: string[];
-    image: string;
-  };
+  tour: any;
   onSelect: (id: string) => void;
   isAlternate?: boolean;
   t: (key: string) => string;
+  lang: Lang;
 }
 
-function TourCard({ tour, onSelect, isAlternate = false, t }: TourCardProps) {
+function TourCard({ tour, onSelect, isAlternate = false, t, lang }: TourCardProps) {
+  const tourName = tr(tour.name, lang);
+  const tourSeason = tr(tour.season, lang);
+  const tourSubtitle = tr(tour.subtitle, lang);
+  const tourDescription = tr(tour.description, lang);
+  const tourDuration = tr(tour.duration, lang);
+  const tourIncluded = trArr(tour.included, lang);
+
   return (
     <div
       onClick={() => onSelect(tour.id)}
@@ -206,15 +217,15 @@ function TourCard({ tour, onSelect, isAlternate = false, t }: TourCardProps) {
           <div className="aspect-[4/3] md:aspect-auto md:h-full relative overflow-hidden min-h-[250px] md:min-h-[400px]">
             <img
               src={tour.image}
-              alt={`${tour.name} - Tour en Parque Nacional Machalilla Puerto López Ecuador`}
+              alt={`${tourName} - Tour en Parque Nacional Machalilla Puerto López Ecuador`}
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
             
-            {tour.season && (
+            {tourSeason && (
               <div className="absolute top-4 left-4 bg-[#C28E5E] text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg">
-                <span className="font-['Lato'] font-semibold text-xs md:text-sm">{tour.season}</span>
+                <span className="font-['Lato'] font-semibold text-xs md:text-sm">{tourSeason}</span>
               </div>
             )}
             
@@ -232,36 +243,36 @@ function TourCard({ tour, onSelect, isAlternate = false, t }: TourCardProps) {
             
             <div>
               <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A2F4B] mb-2 md:mb-3 line-clamp-2">
-                {tour.name}
+                {tourName}
               </h3>
 
-              {tour.subtitle && (
+              {tourSubtitle && (
                 <p className="font-['Lato'] text-lg md:text-xl text-[#C28E5E] font-semibold italic mb-3 md:mb-4 line-clamp-2">
-                  {tour.subtitle}
+                  {tourSubtitle}
                 </p>
               )}
 
               <p className="font-['Lato'] text-gray-600 leading-relaxed text-sm md:text-base lg:text-lg line-clamp-3 md:line-clamp-none">
-                {tour.description}
+                {tourDescription}
               </p>
             </div>
 
             <div className="flex items-center space-x-2 text-[#1A2F4B]">
               <Clock size={18} className="text-[#C28E5E] md:w-5 md:h-5" />
-              <span className="font-['Lato'] font-semibold text-sm md:text-base">{tour.duration}</span>
+              <span className="font-['Lato'] font-semibold text-sm md:text-base">{tourDuration}</span>
             </div>
 
             <div className="space-y-2">
               <p className="font-['Lato'] font-semibold text-[#1A2F4B] text-xs md:text-sm">{t('tours.includes')}</p>
-              {tour.included.slice(0, 3).map((item, idx) => (
+              {tourIncluded.slice(0, 3).map((item, idx) => (
                 <div key={idx} className="flex items-start space-x-2">
                   <Check size={16} className="text-[#C28E5E] flex-shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" />
                   <span className="font-['Lato'] text-gray-700 text-sm md:text-base line-clamp-1">{item}</span>
                 </div>
               ))}
-              {tour.included.length > 3 && (
+              {tourIncluded.length > 3 && (
                 <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium ml-6">
-                  +{tour.included.length - 3} {t('tours.moreServices')}
+                  +{tourIncluded.length - 3} {t('tours.moreServices')}
                 </p>
               )}
             </div>

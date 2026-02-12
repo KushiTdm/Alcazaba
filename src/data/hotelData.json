@@ -348,9 +348,9 @@
     {
       "id": "isla-plata-ballenas",
       "name": {
-        "es": "Isla de la Plata + Avistamiento de Ballenas",
-        "en": "Isla de la Plata + Whale Watching",
-        "fr": "Isla de la Plata + Observation des Baleines"
+        "es": "Isla de la Plata + Avistamiento de Ballenas (Junio-Octubre)",
+        "en": "Isla de la Plata + Whale Watching (June-October)",
+        "fr": "Isla de la Plata + Observation des Baleines (Juin-Octobre)"
       },
       "season": {
         "es": "Todo el año",
@@ -555,9 +555,9 @@
     {
       "id": "buceo-isla-plata",
       "name": {
-        "es": "Buceo Isla de la Plata + Ballenas",
-        "en": "Diving Isla de la Plata + Whales",
-        "fr": "Plongée Isla de la Plata + Baleines"
+        "es": "Buceo Isla de la Plata + Ballenas (Junio-Octubre)",
+        "en": "Diving Isla de la Plata + Whales (June-October)",
+        "fr": "Plongée Isla de la Plata + Baleines (Juin-Octobre)"
       },
       "season": {
         "es": "Todo el año",
@@ -891,9 +891,9 @@
         "fr": "Plongez dans l'histoire précolombienne en visitant le musée archéologique de la culture Manteña. Parcourez des sentiers entre tombes ancestrales de plus de 3000 ans, détendez-vous dans les piscines d'eaux sulfureuses naturelles et rajeunissez votre peau avec les pouvoirs curatifs de la boue volcanique. Une expérience unique qui combine culture, histoire et bien-être naturel au cœur du Parc National Machalilla."
       },
       "duration": {
-        "es": "Medio día (4-5 horas)",
-        "en": "Half day (4-5 hours)",
-        "fr": "Demi-journée (4-5 heures)"
+        "es": "4-5 horas",
+        "en": "4-5 hours",
+        "fr": "4-5 heures"
       },
       "included": {
         "es": [
@@ -961,6 +961,11 @@
         "en": "Los Frailes Beach",
         "fr": "Plage Los Frailes"
       },
+      "season": {
+        "es": "Todo el año",
+        "en": "All year round",
+        "fr": "Toute l'année"
+      },
       "subtitle": {
         "es": "Una de las playas más bellas de Ecuador",
         "en": "One of the most beautiful beaches in Ecuador",
@@ -972,9 +977,9 @@
         "fr": "Sable blanc, eaux cristallines et sentiers naturels du Parc National Machalilla. Parfaite pour se détendre et se connecter avec la nature dans son état pur. Considérée comme l'un des joyaux du littoral équatorien et la plage la plus propre du pays."
       },
       "duration": {
-        "es": "Medio día (4-5 horas)",
-        "en": "Half day (4-5 hours)",
-        "fr": "Demi-journée (4-5 heures)"
+        "es": "4-5 horas",
+        "en": "4-5 hours",
+        "fr": "4-5 heures"
       },
       "included": {
         "es": [

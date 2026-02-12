@@ -1,9 +1,34 @@
 import { Compass, Clock, Lightbulb } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
+
+type Lang = 'es' | 'en' | 'fr';
+
+function tr(field: any, lang: Lang): string {
+  if (typeof field === 'string') return field;
+  if (field && typeof field === 'object') return field[lang] ?? field['es'] ?? '';
+  return '';
+}
+
+function trArr(field: any, lang: Lang): string[] {
+  if (Array.isArray(field)) return field;
+  if (field && typeof field === 'object') {
+    const arr = field[lang] ?? field['es'];
+    if (Array.isArray(arr)) return arr;
+  }
+  return [];
+}
 
 export default function LocalGuide() {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  const lang = language as Lang;
+
+  const title = tr(hotelData.localGuide.title, lang);
+  const description = tr(hotelData.localGuide.description, lang);
+  const hours = tr(hotelData.localGuide.hours, lang);
+  const tips = trArr(hotelData.localGuide.tips, lang);
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#1A2F4B] to-[#C28E5E]">
@@ -18,18 +43,18 @@ export default function LocalGuide() {
 
             <div>
               <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-                {hotelData.localGuide.title}
+                {title}
               </h2>
               <div className="w-12 h-1 bg-white/40 rounded-full mb-6"></div>
             </div>
 
             <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
-              {hotelData.localGuide.description}
+              {description}
             </p>
 
             <div className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm p-4 rounded-xl w-fit">
               <Clock size={22} className="flex-shrink-0" />
-              <span className="font-['Lato'] font-semibold text-sm sm:text-base">{hotelData.localGuide.hours}</span>
+              <span className="font-['Lato'] font-semibold text-sm sm:text-base">{hours}</span>
             </div>
           </div>
 
@@ -43,7 +68,7 @@ export default function LocalGuide() {
             </div>
 
             <div className="space-y-3">
-              {hotelData.localGuide.tips.map((tip, index) => (
+              {tips.map((tip, index) => (
                 <div
                   key={index}
                   className="flex items-start space-x-3 p-3 sm:p-4 bg-gradient-to-br from-[#F9F7F2] to-white rounded-xl hover:shadow-md transition-shadow duration-200"
