@@ -46,7 +46,7 @@ export default function Footer() {
               <span className="block text-[#C28E5E]"> Lobo Marino</span>
             </h3>
             <img
-              src="/images/LoDi-logos.png"
+              src="/images/alcazaba-logo.png"
               alt="Hostal Alcazaba & Lobo Marino"
               className="h-16 sm:h-20 mb-4"
             />

@@ -292,31 +292,55 @@
       "image": "/images/rooms/habitacion-accesible-pmr-hostal-puerto-lopez.webp"
     },
     {
-      "id": "departamento",
-      "type": {
-        "es": "Departamento Familiar",
-        "en": "Family Apartment",
-        "fr": "Appartement Familial"
-      },
-      "description": {
-        "es": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa. Disponible para alquiler semanal o mensual",
-        "en": "Ideal for families, with generous space and flexible configuration. Perfect for long stays with full private kitchen. Available for weekly or monthly rental",
-        "fr": "Idéal pour les familles, avec espace généreux et configuration flexible. Parfait pour longs séjours avec cuisine privée complète. Disponible en location hebdomadaire ou mensuelle"
-      },
-      "capacity": "4-5",
-      "capacityLabel": {
-        "es": "4-5 personas",
-        "en": "4-5 people",
-        "fr": "4-5 personnes"
-      },
-      "amenities": {
-        "es": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
-        "en": ["1 double bed", "2 bunk beds", "Full private kitchen", "Private bathroom", "Spacious room", "Free Wi-Fi", "Fan"],
-        "fr": ["1 lit double", "2 lits superposés", "Cuisine privée complète", "Salle de bain privée", "Espace spacieux", "Wi-Fi gratuit", "Ventilateur"]
-      },
-      "image": "/images/rooms/Departamento.webp",
-      "featured": false
+  "id": "departamento",
+  "type": {
+    "es": "Departamento Familiar",
+    "en": "Family Apartment",
+    "fr": "Appartement Familial"
+  },
+  "description": {
+    "es": "Disponible para alquiler semanal o mensual. Ideal para familias, con 2 dormitorios independientes y una hermosa vista espectacular. Cada habitación cuenta con 1 cama de 2 plazas y 1 de plaza y media. Perfecto para estadías largas con cocina privada completa. Nota: En este departamento no se realiza check-in presencial.",
+    "en": "Available for weekly or monthly rental. Ideal for families, featuring 2 separate bedrooms and a beautiful spectacular view. Each room has 1 double bed and 1 large single bed. Perfect for long stays with a full private kitchen. Note: No on-site check-in for this apartment.",
+    "fr": "Disponible en location hebdomadaire ou mensuelle. Idéal pour les familles, avec 2 chambres indépendantes et une vue magnifique. Chaque chambre dispose d'un lit double et d'un lit simple large. Parfait pour les longs séjours avec cuisine privée complète. Note : Pas de check-in présentiel pour cet appartement."
+  },
+    "capacity": "6",
+    "capacityLabel": {
+      "es": "Hasta 6 personas",
+      "en": "Up to 6 people",
+      "fr": "Jusqu'à 6 personnes"
     },
+    "amenities": {
+      "es": [
+        "2 Dormitorios",
+        "2 Camas de 2 plazas",
+        "2 Camas de 1.5 plazas",
+        "Cocina privada completa",
+        "Baño privado con agua caliente",
+        "Wi-Fi gratuito",
+        "Ventilador"
+      ],
+      "en": [
+        "2 Bedrooms",
+        "2 Double beds",
+        "2 Large single beds",
+        "Full private kitchen",
+        "Private bathroom with hot water",
+        "Free Wi-Fi",
+        "Fan"
+      ],
+      "fr": [
+        "2 Chambres",
+        "2 Lits doubles",
+        "2 Lits simples (1.5 pl)",
+        "Cuisine privée complète",
+        "Salle de bain privée avec eau chaude",
+        "Wi-Fi gratuit",
+        "Ventilateur"
+      ]
+    },
+    "image": "/images/rooms/Departamento.webp",
+    "featured": false
+  },
     {
       "id": "cama-dormitorio",
       "type": {
@@ -695,9 +719,9 @@
     {
       "id": "pesca-deportiva",
       "name": {
-        "es": "Pesca Deportiva de Marlín y Dorado",
-        "en": "Sport Fishing for Marlin and Dorado",
-        "fr": "Pêche Sportive de Marlin et Dorade"
+        "es": "Pesca Deportiva (3 Niveles)",
+        "en": "Sport Fishing (3 Levels)",
+        "fr": "Pêche Sportive (3 Niveaux)"
       },
       "season": {
         "es": "Todo el año (especies varían)",
@@ -705,19 +729,19 @@
         "fr": "Toute l'année (espèces varient)"
       },
       "subtitle": {
-        "es": "Aventura de pesca en alta mar",
-        "en": "Deep sea fishing adventure",
-        "fr": "Aventure de pêche en haute mer"
+        "es": "Desde pesca costera hasta alta mar",
+        "en": "From coastal to deep sea fishing",
+        "fr": "De la pêche côtière à la haute mer"
       },
       "description": {
-        "es": "Experiencia de pesca deportiva en yate de 11 metros, navegando 45 millas de la costa de Puerto López. Captura marlín, dorado, wahoo y picudo según temporada. Peces de hasta 4.5 metros de longitud. Satisfacción y adrenalina garantizadas.",
-        "en": "Sport fishing experience on an 11-meter yacht, sailing 45 miles off the coast of Puerto López. Catch marlin, dorado, wahoo and sailfish depending on season. Fish up to 4.5 meters long. Satisfaction and adrenaline guaranteed.",
-        "fr": "Expérience de pêche sportive sur yacht de 11 mètres, naviguant à 45 milles de la côte de Puerto López. Capturez marlin, dorade, wahoo et espadon selon la saison. Poissons jusqu'à 4,5 mètres de long. Satisfaction et adrénaline garanties."
+        "es": "Ofrecemos 3 modalidades: 1. Pesca de Altura (Marlín/Dorado, 45 millas fuera). 2. Pesca Mediana (Cherna y Picudo). 3. Pesca Básica (Variedad de peces pequeños cerca de la costa). Experiencia en yate de 11 metros con equipamiento profesional.",
+        "en": "We offer 3 modalities: 1. Deep Sea (Marlin/Dorado, 45 miles out). 2. Medium (Grouper and Sailfish). 3. Basic (Variety of small fish near the coast). Experience on an 11-meter yacht with professional equipment.",
+        "fr": "Nous proposons 3 modalités : 1. Haute Mer (Marlin/Dorade, 45 milles au large). 2. Moyenne (Mérou et Espadon). 3. Basique (Variété de petits poissons près de la côte). Expérience sur un yacht de 11 mètres avec équipement professionnel."
       },
       "duration": {
-        "es": "Día completo (05:00 - 17:00)",
-        "en": "Full day (05:00 - 17:00)",
-        "fr": "Journée complète (05h00 - 17h00)"
+        "es": "Opciones de 5h, 10h o 12h",
+        "en": "5h, 10h or 12h options",
+        "fr": "Options de 5h, 10h ou 12h"
       },
       "included": {
         "es": [
@@ -727,7 +751,7 @@
           "GPS y sonda de pesca",
           "Cinturón y silla de pesca",
           "Hielera para conservar capturas",
-          "Desayuno y almuerzo completo"
+          "Almuerzo (según modalidad seleccionada)"
         ],
         "en": [
           "11-meter yacht with 2 eco-friendly engines",
@@ -736,7 +760,7 @@
           "GPS and fish finder",
           "Fishing belt and chair",
           "Cooler to preserve catches",
-          "Full breakfast and lunch"
+          "Lunch (depending on selected modality)"
         ],
         "fr": [
           "Yacht de 11 mètres avec 2 moteurs écologiques",
@@ -745,41 +769,41 @@
           "GPS et sondeur de pêche",
           "Ceinture et chaise de pêche",
           "Glacière pour conserver prises",
-          "Petit-déjeuner et déjeuner complets"
+          "Déjeuner (selon la modalité choisie)"
         ]
       },
       "species": {
         "es": [
-          "Marlín/Picudo (Jun-Ago, Oct-Mar)",
-          "Dorado (Nov-Mar)",
-          "Wahoo (Jun-Oct)"
+          "Nivel Pro: Marlín, Dorado, Wahoo",
+          "Nivel Medio: Cherna, Picudo",
+          "Nivel Básico: Peces pequeños variados"
         ],
         "en": [
-          "Marlin/Sailfish (Jun-Aug, Oct-Mar)",
-          "Dorado (Nov-Mar)",
-          "Wahoo (Jun-Oct)"
+          "Pro Level: Marlin, Dorado, Wahoo",
+          "Medium Level: Grouper, Sailfish",
+          "Basic Level: Various small fish"
         ],
         "fr": [
-          "Marlin/Espadon (Jui-Aoû, Oct-Mar)",
-          "Dorade (Nov-Mar)",
-          "Wahoo (Jui-Oct)"
+          "Niveau Pro : Marlin, Dorade, Wahoo",
+          "Niveau Moyen : Mérou, Espadon",
+          "Niveau Basique : Petits poissons variés"
         ]
       },
       "schedule": {
         "es": [
-          "05:00 - Salida desde Puerto López",
-          "06:30 - Inicio de pesca (navegación 1h30)",
-          "17:00 - Fin del tour"
+          "Pesca Pro: 04:00 - 16:00 (Marlín/Dorado)",
+          "Pesca Media: 04:00 - 14:00 (Cherna/Picudo)",
+          "Pesca Básica: 06:00 - 11:00 (Peces pequeños)"
         ],
         "en": [
-          "05:00 - Departure from Puerto López",
-          "06:30 - Start fishing (1h30 sailing)",
-          "17:00 - End of tour"
+          "Pro Fishing: 04:00 - 16:00 (Marlin/Dorado)",
+          "Medium Fishing: 04:00 - 14:00 (Grouper/Sailfish)",
+          "Basic Fishing: 06:00 - 11:00 (Small fish)"
         ],
         "fr": [
-          "05h00 - Départ de Puerto López",
-          "06h30 - Début de la pêche (1h30 de navigation)",
-          "17h00 - Fin du tour"
+          "Pêche Pro : 04h00 - 16h00 (Marlin/Dorade)",
+          "Pêche Moyenne : 04h00 - 14h00 (Mérou/Espadon)",
+          "Pêche Basique : 06h00 - 11h00 (Petits poissons)"
         ]
       },
       "boat": {
