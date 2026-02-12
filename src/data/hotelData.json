@@ -37,7 +37,7 @@
       "title": "Estacionamiento Gratuito",
       "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
       "icon": "parking",
-      "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.webp"
+      "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.jpeg"
     },
     {
       "id": 3,
@@ -274,7 +274,7 @@
     },
     {
       "id": "guayacan-monos",
-      "name": "Guayacán de los Monos",
+      "name": "Cabalgata guayacán de los Monos ",
       "season": "Todo el año",
       "subtitle": "Trekking y observación de fauna silvestre",
       "description": "Caminata ecológica para observar monos aulladores en su hábitat natural. Explora la vegetación nativa, mariposas tropicales y gran variedad de aves en un ambiente único del bosque ecuatoriano cerca de Puerto López.",

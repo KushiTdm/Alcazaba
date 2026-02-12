@@ -7,13 +7,17 @@ interface HeroProps {
 }
 
 export default function Hero({ startAnimation = false }: HeroProps) {
+  const [showOverlay, setShowOverlay] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (startAnimation) {
-      setTimeout(() => setIsVisible(true), 100);
+      // D'abord afficher l'overlay/filtre après 800ms
+      setTimeout(() => setShowOverlay(true), 800);
+      // Puis afficher le contenu textuel après 1500ms
+      setTimeout(() => setIsVisible(true), 1500);
     }
   }, [startAnimation]);
 
@@ -148,9 +152,17 @@ export default function Hero({ startAnimation = false }: HeroProps) {
             }}
           />
           
-          {/* Multi-layer Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1A2F4B]/75 via-[#1A2F4B]/55 to-[#1A2F4B]/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1A2F4B]/70 via-transparent to-transparent"></div>
+          {/* Multi-layer Gradients avec animation progressive */}
+          <div 
+            className={`absolute inset-0 bg-gradient-to-b from-[#1A2F4B]/75 via-[#1A2F4B]/55 to-[#1A2F4B]/90 transition-opacity duration-1000 ${
+              showOverlay ? 'opacity-100' : 'opacity-0'
+            }`}
+          ></div>
+          <div 
+            className={`absolute inset-0 bg-gradient-to-r from-[#1A2F4B]/70 via-transparent to-transparent transition-opacity duration-1000 delay-300 ${
+              showOverlay ? 'opacity-100' : 'opacity-0'
+            }`}
+          ></div>
         </div>
 
         {/* Top Spacer - Mobile only */}
@@ -167,7 +179,7 @@ export default function Hero({ startAnimation = false }: HeroProps) {
               }`}
             >
               <span className="block">Hostal Alcazaba</span>
-              <span className="block text-[#C28E5E]">&</span>
+              <span className="block text-[#C28E5E] font-serif">&amp;</span>
               <span className="block text-[#C28E5E]">Lobo Marino</span>
             </h1>
 
