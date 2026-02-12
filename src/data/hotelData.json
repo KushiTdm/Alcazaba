@@ -1531,7 +1531,7 @@
         "Recepción 24h/24",
         "Operador de tours certificado (Lobo Marino)",
         "Información turística personalizada",
-        "Desayuno disponible (con suplemento)",
+        "Desayuno continental y tradicional de la localidad (con costo adicional)",
         "Servicio de lavandería (con costo adicional)"
       ],
       "en": [
@@ -1540,7 +1540,7 @@
         "24h reception",
         "Certified tour operator (Lobo Marino)",
         "Personalized tourist information",
-        "Breakfast available (for additional fee)",
+        "Continental and traditional local breakfast (additional cost)",
         "Laundry service (additional cost)"
       ],
       "fr": [
@@ -1549,7 +1549,7 @@
         "Réception 24h/24",
         "Opérateur de tours certifié (Lobo Marino)",
         "Information touristique personnalisée",
-        "Petit-déjeuner disponible (avec supplément)",
+        "Petit-déjeuner continental et traditionnel local (avec supplément)",
         "Service de blanchisserie (coût supplémentaire)"
       ]
     }

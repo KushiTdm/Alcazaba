@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -17,8 +18,28 @@ export default function Features() {
   const lang = language as Lang;
 
   const [isVisible, setIsVisible] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
+
+  // Infinite carousel setup
+  const infiniteFeatures = [...hotelData.usp, ...hotelData.usp, ...hotelData.usp];
+  const startIndex = hotelData.usp.length;
+
+  useEffect(() => {
+    setCurrentIndex(startIndex);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,6 +58,59 @@ export default function Features() {
     return () => observer.disconnect();
   }, []);
 
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const itemsToShow = isMobile ? 1 : 3;
+
+  const nextSlide = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const prevSlide = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  // Handle infinite loop reset
+  useEffect(() => {
+    if (currentIndex === startIndex + hotelData.usp.length) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(startIndex);
+      }, 300);
+    } else if (currentIndex === startIndex - 1) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(startIndex + hotelData.usp.length - 1);
+      }, 300);
+    }
+  }, [currentIndex, startIndex]);
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      nextSlide();
+    }
+    if (touchStart - touchEnd < -75) {
+      prevSlide();
+    }
+  };
+
   return (
     <section ref={sectionRef} className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,57 +126,111 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Grid Layout */}
-        <div className="max-w-5xl mx-auto mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {hotelData.usp.map((feature, index) => {
-              const delay = index * 150;
-              const featureTitle = tr(feature.title, lang);
-              const featureDescription = tr(feature.description, lang);
+        {/* Carousel */}
+        <div className="relative px-0 sm:px-12 mb-12 sm:mb-16">
+          {/* Navigation Buttons - Desktop */}
+          {!isMobile && (
+            <>
+              <button
+                onClick={prevSlide}
+                className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white text-[#1A2F4B] w-12 h-12 rounded-full shadow-xl hover:bg-[#C28E5E] hover:text-white transition-all duration-300 flex items-center justify-center group"
+                aria-label="Característica anterior"
+              >
+                <ChevronLeft size={24} className="group-hover:scale-110 transition-transform" />
+              </button>
+              
+              <button
+                onClick={nextSlide}
+                className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white text-[#1A2F4B] w-12 h-12 rounded-full shadow-xl hover:bg-[#C28E5E] hover:text-white transition-all duration-300 flex items-center justify-center group"
+                aria-label="Siguiente característica"
+              >
+                <ChevronRight size={24} className="group-hover:scale-110 transition-transform" />
+              </button>
+            </>
+          )}
 
-              return (
-                <div
-                  key={feature.id}
-                  onMouseEnter={() => setActiveIndex(index)}
-                  className={`group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full ${
-                    isVisible ? `opacity-100 translate-y-0 animate-fadeInUp` : 'opacity-0 translate-y-10'
-                  }`}
-                  style={{ transitionDelay: `${delay}ms`, animationDelay: `${delay}ms` }}
-                >
-                  {/* Inner container */}
-                  <div className="bg-white rounded-[20px] sm:rounded-[26px] overflow-hidden h-full flex flex-col">
-                    {/* Image Container */}
-                    <div className="relative overflow-hidden h-48 sm:h-56 lg:h-64">
-                      <img
-                        src={feature.image}
-                        alt={featureTitle}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 via-[#1A2F4B]/40 to-transparent"></div>
+          {/* Carousel Container */}
+          <div 
+            className="overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div 
+              className={`flex ${isTransitioning ? 'transition-transform duration-300 ease-out' : ''}`}
+              style={{ 
+                transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+              }}
+            >
+              {infiniteFeatures.map((feature, index) => {
+                const featureTitle = tr(feature.title, lang);
+                const featureDescription = tr(feature.description, lang);
+
+                return (
+                  <div
+                    key={`${feature.id}-${index}`}
+                    className={`flex-shrink-0 px-3 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                    style={{ width: `${100 / itemsToShow}%` }}
+                  >
+                    <div className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full">
                       
-                      {/* Title on Image */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
-                          {featureTitle}
-                        </h3>
+                      {/* Image Container - Plus grande */}
+                      <div className="relative overflow-hidden h-72 sm:h-80 md:h-96">
+                        <img
+                          src={feature.image}
+                          alt={featureTitle}
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/80 via-[#1A2F4B]/20 to-transparent"></div>
+                        
+                        {/* Title on Image */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                          <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight drop-shadow-lg">
+                            {featureTitle}
+                          </h3>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="p-5 sm:p-6 lg:p-8 flex flex-col">
-                      <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed flex-grow">
-                        {featureDescription}
-                      </p>
+                      {/* Content */}
+                      <div className="p-6 sm:p-8">
+                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                          {featureDescription}
+                        </p>
 
-                      <div className="pt-4 mt-auto">
-                        <div className="w-12 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-20 transition-all duration-300"></div>
+                        <div className="pt-6 mt-6 border-t border-gray-200">
+                          <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-24 transition-all duration-300"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
+
+          {/* Mobile Navigation Dots */}
+          {isMobile && (
+            <div className="flex items-center justify-center space-x-2 mt-6">
+              <button onClick={prevSlide} className="text-[#1A2F4B] hover:text-[#C28E5E] p-2">
+                <ChevronLeft size={24} />
+              </button>
+              <div className="flex space-x-2">
+                {hotelData.usp.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className={`h-2 rounded-full transition-all ${
+                      idx === currentIndex % hotelData.usp.length
+                        ? 'w-8 bg-[#C28E5E]'
+                        : 'w-2 bg-[#C28E5E]/30'
+                    }`}
+                  />
+                ))}
+              </div>
+              <button onClick={nextSlide} className="text-[#1A2F4B] hover:text-[#C28E5E] p-2">
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          )}
         </div>
 
         {/* CTA Section */}
@@ -128,14 +256,6 @@ export default function Features() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
-      `}</style>
     </section>
   );
 }
