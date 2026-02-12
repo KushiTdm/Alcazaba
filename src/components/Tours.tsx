@@ -79,6 +79,24 @@ export default function Tours() {
     return () => clearInterval(interval);
   }, []);
 
+  const ctaMessages = {
+    es: {
+      title: "Descuentos Especiales para Grupos e Instituciones",
+      subtitle: "Ofrecemos tarifas especiales para grupos, escuelas, universidades y organizaciones. Contáctanos para una cotización personalizada según tus necesidades.",
+      button: "CONSULTAR DESCUENTOS"
+    },
+    en: {
+      title: "Special Discounts for Groups and Institutions",
+      subtitle: "We offer special rates for groups, schools, universities and organizations. Contact us for a personalized quote according to your needs.",
+      button: "INQUIRE ABOUT DISCOUNTS"
+    },
+    fr: {
+      title: "Réductions Spéciales pour Groupes et Institutions",
+      subtitle: "Nous offrons des tarifs spéciaux pour groupes, écoles, universités et organisations. Contactez-nous pour un devis personnalisé selon vos besoins.",
+      button: "DEMANDER DES RÉDUCTIONS"
+    }
+  };
+
   return (
     <>
       <section ref={sectionRef} id="tours" className="py-16 md:py-24 bg-gradient-to-br from-[#F9F7F2] via-white to-[#F9F7F2] relative overflow-hidden">
@@ -161,21 +179,21 @@ export default function Tours() {
           <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-6">
               <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
-                {t('tours.ctaTitle')}
+                {ctaMessages[lang].title}
               </h3>
               <p className="font-['Lato'] text-base md:text-xl text-white/90">
-                {t('tours.ctaSubtitle')}
+                {ctaMessages[lang].subtitle}
               </p>
               <button
                 onClick={() => {
                   window.open(
-                    `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent('Hola! Necesito ayuda para elegir el mejor tour según mis intereses')}`,
+                    `https://wa.me/${hotelData.contact.whatsapp}?text=${encodeURIComponent('Hola! Me interesa información sobre descuentos para grupos e instituciones')}`,
                     '_blank'
                   );
                 }}
                 className="bg-[#C28E5E] text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-['Lato'] font-bold text-base md:text-lg hover:bg-[#A67347] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
               >
-                {t('tours.ctaButton')}
+                {ctaMessages[lang].button}
               </button>
             </div>
           </div>

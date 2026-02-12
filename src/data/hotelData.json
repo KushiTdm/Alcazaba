@@ -42,6 +42,43 @@
       "fr": "Portes fermées de 22h30 à 05h00"
     }
   },
+  "hostalInfo": {
+    "capacity": 45,
+    "securityFeatures": {
+      "es": [
+        "Ubicación en zona segura fuera de riesgo de tsunami o inundaciones",
+        "Accesos seguros permanentemente",
+        "Puertas de ingreso cerradas de 22:30 a 05:00 para mayor seguridad"
+      ],
+      "en": [
+        "Location in safe area outside tsunami or flood risk",
+        "Permanently secure access",
+        "Entrance doors closed from 22:30 to 05:00 for greater security"
+      ],
+      "fr": [
+        "Emplacement en zone sûre hors risque de tsunami ou d'inondation",
+        "Accès sécurisés en permanence",
+        "Portes d'entrée fermées de 22h30 à 05h00 pour plus de sécurité"
+      ]
+    },
+    "naturalBenefits": {
+      "es": [
+        "Vista privilegiada al océano Pacífico",
+        "Ventilación natural fresca",
+        "Tranquilidad para un sueño confortable"
+      ],
+      "en": [
+        "Privileged view of the Pacific Ocean",
+        "Fresh natural ventilation",
+        "Tranquility for comfortable sleep"
+      ],
+      "fr": [
+        "Vue privilégiée sur l'océan Pacifique",
+        "Ventilation naturelle fraîche",
+        "Tranquillité pour un sommeil confortable"
+      ]
+    }
+  },
   "googleReviews": {
     "rating": 4.6,
     "totalReviews": 188
@@ -49,6 +86,21 @@
   "usp": [
     {
       "id": 1,
+      "title": {
+        "es": "Desayuno Disponible",
+        "en": "Breakfast Available",
+        "fr": "Petit-déjeuner Disponible"
+      },
+      "description": {
+        "es": "Desayuno con suplemento para comenzar bien el día con productos locales",
+        "en": "Breakfast available for an additional fee to start your day right with local products",
+        "fr": "Petit-déjeuner avec supplément pour bien commencer la journée avec produits locaux"
+      },
+      "icon": "coffee",
+      "image": "/images/features/desayuno.jpeg"
+    },
+    {
+      "id": 2,
       "title": {
         "es": "Cocina Compartida Gratuita",
         "en": "Free Shared Kitchen",
@@ -63,7 +115,7 @@
       "image": "/images/features/cucina.webp"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": {
         "es": "Estacionamiento Gratuito",
         "en": "Free Parking",
@@ -78,7 +130,7 @@
       "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.jpeg"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": {
         "es": "Mirador con Vista al Mar en Puerto López",
         "en": "Viewpoint with Ocean View in Puerto López",
@@ -93,7 +145,7 @@
       "image": "/images/features/Mirador_hostal_alcazaba.webp"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": {
         "es": "Vista Panorámica al Mar",
         "en": "Panoramic Ocean View",
@@ -128,9 +180,9 @@
         "fr": "1 personne"
       },
       "amenities": {
-        "es": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
-        "en": ["Double bed", "Fan", "Private bathroom", "Free Wi-Fi", "Wardrobe"],
-        "fr": ["Lit double", "Ventilateur", "Salle de bain privée", "Wi-Fi gratuit", "Armoire"]
+        "es": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias"],
+        "en": ["Double bed", "Fan", "Private bathroom", "Free Wi-Fi", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings"],
+        "fr": ["Lit double", "Ventilateur", "Salle de bain privée", "Wi-Fi gratuit", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires"]
       },
       "image": "/images/rooms/individual.webp",
       "featured": false
@@ -154,9 +206,9 @@
         "fr": "2 personnes"
       },
       "amenities": {
-        "es": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-        "en": ["Double bed", "Private bathroom", "Free Wi-Fi", "Fan", "Wardrobe"],
-        "fr": ["Lit double", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Armoire"]
+        "es": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias", "TV disponible (consultar disponibilidad)"],
+        "en": ["Double bed", "Private bathroom", "Free Wi-Fi", "Fan", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings", "TV available (check availability)"],
+        "fr": ["Lit double", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires", "TV disponible (vérifier disponibilité)"]
       },
       "image": "/images/rooms/Matrimonial.webp",
       "featured": true
@@ -180,9 +232,9 @@
         "fr": "2 personnes"
       },
       "amenities": {
-        "es": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-        "en": ["2 single beds", "Private bathroom", "Free Wi-Fi", "Fan", "Wardrobe"],
-        "fr": ["2 lits simples", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Armoire"]
+        "es": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias"],
+        "en": ["2 single beds", "Private bathroom", "Free Wi-Fi", "Fan", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings"],
+        "fr": ["2 lits simples", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires"]
       },
       "image": "/images/rooms/habitacion_doble-hostal_alcazaba-puerto_lopez.webp",
       "featured": false
@@ -206,9 +258,9 @@
         "fr": "3 personnes"
       },
       "amenities": {
-        "es": ["1 cama matrimonial", "1 cama individual", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
-        "en": ["1 double bed", "1 single bed", "Private bathroom", "Free Wi-Fi", "Fan", "Wardrobe"],
-        "fr": ["1 lit double", "1 lit simple", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Armoire"]
+        "es": ["1 cama matrimonial", "1 cama individual", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias"],
+        "en": ["1 double bed", "1 single bed", "Private bathroom", "Free Wi-Fi", "Fan", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings"],
+        "fr": ["1 lit double", "1 lit simple", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires"]
       },
       "image": "/images/rooms/triple.webp",
       "featured": false
@@ -232,9 +284,9 @@
         "fr": "4 personnes"
       },
       "amenities": {
-        "es": ["2 camas de 2 plazas (o 1 matrimonial + 1 litera)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio amplio"],
-        "en": ["2 double beds (or 1 double + 1 bunk bed)", "Private bathroom", "Free Wi-Fi", "Fan", "Spacious room"],
-        "fr": ["2 lits doubles (ou 1 double + 1 superposé)", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Espace spacieux"]
+        "es": ["2 camas de 2 plazas (o 1 matrimonial + 1 litera)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio amplio", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias"],
+        "en": ["2 double beds (or 1 double + 1 bunk bed)", "Private bathroom", "Free Wi-Fi", "Fan", "Spacious room", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings"],
+        "fr": ["2 lits doubles (ou 1 double + 1 superposé)", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Espace spacieux", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires"]
       },
       "image": "/images/rooms/cuadruple.webp",
       "featured": false
@@ -258,9 +310,9 @@
         "fr": "5 personnes"
       },
       "amenities": {
-        "es": ["1 cama matrimonial", "1 litera mixta (3 personas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio generoso"],
-        "en": ["1 double bed", "1 triple bunk bed", "Private bathroom", "Free Wi-Fi", "Fan", "Generous space"],
-        "fr": ["1 lit double", "1 lit superposé triple", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Espace généreux"]
+        "es": ["1 cama matrimonial", "1 litera mixta (3 personas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio generoso", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias"],
+        "en": ["1 double bed", "1 triple bunk bed", "Private bathroom", "Free Wi-Fi", "Fan", "Generous space", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings"],
+        "fr": ["1 lit double", "1 lit superposé triple", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Espace généreux", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires"]
       },
       "image": "/images/rooms/Quintuple.webp",
       "featured": false
@@ -284,9 +336,9 @@
         "fr": "2 personnes"
       },
       "amenities": {
-        "es": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
-        "en": ["PMR access ramps", "Adapted shower", "Ground floor", "Spacious room", "Free Wi-Fi", "Emergency call"],
-        "fr": ["Rampes d'accès PMR", "Douche adaptée", "Rez-de-chaussée", "Espace spacieux", "Wi-Fi gratuit", "Appel d'urgence"]
+        "es": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia", "Mesa de noche", "Agua caliente y fría abundante", "Espacios adecuados para sus pertenencias"],
+        "en": ["PMR access ramps", "Adapted shower", "Ground floor", "Spacious room", "Free Wi-Fi", "Emergency call", "Nightstand", "Abundant hot and cold water", "Adequate storage spaces for your belongings"],
+        "fr": ["Rampes d'accès PMR", "Douche adaptée", "Rez-de-chaussée", "Espace spacieux", "Wi-Fi gratuit", "Appel d'urgence", "Table de chevet", "Eau chaude et froide abondante", "Espaces de rangement adaptés pour vos affaires"]
       },
       "featured": false,
       "image": "/images/rooms/habitacion-accesible-pmr-hostal-puerto-lopez.webp"
@@ -315,27 +367,33 @@
         "2 Camas de 2 plazas",
         "2 Camas de 1.5 plazas",
         "Cocina privada completa",
-        "Baño privado con agua caliente",
+        "Baño privado con agua caliente y fría abundante",
         "Wi-Fi gratuito",
-        "Ventilador"
+        "Ventilador",
+        "Mesa de noche",
+        "Espacios adecuados para sus pertenencias"
       ],
       "en": [
         "2 Bedrooms",
         "2 Double beds",
         "2 Large single beds",
         "Full private kitchen",
-        "Private bathroom with hot water",
+        "Private bathroom with abundant hot and cold water",
         "Free Wi-Fi",
-        "Fan"
+        "Fan",
+        "Nightstand",
+        "Adequate storage spaces for your belongings"
       ],
       "fr": [
         "2 Chambres",
         "2 Lits doubles",
         "2 Lits simples (1.5 pl)",
         "Cuisine privée complète",
-        "Salle de bain privée avec eau chaude",
+        "Salle de bain privée avec eau chaude et froide abondante",
         "Wi-Fi gratuit",
-        "Ventilateur"
+        "Ventilateur",
+        "Table de chevet",
+        "Espaces de rangement adaptés pour vos affaires"
       ]
     },
     "image": "/images/rooms/Departamento.webp",
@@ -360,9 +418,9 @@
         "fr": "1 lit"
       },
       "amenities": {
-        "es": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
-        "en": ["Individual bunk bed", "Personal locker", "Shared bathroom", "Shared kitchen included", "Free Wi-Fi"],
-        "fr": ["Lit superposé individuel", "Casier personnel", "Salle de bain partagée", "Cuisine commune incluse", "Wi-Fi gratuit"]
+        "es": ["Litera individual", "Casillero de seguridad individual", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito", "Agua caliente y fría abundante"],
+        "en": ["Individual bunk bed", "Individual security locker", "Shared bathroom", "Shared kitchen included", "Free Wi-Fi", "Abundant hot and cold water"],
+        "fr": ["Lit superposé individuel", "Casier de sécurité individuel", "Salle de bain partagée", "Cuisine commune incluse", "Wi-Fi gratuit", "Eau chaude et froide abondante"]
       },
       "image": "/images/rooms/dormitorio-compartido-hostal-economico-puerto-lopez.webp",
       "featured": false
@@ -382,14 +440,14 @@
         "fr": "Toute l'année"
       },
       "subtitle": {
-        "es": "El Galápagos del continente con ballenas jorobadas",
-        "en": "The Galápagos of the mainland with humpback whales",
-        "fr": "Le Galápagos du continent avec baleines à bosse"
+        "es": "Senderismo y observación de aves marinas",
+        "en": "Hiking and seabird observation",
+        "fr": "Randonnée et observation des oiseaux marins"
       },
       "description": {
-        "es": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa aves marinas como piqueros de patas azules, piqueros nazca y fragatas, además de lobos marinos y tortugas Carey, y practica snorkel en aguas cristalinas del Parque Nacional Machalilla.",
-        "en": "Complete tour combining a visit to Isla de la Plata with humpback whale watching. Observe seabirds such as blue-footed boobies, Nazca boobies and frigatebirds, plus sea lions and Hawksbill turtles, and snorkel in the crystal-clear waters of Machalilla National Park.",
-        "fr": "Tour complet combinant visite de l'Isla de la Plata avec observation des baleines à bosse. Observez oiseaux marins comme fous à pieds bleus, fous de Nazca et frégates, ainsi que lions de mer et tortues imbriquées, et pratiquez le snorkeling dans les eaux cristallines du Parc National Machalilla."
+        "es": "Tour completo que combina la visita a la Isla de la Plata con senderismo y observación de aves marinas. Observa aves marinas como piqueros de patas azules, piqueros nazca y fragatas. Durante el trayecto en temporada de ballenas (junio-octubre), podrás avistar ballenas jorobadas. Nota: Las ballenas se pueden observar durante el trayecto en temporada, pero no es el objetivo principal del tour. No hay presencia de lobos marinos.",
+        "en": "Complete tour combining a visit to Isla de la Plata with hiking and seabird observation. Observe seabirds such as blue-footed boobies, Nazca boobies and frigatebirds. During the whale season (June-October), you may spot humpback whales during the journey. Note: Whales can be observed during the journey in season, but it is not the main focus of the tour. No sea lions are present.",
+        "fr": "Tour complet combinant visite de l'Isla de la Plata avec randonnée et observation des oiseaux marins. Observez oiseaux marins comme fous à pieds bleus, fous de Nazca et frégates. Pendant la saison des baleines (juin-octobre), vous pourrez apercevoir des baleines à bosse durant le trajet. Note : Les baleines peuvent être observées durant le trajet en saison, mais ce n'est pas l'objectif principal du tour. Pas de lions de mer présents."
       },
       "duration": {
         "es": "Día completo (09:00 - 17:00)",
@@ -425,7 +483,7 @@
       "itinerary": {
         "es": [
           "09:00 - Salida desde Puerto López",
-          "Durante el trayecto: Avistamiento de ballenas jorobadas",
+          "Durante el trayecto (Jun-Oct): Posible avistamiento de ballenas jorobadas",
           "11:00 - Arribo a Isla de la Plata",
           "11:15 - Caminata guiada observación de aves marinas",
           "13:45 - Bahía Drake para ver tortugas Carey",
@@ -436,7 +494,7 @@
         ],
         "en": [
           "09:00 - Departure from Puerto López",
-          "During the trip: Humpback whale watching",
+          "During the trip (Jun-Oct): Possible humpback whale sighting",
           "11:00 - Arrival at Isla de la Plata",
           "11:15 - Guided walk for seabird observation",
           "13:45 - Drake Bay to see Hawksbill turtles",
@@ -447,7 +505,7 @@
         ],
         "fr": [
           "09h00 - Départ de Puerto López",
-          "Pendant le trajet : Observation des baleines à bosse",
+          "Pendant le trajet (Jui-Oct) : Observation possible des baleines à bosse",
           "11h00 - Arrivée à Isla de la Plata",
           "11h15 - Randonnée guidée observation oiseaux marins",
           "13h45 - Baie Drake pour voir tortues imbriquées",
@@ -534,16 +592,16 @@
       },
       "departures": {
         "es": [
-          "Salida mañana: 11:00 - 14:00",
-          "Salida tarde: 14:00 - 17:00"
+          "Salida mañana: 11:30",
+          "Salida tarde: 14:30"
         ],
         "en": [
-          "Morning departure: 11:00 - 14:00",
-          "Afternoon departure: 14:00 - 17:00"
+          "Morning departure: 11:30",
+          "Afternoon departure: 14:30"
         ],
         "fr": [
-          "Départ matin : 11h00 - 14h00",
-          "Départ après-midi : 14h00 - 17h00"
+          "Départ matin : 11h30",
+          "Départ après-midi : 14h30"
         ]
       },
       "highlights": {
@@ -589,53 +647,124 @@
         "fr": "Toute l'année"
       },
       "subtitle": {
-        "es": "Buceo profesional con avistamiento de ballenas jorobadas",
-        "en": "Professional diving with humpback whale watching",
-        "fr": "Plongée professionnelle avec observation des baleines à bosse"
+        "es": "Buceo profesional para principiantes y certificados",
+        "en": "Professional diving for beginners and certified divers",
+        "fr": "Plongée professionnelle pour débutants et confirmés"
       },
       "description": {
-        "es": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, combinado con avistamiento de ballenas jorobadas. Para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla.",
-        "en": "Professional diving experience on the reefs of Isla de la Plata, combined with humpback whale watching. For certified divers. Explore the seabed of Machalilla National Park.",
-        "fr": "Expérience de plongée professionnelle sur les récifs de l'Isla de la Plata, combinée avec observation des baleines à bosse. Pour plongeurs certifiés. Explorez les fonds marins du Parc National Machalilla."
+        "es": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, apto tanto para principiantes como para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla. Durante la temporada de ballenas (junio a octubre), podrás avistar ballenas jorobadas y rayas mantas gigantes (Mobula birostris).",
+        "en": "Professional diving experience on the reefs of Isla de la Plata, suitable for both beginners and certified divers. Explore the seabed of Machalilla National Park. During whale season (June to October), you can spot humpback whales and giant manta rays (Mobula birostris).",
+        "fr": "Expérience de plongée professionnelle sur les récifs de l'Isla de la Plata, adaptée aux débutants comme aux plongeurs confirmés. Explorez les fonds marins du Parc National Machalilla. Pendant la saison des baleines (juin à octobre), vous pourrez apercevoir des baleines à bosse et des raies mantas géantes (Mobula birostris)."
       },
       "duration": {
-        "es": "Día completo",
-        "en": "Full day",
-        "fr": "Journée complète"
+        "es": "Día completo (07:45 - 16:00)",
+        "en": "Full day (07:45 - 16:00)",
+        "fr": "Journée complète (07h45 - 16h00)"
       },
       "included": {
         "es": [
           "Equipo completo de buceo profesional",
-          "Instructor certificado PADI",
+          "Guías de plongée bilingües (Anglais-Espagnol)",
           "2 inmersiones profundas",
-          "Transporte marítimo",
-          "Lunch",
+          "Embarcación con sistema de seguridad",
+          "Personal formado en primeros auxilios",
+          "Kit de primeros auxilios y oxígeno de emergencia",
+          "Lunch y snacks (bebidas frías y calientes)",
           "Seguro de buceo",
-          "Avistamiento de ballenas jorobadas"
+          "Avistamiento de ballenas jorobadas (Jun-Oct)"
         ],
         "en": [
           "Complete professional diving equipment",
-          "PADI certified instructor",
+          "Bilingual diving guides (English-Spanish)",
           "2 deep dives",
-          "Maritime transport",
-          "Lunch",
+          "Boat with safety system",
+          "First aid trained personnel",
+          "First aid kit and emergency oxygen",
+          "Lunch and snacks (cold and hot drinks)",
           "Diving insurance",
-          "Humpback whale watching"
+          "Humpback whale watching (Jun-Oct)"
         ],
         "fr": [
           "Équipement de plongée professionnel complet",
-          "Instructeur certifié PADI",
+          "Guides de plongée bilingues (Anglais-Espagnol)",
           "2 plongées profondes",
-          "Transport maritime",
-          "Déjeuner",
+          "Embarcation avec système de sécurité",
+          "Personnel formé aux premiers secours",
+          "Kit de premiers soins et oxygène d'urgence",
+          "Déjeuner et snacks (boissons froides et chaudes)",
           "Assurance plongée",
-          "Observation des baleines à bosse"
+          "Observation des baleines à bosse (Jui-Oct)"
         ]
       },
+      "itinerary": {
+        "es": [
+          "07:45 - Reunión en la oficina para finalizar pagos, firmar documentos y probar equipo si es necesario",
+          "08:00 - Salida de la oficina hacia el muelle turístico de Puerto López",
+          "10:00 - Llegada a Isla de la Plata (durante temporada de ballenas Jun-Oct: parada para observarlas)",
+          "10:30 - Briefing, equipamiento y primera inmersión",
+          "11:30 - Snacks, bebidas frías y calientes",
+          "12:30 - Segunda inmersión",
+          "13:30 - Almuerzo (Lunch)",
+          "14:30 - Salida hacia Puerto López",
+          "16:00 - Llegada a Puerto López"
+        ],
+        "en": [
+          "07:45 - Meeting at office to finalize payments, sign documents and try equipment if necessary",
+          "08:00 - Departure from office to Puerto López tourist pier",
+          "10:00 - Arrival at Isla de la Plata (during whale season Jun-Oct: stop to observe them)",
+          "10:30 - Briefing, equipment and first dive",
+          "11:30 - Snacks, cold and hot drinks",
+          "12:30 - Second dive",
+          "13:30 - Lunch",
+          "14:30 - Departure to Puerto López",
+          "16:00 - Arrival at Puerto López"
+        ],
+        "fr": [
+          "07h45 - Réunion au bureau pour finaliser les paiements, signer les documents et essayer l'équipement si nécessaire",
+          "08h00 - Départ du bureau vers le quai touristique de Puerto López",
+          "10h00 - Arrivée à Isla de la Plata (pendant la saison des baleines Jui-Oct : arrêt pour les observer)",
+          "10h30 - Briefing, équipement et première plongée",
+          "11h30 - Snacks, boissons froides et chaudes",
+          "12h30 - Deuxième plongée",
+          "13h30 - Déjeuner (Lunch)",
+          "14h30 - Départ vers Puerto López",
+          "16h00 - Arrivée à Puerto López"
+        ]
+      },
+      "seasonalHighlights": {
+        "es": "Junio a Octubre: Temporada de rayas mantas gigantes (Mobula birostris) y ballenas jorobadas",
+        "en": "June to October: Season of giant manta rays (Mobula birostris) and humpback whales",
+        "fr": "Juin à Octobre : Saison des raies mantas géantes (Mobula birostris) et baleines à bosse"
+      },
       "requirements": {
-        "es": "Certificación de buceo PADI o equivalente requerida",
-        "en": "PADI diving certification or equivalent required",
-        "fr": "Certification de plongée PADI ou équivalente requise"
+        "es": "Apto para principiantes y buceadores certificados. Para principiantes se proporcionará entrenamiento básico.",
+        "en": "Suitable for beginners and certified divers. Basic training will be provided for beginners.",
+        "fr": "Adapté aux débutants et plongeurs confirmés. Formation de base fournie pour les débutants."
+      },
+      "recommendations": {
+        "es": [
+          "Traer traje de baño",
+          "Cortavientos",
+          "Toalla",
+          "Protector solar"
+        ],
+        "en": [
+          "Bring swimsuit",
+          "Windbreaker",
+          "Towel",
+          "Sunscreen"
+        ],
+        "fr": [
+          "Apporter maillot de bain",
+          "Coupe-vent",
+          "Serviette",
+          "Crème solaire"
+        ]
+      },
+      "note": {
+        "es": "Los horarios están sujetos a cambios según condiciones climáticas y marítimas",
+        "en": "Schedules are subject to change according to weather and maritime conditions",
+        "fr": "Les horaires sont susceptibles de changer selon les conditions météorologiques et maritimes"
       },
       "image": "/images/tours/buceo-isla-plata-parque-nacional-machalilla.webp"
     },
@@ -684,6 +813,17 @@
           "Équipement de snorkeling complet",
           "Embarcation équipée de gilets de sauvetage",
           "Guide expérimenté certifié"
+        ]
+      },
+      "departures": {
+        "es": [
+          "Salida: 11:30 (a veces 14:30)"
+        ],
+        "en": [
+          "Departure: 11:30 (sometimes 14:30)"
+        ],
+        "fr": [
+          "Départ : 11h30 (parfois 14h30)"
         ]
       },
       "highlights": {
@@ -1037,9 +1177,9 @@
         "fr": "Nous concevons votre aventure idéale à Puerto López"
       },
       "description": {
-        "es": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única en Puerto López y el Parque Nacional Machalilla.",
-        "en": "Tell us your interests and we'll create an exclusive tour for you. We combine activities, schedules and places according to your preferences. Perfect for groups, families or those seeking a unique experience in Puerto López and Machalilla National Park.",
-        "fr": "Dites-nous vos intérêts et nous créerons un tour exclusif pour vous. Nous combinons activités, horaires et lieux selon vos préférences. Parfait pour groupes, familles ou ceux qui recherchent une expérience unique à Puerto López et au Parc National Machalilla."
+        "es": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única en Puerto López y el Parque Nacional Machalilla. Horarios personalizables y almuerzo incluido.",
+        "en": "Tell us your interests and we'll create an exclusive tour for you. We combine activities, schedules and places according to your preferences. Perfect for groups, families or those seeking a unique experience in Puerto López and Machalilla National Park. Customizable schedules and lunch included.",
+        "fr": "Dites-nous vos intérêts et nous créerons un tour exclusif pour vous. Nous combinons activités, horaires et lieux selon vos préférences. Parfait pour groupes, familles ou ceux qui recherchent une expérience unique à Puerto López et au Parc National Machalilla. Horaires personnalisables et déjeuner inclus."
       },
       "duration": {
         "es": "Según tus necesidades",
@@ -1051,19 +1191,22 @@
           "Itinerario personalizado",
           "Guía exclusivo certificado",
           "Transporte privado",
-          "Actividades a tu medida"
+          "Actividades a tu medida",
+          "Almuerzo incluido"
         ],
         "en": [
           "Personalized itinerary",
           "Exclusive certified guide",
           "Private transport",
-          "Activities tailored to you"
+          "Activities tailored to you",
+          "Lunch included"
         ],
         "fr": [
           "Itinéraire personnalisé",
           "Guide exclusif certifié",
           "Transport privé",
-          "Activités sur mesure"
+          "Activités sur mesure",
+          "Déjeuner inclus"
         ]
       },
       "image": "/images/tours/tour-personalizado-puerto-lopez.webp"
@@ -1314,6 +1457,45 @@
         "en": "Yes, we offer special discounts for groups on most of our tours to Machalilla National Park. Contact us via WhatsApp for a personalized quote based on your group size.",
         "fr": "Oui, nous offrons des réductions spéciales pour les groupes sur la plupart de nos tours au Parc National Machalilla. Contactez-nous par WhatsApp pour obtenir un devis personnalisé selon la taille de votre groupe."
       }
+    },
+    {
+      "id": 9,
+      "question": {
+        "es": "¿Aceptan mascotas en el hostal?",
+        "en": "Do you accept pets at the hostel?",
+        "fr": "Acceptez-vous les animaux de compagnie à l'auberge ?"
+      },
+      "answer": {
+        "es": "Sí, aceptamos mascotas previa consulta. Por favor contáctanos por WhatsApp antes de tu llegada para coordinar los detalles y asegurar que podemos acomodar a tu mascota cómodamente.",
+        "en": "Yes, we accept pets upon prior consultation. Please contact us via WhatsApp before your arrival to coordinate details and ensure we can comfortably accommodate your pet.",
+        "fr": "Oui, nous acceptons les animaux de compagnie sur consultation préalable. Veuillez nous contacter par WhatsApp avant votre arrivée pour coordonner les détails et nous assurer que nous pouvons accueillir confortablement votre animal."
+      }
+    },
+    {
+      "id": 10,
+      "question": {
+        "es": "¿Ofrecen servicio de lavandería?",
+        "en": "Do you offer laundry service?",
+        "fr": "Offrez-vous un service de blanchisserie ?"
+      },
+      "answer": {
+        "es": "Sí, ofrecemos servicio de lavandería con costo adicional. Pregúntanos por las tarifas y tiempos de entrega cuando realices tu reserva o durante tu estadía.",
+        "en": "Yes, we offer laundry service for an additional fee. Ask us about rates and delivery times when you make your reservation or during your stay.",
+        "fr": "Oui, nous offrons un service de blanchisserie moyennant un coût supplémentaire. Renseignez-vous sur les tarifs et les délais de livraison lors de votre réservation ou pendant votre séjour."
+      }
+    },
+    {
+      "id": 11,
+      "question": {
+        "es": "¿El hostal está en zona segura?",
+        "en": "Is the hostel in a safe area?",
+        "fr": "L'auberge est-elle dans une zone sûre ?"
+      },
+      "answer": {
+        "es": "Sí, estamos ubicados en una zona de seguridad fuera de riesgo de tsunami o inundación. El hostal cuenta con accesos seguros permanentemente y puertas que se cierran de 22:30 a 05:00 para mayor tranquilidad de nuestros huéspedes.",
+        "en": "Yes, we are located in a safe area outside tsunami or flood risk. The hostel has permanently secure access and doors that close from 22:30 to 05:00 for the peace of mind of our guests.",
+        "fr": "Oui, nous sommes situés dans une zone de sécurité hors risque de tsunami ou d'inondation. L'auberge dispose d'accès sécurisés en permanence et de portes qui se ferment de 22h30 à 05h00 pour la tranquillité d'esprit de nos clients."
+      }
     }
   ],
   "amenities": {
@@ -1348,29 +1530,35 @@
         "Estacionamiento gratuito",
         "Recepción 24h/24",
         "Operador de tours certificado (Lobo Marino)",
-        "Información turística personalizada"
+        "Información turística personalizada",
+        "Desayuno disponible (con suplemento)",
+        "Servicio de lavandería (con costo adicional)"
       ],
       "en": [
         "Free high-speed Wi-Fi",
         "Free parking",
         "24h reception",
         "Certified tour operator (Lobo Marino)",
-        "Personalized tourist information"
+        "Personalized tourist information",
+        "Breakfast available (for additional fee)",
+        "Laundry service (additional cost)"
       ],
       "fr": [
         "Wi-Fi gratuit haut débit",
         "Parking gratuit",
         "Réception 24h/24",
         "Opérateur de tours certifié (Lobo Marino)",
-        "Information touristique personnalisée"
+        "Information touristique personnalisée",
+        "Petit-déjeuner disponible (avec supplément)",
+        "Service de blanchisserie (coût supplémentaire)"
       ]
     }
   },
   "policies": {
     "pets": {
-      "es": "Se aceptan mascotas bajo solicitud",
-      "en": "Pets accepted upon request",
-      "fr": "Animaux acceptés sur demande"
+      "es": "Se aceptan mascotas bajo consulta previa",
+      "en": "Pets accepted upon prior consultation",
+      "fr": "Animaux acceptés sur consultation préalable"
     },
     "smoking": {
       "es": "Prohibido fumar en las habitaciones",
