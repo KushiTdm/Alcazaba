@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface HeroProps {
   startAnimation?: boolean;
 }
 
 export default function Hero({ startAnimation = false }: HeroProps) {
+  const { t } = useTranslation();
   const [showOverlay, setShowOverlay] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
@@ -14,9 +17,7 @@ export default function Hero({ startAnimation = false }: HeroProps) {
 
   useEffect(() => {
     if (startAnimation) {
-      // D'abord afficher l'overlay/filtre après 800ms
       setTimeout(() => setShowOverlay(true), 800);
-      // Puis afficher le contenu textuel après 1500ms
       setTimeout(() => setIsVisible(true), 1500);
     }
   }, [startAnimation]);
@@ -68,25 +69,29 @@ export default function Hero({ startAnimation = false }: HeroProps) {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              <a href="#habitaciones" className="text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium text-sm lg:text-base">Habitaciones</a>
-              <a href="#tours" className="text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium text-sm lg:text-base">Tours</a>
-              <a href="#contacto" className="text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium text-sm lg:text-base">Contacto</a>
+              <a href="#habitaciones" className="text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium text-sm lg:text-base">{t('nav.rooms')}</a>
+              <a href="#tours" className="text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium text-sm lg:text-base">{t('nav.tours')}</a>
+              <a href="#contacto" className="text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium text-sm lg:text-base">{t('nav.contact')}</a>
+              <LanguageSelector />
               <button
                 onClick={handleWhatsApp}
                 className="bg-[#C28E5E] text-white px-5 lg:px-6 py-2 rounded-full font-['Lato'] font-semibold text-sm hover:bg-[#A67347] transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105"
               >
-                RESERVAR
+                {t('nav.reserve')}
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-white p-2"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="md:hidden flex items-center space-x-3">
+              <LanguageSelector />
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-white p-2"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -97,21 +102,21 @@ export default function Hero({ startAnimation = false }: HeroProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium py-2"
               >
-                Habitaciones
+                {t('nav.rooms')}
               </a>
               <a
                 href="#tours"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium py-2"
               >
-                Tours
+                {t('nav.tours')}
               </a>
               <a
                 href="#contacto"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#C28E5E] transition-colors duration-300 font-['Lato'] font-medium py-2"
               >
-                Contacto
+                {t('nav.contact')}
               </a>
               <button
                 onClick={() => {
@@ -120,7 +125,7 @@ export default function Hero({ startAnimation = false }: HeroProps) {
                 }}
                 className="w-full bg-[#C28E5E] text-white px-5 py-3 rounded-full font-['Lato'] font-semibold text-sm hover:bg-[#A67347] transition-all duration-300 shadow-lg mt-4"
               >
-                RESERVAR AHORA
+                {t('nav.reserve')}
               </button>
             </div>
           )}
@@ -132,9 +137,8 @@ export default function Hero({ startAnimation = false }: HeroProps) {
         id="inicio" 
         className="relative w-full min-h-screen flex flex-col justify-between items-center py-8 sm:py-0 sm:h-screen overflow-hidden"
       >
-        {/* Background Image - VERSION RESPONSIVE AMÉLIORÉE */}
+        {/* Background Image */}
         <div className="absolute inset-0">
-          {/* Image desktop - cachée sur mobile */}
           <div 
             className="hidden sm:block absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
             style={{
@@ -142,7 +146,6 @@ export default function Hero({ startAnimation = false }: HeroProps) {
             }}
           />
           
-          {/* Image mobile - avec object-position optimisé */}
           <img
             src="/images/Hostal_Alcazaba-puerto_lopez.webp"
             alt="Hostal Alcazaba Puerto López"
@@ -152,7 +155,6 @@ export default function Hero({ startAnimation = false }: HeroProps) {
             }}
           />
           
-          {/* Multi-layer Gradients avec animation progressive */}
           <div 
             className={`absolute inset-0 bg-gradient-to-b from-[#1A2F4B]/75 via-[#1A2F4B]/55 to-[#1A2F4B]/90 transition-opacity duration-1000 ${
               showOverlay ? 'opacity-100' : 'opacity-0'
@@ -168,7 +170,7 @@ export default function Hero({ startAnimation = false }: HeroProps) {
         {/* Top Spacer - Mobile only */}
         <div className="sm:hidden h-16"></div>
 
-        {/* Content Container - Centré verticalement */}
+        {/* Content Container */}
         <div className="relative w-full px-4 sm:px-6 lg:px-8 flex items-center justify-center flex-1 z-10">
           <div className="w-full max-w-4xl text-center text-white space-y-3 sm:space-y-6 md:space-y-8">
             
@@ -178,9 +180,9 @@ export default function Hero({ startAnimation = false }: HeroProps) {
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
             >
-              <span className="block">Hostal Alcazaba</span>
+              <span className="block">{t('hero.title1')}</span>
               <span className="block text-[#C28E5E] font-serif">&amp;</span>
-              <span className="block text-[#C28E5E]">Lobo Marino</span>
+              <span className="block text-[#C28E5E]">{t('hero.title2')}</span>
             </h1>
 
             {/* Slogan */}
@@ -189,7 +191,7 @@ export default function Hero({ startAnimation = false }: HeroProps) {
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
               }`}
             >
-              Hospitalidad auténtica y familiar en Puerto López
+              {t('hero.subtitle')}
             </p>
 
             {/* CTA Buttons */}
@@ -202,7 +204,7 @@ export default function Hero({ startAnimation = false }: HeroProps) {
                 onClick={handleWhatsApp}
                 className="group relative bg-[#C28E5E] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-base md:text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(194,142,94,0.5)] hover:scale-105 active:scale-95 w-full sm:w-auto min-h-[48px] sm:min-h-auto touch-manipulation"
               >
-                <span className="relative z-10">RESERVAR AHORA</span>
+                <span className="relative z-10">{t('hero.cta1')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#A67347] to-[#C28E5E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
               
@@ -210,15 +212,14 @@ export default function Hero({ startAnimation = false }: HeroProps) {
                 href="#habitaciones"
                 className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#1A2F4B] transition-all duration-300 text-center backdrop-blur-sm active:scale-95 w-full sm:w-auto min-h-[48px] sm:min-h-auto touch-manipulation"
               >
-                VER HABITACIONES
+                {t('hero.cta2')}
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom section - Scroll indicator et espacement */}
+        {/* Bottom section */}
         <div className="relative z-10 w-full pb-8 sm:pb-12">
-          {/* Scroll Indicator - Hidden on mobile */}
           <button
             onClick={scrollToContent}
             className={`hidden sm:flex mx-auto text-white/80 hover:text-white transition-all duration-1000 delay-[1500ms] flex-col items-center ${
@@ -226,14 +227,14 @@ export default function Hero({ startAnimation = false }: HeroProps) {
             }`}
           >
             <div className="flex flex-col items-center space-y-2 animate-bounce">
-              <span className="font-['Lato'] text-xs uppercase tracking-wider">Descubre más</span>
+              <span className="font-['Lato'] text-xs uppercase tracking-wider">{t('hero.scroll')}</span>
               <ChevronDown size={28} />
             </div>
           </button>
         </div>
 
-        {/* Decorative gradient at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-5"></div>
+        {/* Decorative gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-5"></div>
 
       </section>
 

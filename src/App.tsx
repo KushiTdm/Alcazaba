@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { LanguageProvider } from './contexts/LanguageContext';
+import DynamicMetaTags from './components/DynamicMetaTags';
 import VideoIntro from './components/VideoIntro';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -17,14 +19,16 @@ function App() {
 
   const handleIntroComplete = () => {
     setShowIntro(false);
-    // Petit délai pour que le fade-out soit complètement terminé
+    
     setTimeout(() => {
       setStartHeroAnimation(true);
     }, 100);
   };
 
   return (
-    <>
+    <LanguageProvider>
+      <DynamicMetaTags />
+      
       {showIntro && <VideoIntro onComplete={handleIntroComplete} />}
       
       <div className="min-h-screen bg-white">
@@ -41,7 +45,7 @@ function App() {
         <Footer />
         <FloatingWhatsApp />
       </div>
-    </>
+    </LanguageProvider>
   );
 }
 

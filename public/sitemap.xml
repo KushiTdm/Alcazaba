@@ -1,45 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage -->
+  <!-- Homepage - Spanish -->
   <url>
-    <loc>https://hotelpuertolopez.com/</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://hotelpuertolopez.com/?lang=es</loc>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotelpuertolopez.com/"/>
   </url>
   
-  <!-- Habitaciones Section -->
+  <!-- Homepage - English -->
   <url>
-    <loc>https://hotelpuertolopez.com/#habitaciones</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://hotelpuertolopez.com/?lang=en</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotelpuertolopez.com/"/>
+  </url>
+  
+  <!-- Homepage - French -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=fr</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotelpuertolopez.com/"/>
+  </url>
+  
+  <!-- Homepage - Default (auto-detect) -->
+  <url>
+    <loc>https://hotelpuertolopez.com/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotelpuertolopez.com/"/>
+  </url>
+  
+  <!-- Habitaciones/Rooms/Chambres Section - Spanish -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=es#habitaciones</loc>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#habitaciones"/>
   </url>
   
-  <!-- Tours Section -->
+  <!-- Habitaciones/Rooms/Chambres Section - English -->
   <url>
-    <loc>https://hotelpuertolopez.com/#tours</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://hotelpuertolopez.com/?lang=en#habitaciones</loc>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#habitaciones"/>
   </url>
   
-  <!-- Testimonios Section -->
+  <!-- Habitaciones/Rooms/Chambres Section - French -->
   <url>
-    <loc>https://hotelpuertolopez.com/#testimonios</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://hotelpuertolopez.com/?lang=fr#habitaciones</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#habitaciones"/>
+  </url>
+  
+  <!-- Tours Section - Spanish -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=es#tours</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#tours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#tours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#tours"/>
+  </url>
+  
+  <!-- Tours Section - English -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=en#tours</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#tours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#tours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#tours"/>
+  </url>
+  
+  <!-- Tours Section - French -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=fr#tours</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#tours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#tours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#tours"/>
+  </url>
+  
+  <!-- Testimonios/Testimonials/Témoignages Section - Spanish -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=es#testimonios</loc>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#testimonios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#testimonios"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#testimonios"/>
   </url>
   
-  <!-- Contacto Section -->
+  <!-- Testimonios/Testimonials/Témoignages Section - English -->
   <url>
-    <loc>https://hotelpuertolopez.com/#contacto</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://hotelpuertolopez.com/?lang=en#testimonios</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#testimonios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#testimonios"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#testimonios"/>
+  </url>
+  
+  <!-- Testimonios/Testimonials/Témoignages Section - French -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=fr#testimonios</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#testimonios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#testimonios"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#testimonios"/>
+  </url>
+  
+  <!-- Contacto/Contact Section - Spanish -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=es#contacto</loc>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#contacto"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#contacto"/>
+  </url>
+  
+  <!-- Contacto/Contact Section - English -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=en#contacto</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#contacto"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#contacto"/>
+  </url>
+  
+  <!-- Contacto/Contact Section - French -->
+  <url>
+    <loc>https://hotelpuertolopez.com/?lang=fr#contacto</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hotelpuertolopez.com/?lang=es#contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotelpuertolopez.com/?lang=en#contacto"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hotelpuertolopez.com/?lang=fr#contacto"/>
   </url>
   
 </urlset>

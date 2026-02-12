@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { Clock, Check, ArrowRight, Waves } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import TourDetail from '../pages/Tourdetail';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Tours() {
+  const { t } = useTranslation();
   const [selectedTour, setSelectedTour] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,15 +76,15 @@ export default function Tours() {
           <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
             <div className="inline-flex items-center space-x-2 bg-white px-4 md:px-6 py-2 rounded-full shadow-md mb-4 md:mb-6">
               <Waves className="text-[#C28E5E]" size={18} />
-              <span className="font-['Lato'] text-[#1A2F4B] font-semibold text-sm md:text-base">EXPERIENCIAS</span>
+              <span className="font-['Lato'] text-[#1A2F4B] font-semibold text-sm md:text-base">{t('tours.subtitle')}</span>
             </div>
             
             <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A2F4B] mb-4 md:mb-6 px-4">
-              Tours y Aventuras
+              {t('tours.title')}
             </h2>
             
             <p className="font-['Lato'] text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Descubre la magia del Parque Nacional Machalilla con nuestros tours recomendados
+              {t('tours.description')}
             </p>
           </div>
 
@@ -100,7 +102,7 @@ export default function Tours() {
               >
                 {hotelData.tours.map((tour) => (
                   <div key={tour.id} className="w-full flex-shrink-0 px-4">
-                    <TourCard tour={tour} onSelect={setSelectedTour} />
+                    <TourCard tour={tour} onSelect={setSelectedTour} t={t} />
                   </div>
                 ))}
               </div>
@@ -138,7 +140,7 @@ export default function Tours() {
                     transitionDelay: `${delay}ms`
                   }}
                 >
-                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={!isEven} />
+                  <TourCard tour={tour} onSelect={setSelectedTour} isAlternate={!isEven} t={t} />
                 </div>
               );
             })}
@@ -147,10 +149,10 @@ export default function Tours() {
           <div className={`mt-12 md:mt-16 bg-gradient-to-r from-[#1A2F4B] to-[#243A56] rounded-3xl p-6 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-6">
               <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
-                ¿Necesitas ayuda para elegir?
+                {t('tours.ctaTitle')}
               </h3>
               <p className="font-['Lato'] text-base md:text-xl text-white/90">
-                Nuestros anfitriones conocen perfectamente la región y te ayudarán a planificar la experiencia perfecta
+                {t('tours.ctaSubtitle')}
               </p>
               <button
                 onClick={() => {
@@ -161,7 +163,7 @@ export default function Tours() {
                 }}
                 className="bg-[#C28E5E] text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-['Lato'] font-bold text-base md:text-lg hover:bg-[#A67347] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
               >
-                CONSULTAR POR WHATSAPP
+                {t('tours.ctaButton')}
               </button>
             </div>
           </div>
@@ -189,9 +191,10 @@ interface TourCardProps {
   };
   onSelect: (id: string) => void;
   isAlternate?: boolean;
+  t: (key: string) => string;
 }
 
-function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
+function TourCard({ tour, onSelect, isAlternate = false, t }: TourCardProps) {
   return (
     <div
       onClick={() => onSelect(tour.id)}
@@ -217,7 +220,7 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
             
             <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 items-end justify-center pb-8">
               <div className="flex items-center space-x-2 text-white">
-                <span className="font-['Lato'] font-semibold text-base md:text-lg">Explorar este tour</span>
+                <span className="font-['Lato'] font-semibold text-base md:text-lg">{t('tours.exploreText') || 'Explorar este tour'}</span>
                 <ArrowRight size={20} className="transform group-hover:translate-x-2 transition-transform duration-300 md:w-6 md:h-6" />
               </div>
             </div>
@@ -249,7 +252,7 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
             </div>
 
             <div className="space-y-2">
-              <p className="font-['Lato'] font-semibold text-[#1A2F4B] text-xs md:text-sm">Incluye:</p>
+              <p className="font-['Lato'] font-semibold text-[#1A2F4B] text-xs md:text-sm">{t('tours.includes')}</p>
               {tour.included.slice(0, 3).map((item, idx) => (
                 <div key={idx} className="flex items-start space-x-2">
                   <Check size={16} className="text-[#C28E5E] flex-shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" />
@@ -258,7 +261,7 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
               ))}
               {tour.included.length > 3 && (
                 <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium ml-6">
-                  +{tour.included.length - 3} servicios más incluidos
+                  +{tour.included.length - 3} {t('tours.moreServices')}
                 </p>
               )}
             </div>
@@ -271,7 +274,7 @@ function TourCard({ tour, onSelect, isAlternate = false }: TourCardProps) {
                 }}
                 className="bg-[#1A2F4B] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-['Lato'] font-semibold text-sm md:text-base hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105 flex items-center space-x-2 w-full md:w-auto justify-center"
               >
-                <span>Más Información</span>
+                <span>{t('tours.moreInfo')}</span>
                 <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
               </button>
             </div>

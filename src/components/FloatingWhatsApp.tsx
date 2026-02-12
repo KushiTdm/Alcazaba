@@ -1,8 +1,10 @@
 import { MessageCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import hotelData from '../data/hotelData.json';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function FloatingWhatsApp() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleWhatsApp = () => {
@@ -23,8 +25,8 @@ export default function FloatingWhatsApp() {
                   <MessageCircle size={24} className="text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#1A2F4B]">Hostal Alcazaba</p>
-                  <p className="text-sm text-gray-600">En línea ahora</p>
+                  <p className="font-bold text-[#1A2F4B]">{t('whatsapp.title')}</p>
+                  <p className="text-sm text-gray-600">{t('whatsapp.online')}</p>
                 </div>
               </div>
               <button
@@ -35,13 +37,13 @@ export default function FloatingWhatsApp() {
               </button>
             </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              ¿Necesitas ayuda? Escríbenos por WhatsApp y te responderemos lo antes posible.
+              {t('whatsapp.message')}
             </p>
             <button
               onClick={handleWhatsApp}
               className="w-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
             >
-              Iniciar Chat
+              {t('whatsapp.startChat')}
             </button>
           </div>
         )}

@@ -1,0 +1,452 @@
+{
+  "es": {
+    "branding": {
+      "name": "Hostal Alcazaba & Lobo Marino",
+      "slogan": "Tu experiencia está garantizada",
+      "tagline": "Hospitalidad auténtica en el corazón de Puerto López"
+    },
+    "nav": {
+      "rooms": "Habitaciones",
+      "tours": "Tours",
+      "contact": "Contacto",
+      "reserve": "RESERVAR"
+    },
+    "hero": {
+      "title1": "Hostal Alcazaba",
+      "title2": "Lobo Marino",
+      "subtitle": "Hospitalidad auténtica y familiar en Puerto López",
+      "cta1": "RESERVAR AHORA",
+      "cta2": "VER HABITACIONES",
+      "scroll": "Descubre más"
+    },
+    "features": {
+      "title": "¿Por Qué Elegirnos?",
+      "subtitle": "Comodidades pensadas para hacer de tu estadía una experiencia inolvidable",
+      "cta": {
+        "title": "¿Listo para tu próxima aventura?",
+        "subtitle": "Reserva ahora y disfruta de la mejor hospitalidad en Puerto López",
+        "button": "RESERVAR AHORA"
+      }
+    },
+    "about": {
+      "subtitle": "NUESTRA HISTORIA",
+      "title": "Conoce a Nuestros Anfitriones",
+      "hosts": "María & Oswaldo",
+      "role": "Anfitriones y Propietarios",
+      "missionTitle": "Una Familia, Una Misión",
+      "paragraph1": "Lo que nos hace diferentes es compartir un ambiente familiar y auténtico. No somos un hotel más, somos una familia que abre las puertas de su hogar.",
+      "paragraph2": "Nuestro objetivo no es solo ganar dinero, sino servir con el corazón. Queremos que cada persona que cruza nuestra puerta se sienta como en su casa, rodeada de calor humano y hospitalidad genuina.",
+      "paragraph3": "Con años de experiencia en Puerto López, conocemos cada rincón, cada secreto del Parque Nacional Machalilla. Compartimos este conocimiento con amor, porque para nosotros, cada huésped es un amigo que aún no conocíamos.",
+      "quote": "Tu experiencia está garantizada porque viene del corazón",
+      "valuesTitle": "Nuestros Valores",
+      "value1Title": "Hospitalidad de Corazón",
+      "value1Desc": "Más que un negocio, es nuestra pasión compartir la belleza de Puerto López",
+      "value2Title": "Como en Casa",
+      "value2Desc": "Cada huésped es parte de nuestra familia. Tu comodidad es nuestra prioridad",
+      "value3Title": "Conexión Humana",
+      "value3Desc": "Creemos en las relaciones auténticas y en crear recuerdos que duran toda la vida",
+      "value4Title": "Servicio con Alma",
+      "value4Desc": "Nuestro objetivo es servir, no solo vender. Tu experiencia está garantizada",
+      "ctaTitle": "Ven y Sé Parte de Nuestra Familia",
+      "ctaSubtitle": "No eres solo un número de reserva. Eres una persona con sueños, historias e ilusiones. Queremos conocerte y hacer que tu visita a Puerto López sea inolvidable.",
+      "ctaButton": "CONÓCENOS PERSONALMENTE"
+    },
+    "rooms": {
+      "subtitle": "ALOJAMIENTO",
+      "title": "Nuestras Habitaciones",
+      "description": "Cómodas habitaciones para un descanso confortable.",
+      "viewDetails": "Ver detalles",
+      "seeMore": "Ver más detalles",
+      "moreAmenities": "comodidades más",
+      "notFound": "¿No encuentras lo que buscas?",
+      "checkAvailability": "CONSULTAR DISPONIBILIDAD",
+      "capacity": "persona|personas",
+      "featured": "Destacado"
+    },
+    "tours": {
+      "subtitle": "EXPERIENCIAS",
+      "title": "Tours y Aventuras",
+      "description": "Descubre la magia del Parque Nacional Machalilla con nuestros tours recomendados",
+      "duration": "Duración",
+      "includes": "Incluye:",
+      "moreServices": "servicios más incluidos",
+      "moreInfo": "Más Información",
+      "ctaTitle": "¿Necesitas ayuda para elegir?",
+      "ctaSubtitle": "Nuestros anfitriones conocen perfectamente la región y te ayudarán a planificar la experiencia perfecta",
+      "ctaButton": "CONSULTAR POR WHATSAPP"
+    },
+    "localGuide": {
+      "label": "Guía Local",
+      "tips": "Consejos del Local",
+      "planVisit": "Planifica tu Visita"
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen Nuestros Huéspedes",
+      "basedOn": "Basado en",
+      "reviews": "opiniones verificadas",
+      "ctaText": "¿Listo para vivir tu propia experiencia?",
+      "ctaButton": "RESERVA TU HABITACIÓN"
+    },
+    "faq": {
+      "label": "Preguntas Frecuentes",
+      "title": "¿Tienes Dudas?",
+      "subtitle": "Aquí respondemos las preguntas más comunes de nuestros huéspedes",
+      "notFound": "¿No encontraste la respuesta que buscabas?",
+      "contactButton": "Contáctanos por WhatsApp"
+    },
+    "footer": {
+      "navigation": "Navegación",
+      "contact": "Contacto",
+      "followUs": "Síguenos",
+      "rights": "Todos los derechos reservados.",
+      "devBy": "Desarrollo web por",
+      "devByMobile": "Diseño por",
+      "devText": "Sitio web diseñado y optimizado para convertir visitantes en huéspedes. ¿Necesitas un sitio web profesional para tu hotel o negocio turístico?",
+      "devLink": "Conoce NeuraWeb",
+      "devTextEnd": "— Especialistas en desarrollo web para el sector turístico en Ecuador."
+    },
+    "roomDetail": {
+      "back": "Volver a habitaciones",
+      "featured": "Habitación Destacada",
+      "amenitiesTitle": "Comodidades Incluidas",
+      "infoTitle": "Información Importante",
+      "checkin": "Check-in:",
+      "checkout": "Check-out:",
+      "sharedKitchen": "Cocina compartida gratuita",
+      "freeParking": "Estacionamiento gratuito",
+      "highSpeedWifi": "Wi-Fi de alta velocidad",
+      "bookTitle": "Reserva tu Estadía",
+      "bookSubtitle": "Consulta disponibilidad y tarifas",
+      "checkInDate": "Fecha de entrada",
+      "checkOutDate": "Fecha de salida",
+      "guests": "Número de huéspedes",
+      "guest": "huésped",
+      "guestsPlural": "huéspedes",
+      "consultButton": "CONSULTAR POR WHATSAPP",
+      "responseTime": "Respuesta inmediata • Te cotizaremos la mejor tarifa"
+    },
+    "tourDetail": {
+      "back": "Volver a tours",
+      "included": "El Tour Incluye",
+      "recommendations": "Recomendaciones",
+      "rec1": "Lleva ropa cómoda y protector solar biodegradable",
+      "rec2": "Trae agua y snacks adicionales si lo deseas",
+      "rec3": "Cámara o teléfono para capturar momentos increíbles",
+      "rec4": "Reserva con anticipación en temporada alta",
+      "bookTitle": "Reserva esta Experiencia",
+      "bookSubtitle": "Consulta disponibilidad y tarifas",
+      "preferredDate": "Fecha preferida del tour",
+      "participants": "Número de participantes",
+      "person": "persona",
+      "people": "personas",
+      "consultButton": "CONSULTAR POR WHATSAPP",
+      "responseTime": "Tours operados por guías certificados • Te cotizaremos la mejor tarifa"
+    },
+    "whatsapp": {
+      "title": "Hostal Alcazaba",
+      "online": "En línea ahora",
+      "message": "¿Necesitas ayuda? Escríbenos por WhatsApp y te responderemos lo antes posible.",
+      "startChat": "Iniciar Chat"
+    }
+  },
+  "en": {
+    "branding": {
+      "name": "Hostal Alcazaba & Lobo Marino",
+      "slogan": "Your experience is guaranteed",
+      "tagline": "Authentic hospitality in the heart of Puerto López"
+    },
+    "nav": {
+      "rooms": "Rooms",
+      "tours": "Tours",
+      "contact": "Contact",
+      "reserve": "BOOK NOW"
+    },
+    "hero": {
+      "title1": "Hostal Alcazaba",
+      "title2": "Lobo Marino",
+      "subtitle": "Authentic family hospitality in Puerto López",
+      "cta1": "BOOK NOW",
+      "cta2": "VIEW ROOMS",
+      "scroll": "Discover more"
+    },
+    "features": {
+      "title": "Why Choose Us?",
+      "subtitle": "Amenities designed to make your stay an unforgettable experience",
+      "cta": {
+        "title": "Ready for your next adventure?",
+        "subtitle": "Book now and enjoy the best hospitality in Puerto López",
+        "button": "BOOK NOW"
+      }
+    },
+    "about": {
+      "subtitle": "OUR STORY",
+      "title": "Meet Your Hosts",
+      "hosts": "María & Oswaldo",
+      "role": "Hosts and Owners",
+      "missionTitle": "One Family, One Mission",
+      "paragraph1": "What makes us different is sharing a family and authentic atmosphere. We're not just another hotel, we're a family opening the doors of our home.",
+      "paragraph2": "Our goal is not just to make money, but to serve with our hearts. We want every person who walks through our door to feel at home, surrounded by human warmth and genuine hospitality.",
+      "paragraph3": "With years of experience in Puerto López, we know every corner, every secret of Machalilla National Park. We share this knowledge with love, because for us, every guest is a friend we haven't met yet.",
+      "quote": "Your experience is guaranteed because it comes from the heart",
+      "valuesTitle": "Our Values",
+      "value1Title": "Hospitality from the Heart",
+      "value1Desc": "More than a business, it's our passion to share the beauty of Puerto López",
+      "value2Title": "Like Home",
+      "value2Desc": "Every guest is part of our family. Your comfort is our priority",
+      "value3Title": "Human Connection",
+      "value3Desc": "We believe in authentic relationships and creating memories that last a lifetime",
+      "value4Title": "Service with Soul",
+      "value4Desc": "Our goal is to serve, not just to sell. Your experience is guaranteed",
+      "ctaTitle": "Come and Be Part of Our Family",
+      "ctaSubtitle": "You're not just a booking number. You're a person with dreams, stories and hopes. We want to meet you and make your visit to Puerto López unforgettable.",
+      "ctaButton": "MEET US PERSONALLY"
+    },
+    "rooms": {
+      "subtitle": "ACCOMMODATION",
+      "title": "Our Rooms",
+      "description": "Comfortable rooms for a restful stay.",
+      "viewDetails": "View details",
+      "seeMore": "See more details",
+      "moreAmenities": "more amenities",
+      "notFound": "Can't find what you're looking for?",
+      "checkAvailability": "CHECK AVAILABILITY",
+      "capacity": "person|people",
+      "featured": "Featured"
+    },
+    "tours": {
+      "subtitle": "EXPERIENCES",
+      "title": "Tours and Adventures",
+      "description": "Discover the magic of Machalilla National Park with our recommended tours",
+      "duration": "Duration",
+      "includes": "Includes:",
+      "moreServices": "more services included",
+      "moreInfo": "More Information",
+      "ctaTitle": "Need help choosing?",
+      "ctaSubtitle": "Our hosts know the region perfectly and will help you plan the perfect experience",
+      "ctaButton": "CONTACT VIA WHATSAPP"
+    },
+    "localGuide": {
+      "label": "Local Guide",
+      "tips": "Local Tips",
+      "planVisit": "Plan Your Visit"
+    },
+    "testimonials": {
+      "title": "What Our Guests Say",
+      "basedOn": "Based on",
+      "reviews": "verified reviews",
+      "ctaText": "Ready to live your own experience?",
+      "ctaButton": "BOOK YOUR ROOM"
+    },
+    "faq": {
+      "label": "Frequently Asked Questions",
+      "title": "Have Questions?",
+      "subtitle": "Here we answer the most common questions from our guests",
+      "notFound": "Didn't find the answer you were looking for?",
+      "contactButton": "Contact us via WhatsApp"
+    },
+    "footer": {
+      "navigation": "Navigation",
+      "contact": "Contact",
+      "followUs": "Follow Us",
+      "rights": "All rights reserved.",
+      "devBy": "Web development by",
+      "devByMobile": "Design by",
+      "devText": "Website designed and optimized to convert visitors into guests. Need a professional website for your hotel or tourism business?",
+      "devLink": "Learn about NeuraWeb",
+      "devTextEnd": "— Specialists in web development for the tourism sector in Ecuador."
+    },
+    "roomDetail": {
+      "back": "Back to rooms",
+      "featured": "Featured Room",
+      "amenitiesTitle": "Included Amenities",
+      "infoTitle": "Important Information",
+      "checkin": "Check-in:",
+      "checkout": "Check-out:",
+      "sharedKitchen": "Free shared kitchen",
+      "freeParking": "Free parking",
+      "highSpeedWifi": "High-speed Wi-Fi",
+      "bookTitle": "Book Your Stay",
+      "bookSubtitle": "Check availability and rates",
+      "checkInDate": "Check-in date",
+      "checkOutDate": "Check-out date",
+      "guests": "Number of guests",
+      "guest": "guest",
+      "guestsPlural": "guests",
+      "consultButton": "CONTACT VIA WHATSAPP",
+      "responseTime": "Immediate response • We'll quote you the best rate"
+    },
+    "tourDetail": {
+      "back": "Back to tours",
+      "included": "Tour Includes",
+      "recommendations": "Recommendations",
+      "rec1": "Bring comfortable clothing and biodegradable sunscreen",
+      "rec2": "Bring extra water and snacks if desired",
+      "rec3": "Camera or phone to capture incredible moments",
+      "rec4": "Book in advance during high season",
+      "bookTitle": "Book This Experience",
+      "bookSubtitle": "Check availability and rates",
+      "preferredDate": "Preferred tour date",
+      "participants": "Number of participants",
+      "person": "person",
+      "people": "people",
+      "consultButton": "CONTACT VIA WHATSAPP",
+      "responseTime": "Tours operated by certified guides • We'll quote you the best rate"
+    },
+    "whatsapp": {
+      "title": "Hostal Alcazaba",
+      "online": "Online now",
+      "message": "Need help? Write to us on WhatsApp and we'll respond as soon as possible.",
+      "startChat": "Start Chat"
+    }
+  },
+  "fr": {
+    "branding": {
+      "name": "Hostal Alcazaba & Lobo Marino",
+      "slogan": "Votre expérience est garantie",
+      "tagline": "Hospitalité authentique au cœur de Puerto López"
+    },
+    "nav": {
+      "rooms": "Chambres",
+      "tours": "Excursions",
+      "contact": "Contact",
+      "reserve": "RÉSERVER"
+    },
+    "hero": {
+      "title1": "Hostal Alcazaba",
+      "title2": "Lobo Marino",
+      "subtitle": "Hospitalité familiale authentique à Puerto López",
+      "cta1": "RÉSERVER MAINTENANT",
+      "cta2": "VOIR LES CHAMBRES",
+      "scroll": "Découvrir plus"
+    },
+    "features": {
+      "title": "Pourquoi Nous Choisir ?",
+      "subtitle": "Des commodités pensées pour faire de votre séjour une expérience inoubliable",
+      "cta": {
+        "title": "Prêt pour votre prochaine aventure ?",
+        "subtitle": "Réservez maintenant et profitez de la meilleure hospitalité à Puerto López",
+        "button": "RÉSERVER MAINTENANT"
+      }
+    },
+    "about": {
+      "subtitle": "NOTRE HISTOIRE",
+      "title": "Rencontrez Vos Hôtes",
+      "hosts": "María & Oswaldo",
+      "role": "Hôtes et Propriétaires",
+      "missionTitle": "Une Famille, Une Mission",
+      "paragraph1": "Ce qui nous rend différents, c'est le partage d'une atmosphère familiale et authentique. Nous ne sommes pas un hôtel de plus, nous sommes une famille qui ouvre les portes de sa maison.",
+      "paragraph2": "Notre objectif n'est pas seulement de gagner de l'argent, mais de servir avec le cœur. Nous voulons que chaque personne qui franchit notre porte se sente comme chez elle, entourée de chaleur humaine et d'hospitalité sincère.",
+      "paragraph3": "Avec des années d'expérience à Puerto López, nous connaissons chaque recoin, chaque secret du Parc National Machalilla. Nous partageons ces connaissances avec amour, car pour nous, chaque invité est un ami que nous n'avons pas encore rencontré.",
+      "quote": "Votre expérience est garantie car elle vient du cœur",
+      "valuesTitle": "Nos Valeurs",
+      "value1Title": "Hospitalité du Cœur",
+      "value1Desc": "Plus qu'un business, c'est notre passion de partager la beauté de Puerto López",
+      "value2Title": "Comme à la Maison",
+      "value2Desc": "Chaque invité fait partie de notre famille. Votre confort est notre priorité",
+      "value3Title": "Connexion Humaine",
+      "value3Desc": "Nous croyons aux relations authentiques et à la création de souvenirs qui durent toute une vie",
+      "value4Title": "Service avec Âme",
+      "value4Desc": "Notre objectif est de servir, pas seulement de vendre. Votre expérience est garantie",
+      "ctaTitle": "Venez Faire Partie de Notre Famille",
+      "ctaSubtitle": "Vous n'êtes pas qu'un numéro de réservation. Vous êtes une personne avec des rêves, des histoires et des espoirs. Nous voulons vous rencontrer et rendre votre visite à Puerto López inoubliable.",
+      "ctaButton": "RENCONTREZ-NOUS PERSONNELLEMENT"
+    },
+    "rooms": {
+      "subtitle": "HÉBERGEMENT",
+      "title": "Nos Chambres",
+      "description": "Chambres confortables pour un repos agréable.",
+      "viewDetails": "Voir les détails",
+      "seeMore": "Voir plus de détails",
+      "moreAmenities": "commodités supplémentaires",
+      "notFound": "Vous ne trouvez pas ce que vous cherchez ?",
+      "checkAvailability": "VÉRIFIER LA DISPONIBILITÉ",
+      "capacity": "personne|personnes",
+      "featured": "En vedette"
+    },
+    "tours": {
+      "subtitle": "EXPÉRIENCES",
+      "title": "Excursions et Aventures",
+      "description": "Découvrez la magie du Parc National Machalilla avec nos excursions recommandées",
+      "duration": "Durée",
+      "includes": "Inclus :",
+      "moreServices": "services supplémentaires inclus",
+      "moreInfo": "Plus d'Informations",
+      "ctaTitle": "Besoin d'aide pour choisir ?",
+      "ctaSubtitle": "Nos hôtes connaissent parfaitement la région et vous aideront à planifier l'expérience parfaite",
+      "ctaButton": "CONTACTER PAR WHATSAPP"
+    },
+    "localGuide": {
+      "label": "Guide Local",
+      "tips": "Conseils Locaux",
+      "planVisit": "Planifiez Votre Visite"
+    },
+    "testimonials": {
+      "title": "Ce Que Disent Nos Invités",
+      "basedOn": "Basé sur",
+      "reviews": "avis vérifiés",
+      "ctaText": "Prêt à vivre votre propre expérience ?",
+      "ctaButton": "RÉSERVEZ VOTRE CHAMBRE"
+    },
+    "faq": {
+      "label": "Questions Fréquentes",
+      "title": "Des Questions ?",
+      "subtitle": "Nous répondons ici aux questions les plus courantes de nos invités",
+      "notFound": "Vous n'avez pas trouvé la réponse que vous cherchiez ?",
+      "contactButton": "Contactez-nous par WhatsApp"
+    },
+    "footer": {
+      "navigation": "Navigation",
+      "contact": "Contact",
+      "followUs": "Suivez-Nous",
+      "rights": "Tous droits réservés.",
+      "devBy": "Développement web par",
+      "devByMobile": "Design par",
+      "devText": "Site web conçu et optimisé pour convertir les visiteurs en clients. Besoin d'un site web professionnel pour votre hôtel ou entreprise touristique ?",
+      "devLink": "Découvrez NeuraWeb",
+      "devTextEnd": "— Spécialistes du développement web pour le secteur touristique en Équateur."
+    },
+    "roomDetail": {
+      "back": "Retour aux chambres",
+      "featured": "Chambre En Vedette",
+      "amenitiesTitle": "Commodités Incluses",
+      "infoTitle": "Informations Importantes",
+      "checkin": "Arrivée :",
+      "checkout": "Départ :",
+      "sharedKitchen": "Cuisine partagée gratuite",
+      "freeParking": "Parking gratuit",
+      "highSpeedWifi": "Wi-Fi haute vitesse",
+      "bookTitle": "Réservez Votre Séjour",
+      "bookSubtitle": "Vérifiez la disponibilité et les tarifs",
+      "checkInDate": "Date d'arrivée",
+      "checkOutDate": "Date de départ",
+      "guests": "Nombre d'invités",
+      "guest": "invité",
+      "guestsPlural": "invités",
+      "consultButton": "CONTACTER PAR WHATSAPP",
+      "responseTime": "Réponse immédiate • Nous vous proposerons le meilleur tarif"
+    },
+    "tourDetail": {
+      "back": "Retour aux excursions",
+      "included": "L'Excursion Comprend",
+      "recommendations": "Recommandations",
+      "rec1": "Apportez des vêtements confortables et une crème solaire biodégradable",
+      "rec2": "Apportez de l'eau et des collations supplémentaires si vous le souhaitez",
+      "rec3": "Appareil photo ou téléphone pour capturer des moments incroyables",
+      "rec4": "Réservez à l'avance en haute saison",
+      "bookTitle": "Réservez Cette Expérience",
+      "bookSubtitle": "Vérifiez la disponibilité et les tarifs",
+      "preferredDate": "Date préférée de l'excursion",
+      "participants": "Nombre de participants",
+      "person": "personne",
+      "people": "personnes",
+      "consultButton": "CONTACTER PAR WHATSAPP",
+      "responseTime": "Excursions opérées par des guides certifiés • Nous vous proposerons le meilleur tarif"
+    },
+    "whatsapp": {
+      "title": "Hostal Alcazaba",
+      "online": "En ligne maintenant",
+      "message": "Besoin d'aide ? Écrivez-nous sur WhatsApp et nous vous répondrons dès que possible.",
+      "startChat": "Démarrer la Discussion"
+    }
+  }
+}

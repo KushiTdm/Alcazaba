@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { Users, Check, Star, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import RoomDetail from '../pages/Roomdetail';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Rooms() {
+  const { t } = useTranslation();
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -79,16 +81,16 @@ export default function Rooms() {
           
           <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0 animate-fadeInUp' : 'opacity-0 -translate-y-10'}`}>
             <div className="inline-block bg-[#F9F7F2] px-4 sm:px-6 py-2 rounded-full mb-6">
-              <span className="font-['Lato'] text-[#C28E5E] font-semibold text-sm sm:text-base">ALOJAMIENTO</span>
+              <span className="font-['Lato'] text-[#C28E5E] font-semibold text-sm sm:text-base">{t('rooms.subtitle')}</span>
             </div>
             
             <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A2F4B] mb-3 sm:mb-4">
-              Nuestras Habitaciones
+              {t('rooms.title')}
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full mx-auto mb-6"></div>
             
             <p className="font-['Lato'] text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
-              Cómodas habitaciones para un descanso confortable.
+              {t('rooms.description')}
             </p>
           </div>
 
@@ -135,7 +137,7 @@ export default function Rooms() {
                         {room.featured && (
                           <div className="absolute top-4 right-4 z-10 bg-[#C28E5E] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center space-x-1 shadow-lg">
                             <Star size={14} fill="white" />
-                            <span className="font-['Lato'] font-semibold text-xs sm:text-sm">Destacado</span>
+                            <span className="font-['Lato'] font-semibold text-xs sm:text-sm">{t('rooms.featured')}</span>
                           </div>
                         )}
 
@@ -151,7 +153,7 @@ export default function Rooms() {
                           {/* Overlay */}
                           <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-4 sm:pb-6">
                             <div className="flex items-center space-x-2 text-white">
-                              <span className="font-['Lato'] font-semibold text-sm sm:text-base">Ver detalles</span>
+                              <span className="font-['Lato'] font-semibold text-sm sm:text-base">{t('rooms.viewDetails')}</span>
                               <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform duration-300" />
                             </div>
                           </div>
@@ -182,7 +184,7 @@ export default function Rooms() {
                             ))}
                             {room.amenities.length > 2 && (
                               <p className="font-['Lato'] text-xs text-[#C28E5E] font-medium">
-                                +{room.amenities.length - 2} comodidades más
+                                +{room.amenities.length - 2} {t('rooms.moreAmenities')}
                               </p>
                             )}
                           </div>
@@ -196,7 +198,7 @@ export default function Rooms() {
                               }}
                               className="w-full bg-[#1A2F4B] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-['Lato'] font-semibold text-xs sm:text-sm hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105 min-h-[40px] sm:min-h-auto"
                             >
-                              Ver más detalles
+                              {t('rooms.seeMore')}
                             </button>
                           </div>
                         </div>
@@ -235,7 +237,7 @@ export default function Rooms() {
           {/* Bottom CTA */}
           <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="font-['Lato'] text-gray-600 text-sm sm:text-base mb-4">
-              ¿No encuentras lo que buscas?
+              {t('rooms.notFound')}
             </p>
             <button
               onClick={() => {
@@ -246,7 +248,7 @@ export default function Rooms() {
               }}
               className="bg-[#C28E5E] text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#A67347] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-block"
             >
-              CONSULTAR DISPONIBILIDAD
+              {t('rooms.checkAvailability')}
             </button>
           </div>
         </div>

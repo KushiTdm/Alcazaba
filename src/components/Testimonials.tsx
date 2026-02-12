@@ -1,8 +1,10 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import hotelData from '../data/hotelData.json';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Testimonials() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -60,7 +62,7 @@ export default function Testimonials() {
           </div>
 
           <h2 className="font-['Playfair_Display'] text-5xl sm:text-6xl font-bold text-white mb-6">
-            Lo Que Dicen Nuestros Huéspedes
+            {t('testimonials.title')}
           </h2>
 
           <div className="flex items-center justify-center space-x-4 mb-4">
@@ -80,7 +82,7 @@ export default function Testimonials() {
           </div>
           
           <p className="font-['Lato'] text-xl text-white/80">
-            Basado en {hotelData.googleReviews.totalReviews} opiniones verificadas
+            {t('testimonials.basedOn')} {hotelData.googleReviews.totalReviews} {t('testimonials.reviews')}
           </p>
         </div>
 
@@ -154,7 +156,7 @@ export default function Testimonials() {
         {/* CTA */}
         <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <p className="font-['Lato'] text-white/80 text-lg mb-6">
-            ¿Listo para vivir tu propia experiencia?
+            {t('testimonials.ctaText')}
           </p>
           <button
             onClick={() => {
@@ -165,7 +167,7 @@ export default function Testimonials() {
             }}
             className="bg-[#C28E5E] text-white px-10 py-4 rounded-full font-['Lato'] font-bold text-lg hover:bg-[#A67347] transition-all duration-300 shadow-2xl hover:shadow-[0_0_30px_rgba(194,142,94,0.5)] hover:scale-105 inline-flex items-center space-x-2"
           >
-            <span>RESERVA TU HABITACIÓN</span>
+            <span>{t('testimonials.ctaButton')}</span>
           </button>
         </div>
       </div>

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function FAQ() {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleQuestion = (index: number) => {
@@ -15,13 +17,13 @@ export default function FAQ() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-md mb-6">
             <HelpCircle className="text-[#C28E5E]" size={20} />
-            <span className="text-[#1A2F4B] font-semibold">Preguntas Frecuentes</span>
+            <span className="text-[#1A2F4B] font-semibold">{t('faq.label')}</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#1A2F4B] mb-4">
-            ¿Tienes Dudas?
+            {t('faq.title')}
           </h2>
           <p className="text-xl text-gray-600">
-            Aquí respondemos las preguntas más comunes de nuestros huéspedes
+            {t('faq.subtitle')}
           </p>
         </div>
 
@@ -61,7 +63,7 @@ export default function FAQ() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4 text-lg">
-            ¿No encontraste la respuesta que buscabas?
+            {t('faq.notFound')}
           </p>
           <button
             onClick={() => {
@@ -72,7 +74,7 @@ export default function FAQ() {
             }}
             className="bg-[#C28E5E] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A2F4B] transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center space-x-2"
           >
-            <span>Contáctanos por WhatsApp</span>
+            <span>{t('faq.contactButton')}</span>
           </button>
         </div>
       </div>

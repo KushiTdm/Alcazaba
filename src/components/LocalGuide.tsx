@@ -1,7 +1,10 @@
 import { Compass, Clock, Lightbulb } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function LocalGuide() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#1A2F4B] to-[#C28E5E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,7 +13,7 @@ export default function LocalGuide() {
           <div className="text-white space-y-6 order-2 lg:order-1">
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full w-fit">
               <Compass size={20} />
-              <span className="font-['Lato'] font-semibold text-sm sm:text-base">Guía Local</span>
+              <span className="font-['Lato'] font-semibold text-sm sm:text-base">{t('localGuide.label')}</span>
             </div>
 
             <div>
@@ -36,7 +39,7 @@ export default function LocalGuide() {
               <div className="bg-[#C28E5E] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lightbulb size={24} className="text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#1A2F4B]">Consejos del Local</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1A2F4B]">{t('localGuide.tips')}</h3>
             </div>
 
             <div className="space-y-3">
@@ -63,7 +66,7 @@ export default function LocalGuide() {
                 }}
                 className="w-full bg-[#1A2F4B] text-white py-3 sm:py-4 rounded-full font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#C28E5E] transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] sm:min-h-auto"
               >
-                Planifica tu Visita
+                {t('localGuide.planVisit')}
               </button>
             </div>
           </div>

@@ -1,24 +1,46 @@
 {
+  "languages": ["es", "en", "fr"],
+  "defaultLanguage": "es",
   "branding": {
     "name": "Hostal Alcazaba & Lobo Marino",
-    "slogan": "Tu experiencia está garantizada",
-    "tagline": "Hospitalidad auténtica en el corazón de Puerto López"
+    "slogan": {
+      "es": "Tu experiencia está garantizada",
+      "en": "Your experience is guaranteed",
+      "fr": "Votre expérience est garantie"
+    },
+    "tagline": {
+      "es": "Hospitalidad auténtica en el corazón de Puerto López",
+      "en": "Authentic hospitality in the heart of Puerto López",
+      "fr": "Hospitalité authentique au cœur de Puerto López"
+    }
   },
   "contact": {
     "whatsapp": "593990333411",
     "whatsappOswaldo": "593988650782",
-    "whatsappMessage": "Hola! Me gustaría reservar una habitación en Hostal Alcazaba",
+    "whatsappMessage": {
+      "es": "Hola! Me gustaría reservar una habitación en Hostal Alcazaba",
+      "en": "Hello! I would like to book a room at Hostal Alcazaba",
+      "fr": "Bonjour! Je souhaiterais réserver une chambre à l'Hostal Alcazaba"
+    },
     "email": "hotelalcazaba@hotmail.com",
     "facebook": "https://www.facebook.com/hostalalcazaba",
     "instagram": "@tourslobomarino",
     "instagramHostal": "@hostal.alcazaba",
     "location": "San Francisco y Rogerio Figueroa",
     "locationUrl": "https://www.google.com/maps/search/?api=1&query=San+Francisco+y+Rogerio+Figueroa+Puerto+López+Ecuador",
-    "details": "A 800m de la playa, 1km del mercado. Zona tranquila en las alturas con vista al mar",
+    "details": {
+      "es": "A 800m de la playa, 1km del mercado. Zona tranquila en las alturas con vista al mar",
+      "en": "800m from the beach, 1km from the market. Quiet area in the heights with ocean view",
+      "fr": "À 800m de la plage, 1km du marché. Zone calme en hauteur avec vue sur l'océan"
+    },
     "city": "Puerto López, Ecuador",
     "checkin": "14:00 - 22:00",
     "checkout": "05:00 - 12:00",
-    "security": "Puertas cerradas de 22:30 a 05:00"
+    "security": {
+      "es": "Puertas cerradas de 22:30 a 05:00",
+      "en": "Doors closed from 22:30 to 05:00",
+      "fr": "Portes fermées de 22h30 à 05h00"
+    }
   },
   "googleReviews": {
     "rating": 4.6,
@@ -27,29 +49,61 @@
   "usp": [
     {
       "id": 1,
-      "title": "Cocina Compartida Gratuita",
-      "description": "Espacios completamente equipados: microondas, frigo, utensilios completos",
+      "title": {
+        "es": "Cocina Compartida Gratuita",
+        "en": "Free Shared Kitchen",
+        "fr": "Cuisine Partagée Gratuite"
+      },
+      "description": {
+        "es": "Espacios completamente equipados: microondas, frigo, utensilios completos",
+        "en": "Fully equipped spaces: microwave, fridge, complete utensils",
+        "fr": "Espaces entièrement équipés : micro-ondes, frigo, ustensiles complets"
+      },
       "icon": "utensils",
       "image": "/images/features/cucina.webp"
     },
     {
       "id": 2,
-      "title": "Estacionamiento Gratuito",
-      "description": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
+      "title": {
+        "es": "Estacionamiento Gratuito",
+        "en": "Free Parking",
+        "fr": "Parking Gratuit"
+      },
+      "description": {
+        "es": "Parking seguro y gratuito dentro de la residencia para todos nuestros huéspedes",
+        "en": "Safe and free parking inside the residence for all our guests",
+        "fr": "Parking sécurisé et gratuit à l'intérieur de la résidence pour tous nos clients"
+      },
       "icon": "parking",
       "image": "/images/features/parking-hostal_alcazamba-puerto_lopez.jpeg"
     },
     {
       "id": 3,
-      "title": "Mirador con Vista al Mar en Puerto López",
-      "description": "Disfruta de nuestro mirador con impresionante vista panorámica al océano Pacífico y a Puerto López",
+      "title": {
+        "es": "Mirador con Vista al Mar en Puerto López",
+        "en": "Viewpoint with Ocean View in Puerto López",
+        "fr": "Mirador avec Vue sur la Mer à Puerto López"
+      },
+      "description": {
+        "es": "Disfruta de nuestro mirador con impresionante vista panorámica al océano Pacífico y a Puerto López",
+        "en": "Enjoy our viewpoint with stunning panoramic views of the Pacific Ocean and Puerto López",
+        "fr": "Profitez de notre mirador avec vue panoramique imprenable sur l'océan Pacifique et Puerto López"
+      },
       "icon": "camera",
       "image": "/images/features/Mirador_hostal_alcazaba.webp"
     },
     {
       "id": 4,
-      "title": "Vista Panorámica al Mar",
-      "description": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
+      "title": {
+        "es": "Vista Panorámica al Mar",
+        "en": "Panoramic Ocean View",
+        "fr": "Vue Panoramique sur la Mer"
+      },
+      "description": {
+        "es": "Terraza en el techo con hamacas y vistas espectaculares del atardecer",
+        "en": "Rooftop terrace with hammocks and spectacular sunset views",
+        "fr": "Terrasse sur le toit avec hamacs et vues spectaculaires sur le coucher de soleil"
+      },
       "icon": "map-pin",
       "image": "/images/features/hamac.webp"
     }
@@ -57,82 +111,235 @@
   "rooms": [
     {
       "id": "habitacion-individual",
-      "type": "Habitación Individual",
-      "description": "Perfecta para viajeros solitarios, equipada con cama de 2 plazas para mayor comodidad",
-      "capacity": "1 persona",
-      "amenities": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
+      "type": {
+        "es": "Habitación Individual",
+        "en": "Single Room",
+        "fr": "Chambre Individuelle"
+      },
+      "description": {
+        "es": "Perfecta para viajeros solitarios, equipada con cama de 2 plazas para mayor comodidad",
+        "en": "Perfect for solo travelers, equipped with a double bed for extra comfort",
+        "fr": "Parfaite pour les voyageurs solitaires, équipée d'un lit double pour plus de confort"
+      },
+      "capacity": "1",
+      "capacityLabel": {
+        "es": "1 persona",
+        "en": "1 person",
+        "fr": "1 personne"
+      },
+      "amenities": {
+        "es": ["Cama de 2 plazas", "Ventilador", "Baño privado", "Wi-Fi gratuito", "Armario"],
+        "en": ["Double bed", "Fan", "Private bathroom", "Free Wi-Fi", "Wardrobe"],
+        "fr": ["Lit double", "Ventilateur", "Salle de bain privée", "Wi-Fi gratuit", "Armoire"]
+      },
       "image": "/images/rooms/individual.webp",
       "featured": false
     },
     {
       "id": "habitacion-matrimonial",
-      "type": "Habitación Matrimonial",
-      "description": "Cómoda y acogedora para parejas, con cama matrimonial de 2 plazas",
-      "capacity": "2 personas",
-      "amenities": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+      "type": {
+        "es": "Habitación Matrimonial",
+        "en": "Double Room",
+        "fr": "Chambre Matrimoniale"
+      },
+      "description": {
+        "es": "Cómoda y acogedora para parejas, con cama matrimonial de 2 plazas",
+        "en": "Comfortable and cozy for couples, with a double bed",
+        "fr": "Confortable et douillette pour les couples, avec un lit double"
+      },
+      "capacity": "2",
+      "capacityLabel": {
+        "es": "2 personas",
+        "en": "2 people",
+        "fr": "2 personnes"
+      },
+      "amenities": {
+        "es": ["Cama matrimonial (2 plazas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+        "en": ["Double bed", "Private bathroom", "Free Wi-Fi", "Fan", "Wardrobe"],
+        "fr": ["Lit double", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Armoire"]
+      },
       "image": "/images/rooms/Matrimonial.webp",
       "featured": true
     },
     {
       "id": "habitacion-doble",
-      "type": "Habitación Doble",
-      "description": "Espaciosa habitación con dos camas individuales, ideal para amigos o familia",
-      "capacity": "2 personas",
-      "amenities": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+      "type": {
+        "es": "Habitación Doble",
+        "en": "Twin Room",
+        "fr": "Chambre Double"
+      },
+      "description": {
+        "es": "Espaciosa habitación con dos camas individuales, ideal para amigos o familia",
+        "en": "Spacious room with two single beds, ideal for friends or family",
+        "fr": "Chambre spacieuse avec deux lits simples, idéale pour les amis ou la famille"
+      },
+      "capacity": "2",
+      "capacityLabel": {
+        "es": "2 personas",
+        "en": "2 people",
+        "fr": "2 personnes"
+      },
+      "amenities": {
+        "es": ["2 camas individuales", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+        "en": ["2 single beds", "Private bathroom", "Free Wi-Fi", "Fan", "Wardrobe"],
+        "fr": ["2 lits simples", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Armoire"]
+      },
       "image": "/images/rooms/habitacion_doble-hostal_alcazaba-puerto_lopez.webp",
       "featured": false
     },
     {
       "id": "habitacion-triple",
-      "type": "Habitación Triple",
-      "description": "Perfecta para grupos pequeños o familias, con cama matrimonial y cama individual",
-      "capacity": "3 personas",
-      "amenities": ["1 cama matrimonial", "1 cama individual", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+      "type": {
+        "es": "Habitación Triple",
+        "en": "Triple Room",
+        "fr": "Chambre Triple"
+      },
+      "description": {
+        "es": "Perfecta para grupos pequeños o familias, con cama matrimonial y cama individual",
+        "en": "Perfect for small groups or families, with one double bed and one single bed",
+        "fr": "Parfaite pour petits groupes ou familles, avec un lit double et un lit simple"
+      },
+      "capacity": "3",
+      "capacityLabel": {
+        "es": "3 personas",
+        "en": "3 people",
+        "fr": "3 personnes"
+      },
+      "amenities": {
+        "es": ["1 cama matrimonial", "1 cama individual", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Armario"],
+        "en": ["1 double bed", "1 single bed", "Private bathroom", "Free Wi-Fi", "Fan", "Wardrobe"],
+        "fr": ["1 lit double", "1 lit simple", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Armoire"]
+      },
       "image": "/images/rooms/triple.webp",
       "featured": false
     },
     {
       "id": "habitacion-cuadruple",
-      "type": "Habitación Cuádruple",
-      "description": "Amplia habitación familiar con dos camas de 2 plazas o cama matrimonial y litera",
-      "capacity": "4 personas",
-      "amenities": ["2 camas de 2 plazas (o 1 matrimonial + 1 litera)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio amplio"],
+      "type": {
+        "es": "Habitación Cuádruple",
+        "en": "Quad Room",
+        "fr": "Chambre Quadruple"
+      },
+      "description": {
+        "es": "Amplia habitación familiar con dos camas de 2 plazas o cama matrimonial y litera",
+        "en": "Large family room with two double beds or one double bed and bunk bed",
+        "fr": "Grande chambre familiale avec deux lits doubles ou un lit double et un lit superposé"
+      },
+      "capacity": "4",
+      "capacityLabel": {
+        "es": "4 personas",
+        "en": "4 people",
+        "fr": "4 personnes"
+      },
+      "amenities": {
+        "es": ["2 camas de 2 plazas (o 1 matrimonial + 1 litera)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio amplio"],
+        "en": ["2 double beds (or 1 double + 1 bunk bed)", "Private bathroom", "Free Wi-Fi", "Fan", "Spacious room"],
+        "fr": ["2 lits doubles (ou 1 double + 1 superposé)", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Espace spacieux"]
+      },
       "image": "/images/rooms/cuadruple.webp",
       "featured": false
     },
     {
       "id": "habitacion-quintuple",
-      "type": "Habitación Quíntuple",
-      "description": "Ideal para grupos grandes o familias numerosas, con cama matrimonial y litera mixta triple",
-      "capacity": "5 personas",
-      "amenities": ["1 cama matrimonial", "1 litera mixta (3 personas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio generoso"],
+      "type": {
+        "es": "Habitación Quíntuple",
+        "en": "Family Room (5 people)",
+        "fr": "Chambre Quintuple"
+      },
+      "description": {
+        "es": "Ideal para grupos grandes o familias numerosas, con cama matrimonial y litera mixta triple",
+        "en": "Ideal for large groups or families, with one double bed and one triple bunk bed",
+        "fr": "Idéale pour grands groupes ou familles nombreuses, avec un lit double et un lit superposé triple"
+      },
+      "capacity": "5",
+      "capacityLabel": {
+        "es": "5 personas",
+        "en": "5 people",
+        "fr": "5 personnes"
+      },
+      "amenities": {
+        "es": ["1 cama matrimonial", "1 litera mixta (3 personas)", "Baño privado", "Wi-Fi gratuito", "Ventilador", "Espacio generoso"],
+        "en": ["1 double bed", "1 triple bunk bed", "Private bathroom", "Free Wi-Fi", "Fan", "Generous space"],
+        "fr": ["1 lit double", "1 lit superposé triple", "Salle de bain privée", "Wi-Fi gratuit", "Ventilateur", "Espace généreux"]
+      },
       "image": "/images/rooms/Quintuple.webp",
       "featured": false
     },
     {
       "id": "habitacion-accesible-pmr",
-      "type": "Habitación Accesible PMR",
-      "description": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras arquitectónicas",
-      "capacity": "2 personas",
-      "amenities": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
+      "type": {
+        "es": "Habitación Accesible PMR",
+        "en": "Accessible PMR Room",
+        "fr": "Chambre Accessible PMR"
+      },
+      "description": {
+        "es": "Diseñada especialmente para garantizar comodidad y autonomía total. En planta baja con acceso sin barreras arquitectónicas",
+        "en": "Specially designed to ensure total comfort and autonomy. On ground floor with barrier-free access",
+        "fr": "Spécialement conçue pour garantir confort et autonomie totale. En rez-de-chaussée avec accès sans barrières architecturales"
+      },
+      "capacity": "2",
+      "capacityLabel": {
+        "es": "2 personas",
+        "en": "2 people",
+        "fr": "2 personnes"
+      },
+      "amenities": {
+        "es": ["Rampas de acceso PMR", "Ducha adaptada", "Planta baja", "Espacio amplio", "Wi-Fi gratuito", "Llamado de emergencia"],
+        "en": ["PMR access ramps", "Adapted shower", "Ground floor", "Spacious room", "Free Wi-Fi", "Emergency call"],
+        "fr": ["Rampes d'accès PMR", "Douche adaptée", "Rez-de-chaussée", "Espace spacieux", "Wi-Fi gratuit", "Appel d'urgence"]
+      },
       "featured": false,
       "image": "/images/rooms/habitacion-accesible-pmr-hostal-puerto-lopez.webp"
     },
     {
       "id": "departamento",
-      "type": "Departamento Familiar",
-      "description": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa. Disponible para alquiler semanal o mensual",
-      "capacity": "4-5 personas",
-      "amenities": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
+      "type": {
+        "es": "Departamento Familiar",
+        "en": "Family Apartment",
+        "fr": "Appartement Familial"
+      },
+      "description": {
+        "es": "Ideal para familias, con espacio generoso y configuración flexible. Perfecto para estadías largas con cocina privada completa. Disponible para alquiler semanal o mensual",
+        "en": "Ideal for families, with generous space and flexible configuration. Perfect for long stays with full private kitchen. Available for weekly or monthly rental",
+        "fr": "Idéal pour les familles, avec espace généreux et configuration flexible. Parfait pour longs séjours avec cuisine privée complète. Disponible en location hebdomadaire ou mensuelle"
+      },
+      "capacity": "4-5",
+      "capacityLabel": {
+        "es": "4-5 personas",
+        "en": "4-5 people",
+        "fr": "4-5 personnes"
+      },
+      "amenities": {
+        "es": ["1 cama matrimonial", "2 literas", "Cocina privada completa", "Baño privado", "Espacio amplio", "Wi-Fi gratuito", "Ventilador"],
+        "en": ["1 double bed", "2 bunk beds", "Full private kitchen", "Private bathroom", "Spacious room", "Free Wi-Fi", "Fan"],
+        "fr": ["1 lit double", "2 lits superposés", "Cuisine privée complète", "Salle de bain privée", "Espace spacieux", "Wi-Fi gratuit", "Ventilateur"]
+      },
       "image": "/images/rooms/Departamento.webp",
       "featured": false
     },
     {
       "id": "cama-dormitorio",
-      "type": "Cama en Dormitorio Compartido",
-      "description": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales que exploran Ecuador",
-      "capacity": "1 cama",
-      "amenities": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
+      "type": {
+        "es": "Cama en Dormitorio Compartido",
+        "en": "Bed in Shared Dormitory",
+        "fr": "Lit en Dortoir Partagé"
+      },
+      "description": {
+        "es": "Dormitorio mixto de 4 camas, perfecto para mochileros y viajeros sociales que exploran Ecuador",
+        "en": "Mixed dormitory with 4 beds, perfect for backpackers and social travelers exploring Ecuador",
+        "fr": "Dortoir mixte de 4 lits, parfait pour les routards et voyageurs sociaux qui explorent l'Équateur"
+      },
+      "capacity": "1",
+      "capacityLabel": {
+        "es": "1 cama",
+        "en": "1 bed",
+        "fr": "1 lit"
+      },
+      "amenities": {
+        "es": ["Litera individual", "Locker personal", "Baño compartido", "Cocina común incluida", "Wi-Fi gratuito"],
+        "en": ["Individual bunk bed", "Personal locker", "Shared bathroom", "Shared kitchen included", "Free Wi-Fi"],
+        "fr": ["Lit superposé individuel", "Casier personnel", "Salle de bain partagée", "Cuisine commune incluse", "Wi-Fi gratuit"]
+      },
       "image": "/images/rooms/dormitorio-compartido-hostal-economico-puerto-lopez.webp",
       "featured": false
     }
@@ -140,339 +347,1011 @@
   "tours": [
     {
       "id": "isla-plata-ballenas",
-      "name": "Isla de la Plata + Avistamiento de Ballenas(Junio - Octubre)",
-      "season": "Todo el año",
-      "subtitle": "El Galápagos del continente con ballenas jorobadas",
-      "description": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa aves marinas como piqueros de patas azules, piqueros nazca y fragatas, además de lobos marinos y tortugas Carey, y practica snorkel en aguas cristalinas del Parque Nacional Machalilla.",
-      "duration": "Día completo (09:00 - 17:00)",
-      "included": [
-        "Guía bilingüe certificado (inglés/español)",
-        "Lunch completo (frutas, sandwiches, bebidas)",
-        "Equipo de snorkeling profesional",
-        "Embarcación equipada con salvavidas",
-        "Transporte marítimo desde Puerto López",
-        "Entrada al Parque Nacional Machalilla"
-      ],
-      "itinerary": [
-        "09:00 - Salida desde Puerto López",
-        "Durante el trayecto: Avistamiento de ballenas jorobadas",
-        "11:00 - Arribo a Isla de la Plata",
-        "11:15 - Caminata guiada observación de aves marinas",
-        "13:45 - Bahía Drake para ver tortugas Carey",
-        "14:00 - Snorkeling (peces tropicales, arrecifes coralinos)",
-        "15:00 - Lunch",
-        "15:30 - Retorno a Puerto López",
-        "17:00 - Arribo"
-      ],
-      "highlights": [
-        "Piqueros de patas azules, rojas y nazca",
-        "Fragatas y pájaros tropicales",
-        "Tortugas Carey (reserva mundial)",
-        "Snorkel con peces tropicales",
-        "Arrecifes coralinos"
-      ],
+      "name": {
+        "es": "Isla de la Plata + Avistamiento de Ballenas",
+        "en": "Isla de la Plata + Whale Watching",
+        "fr": "Isla de la Plata + Observation des Baleines"
+      },
+      "season": {
+        "es": "Todo el año",
+        "en": "All year round",
+        "fr": "Toute l'année"
+      },
+      "subtitle": {
+        "es": "El Galápagos del continente con ballenas jorobadas",
+        "en": "The Galápagos of the mainland with humpback whales",
+        "fr": "Le Galápagos du continent avec baleines à bosse"
+      },
+      "description": {
+        "es": "Tour completo que combina la visita a la Isla de la Plata con avistamiento de ballenas jorobadas. Observa aves marinas como piqueros de patas azules, piqueros nazca y fragatas, además de lobos marinos y tortugas Carey, y practica snorkel en aguas cristalinas del Parque Nacional Machalilla.",
+        "en": "Complete tour combining a visit to Isla de la Plata with humpback whale watching. Observe seabirds such as blue-footed boobies, Nazca boobies and frigatebirds, plus sea lions and Hawksbill turtles, and snorkel in the crystal-clear waters of Machalilla National Park.",
+        "fr": "Tour complet combinant visite de l'Isla de la Plata avec observation des baleines à bosse. Observez oiseaux marins comme fous à pieds bleus, fous de Nazca et frégates, ainsi que lions de mer et tortues imbriquées, et pratiquez le snorkeling dans les eaux cristallines du Parc National Machalilla."
+      },
+      "duration": {
+        "es": "Día completo (09:00 - 17:00)",
+        "en": "Full day (09:00 - 17:00)",
+        "fr": "Journée complète (09h00 - 17h00)"
+      },
+      "included": {
+        "es": [
+          "Guía bilingüe certificado (inglés/español)",
+          "Lunch completo (frutas, sandwiches, bebidas)",
+          "Equipo de snorkeling profesional",
+          "Embarcación equipada con salvavidas",
+          "Transporte marítimo desde Puerto López",
+          "Entrada al Parque Nacional Machalilla"
+        ],
+        "en": [
+          "Certified bilingual guide (English/Spanish)",
+          "Full lunch (fruits, sandwiches, drinks)",
+          "Professional snorkeling equipment",
+          "Boat equipped with life jackets",
+          "Maritime transport from Puerto López",
+          "Entrance to Machalilla National Park"
+        ],
+        "fr": [
+          "Guide bilingue certifié (anglais/espagnol)",
+          "Déjeuner complet (fruits, sandwichs, boissons)",
+          "Équipement de snorkeling professionnel",
+          "Embarcation équipée de gilets de sauvetage",
+          "Transport maritime depuis Puerto López",
+          "Entrée au Parc National Machalilla"
+        ]
+      },
+      "itinerary": {
+        "es": [
+          "09:00 - Salida desde Puerto López",
+          "Durante el trayecto: Avistamiento de ballenas jorobadas",
+          "11:00 - Arribo a Isla de la Plata",
+          "11:15 - Caminata guiada observación de aves marinas",
+          "13:45 - Bahía Drake para ver tortugas Carey",
+          "14:00 - Snorkeling (peces tropicales, arrecifes coralinos)",
+          "15:00 - Lunch",
+          "15:30 - Retorno a Puerto López",
+          "17:00 - Arribo"
+        ],
+        "en": [
+          "09:00 - Departure from Puerto López",
+          "During the trip: Humpback whale watching",
+          "11:00 - Arrival at Isla de la Plata",
+          "11:15 - Guided walk for seabird observation",
+          "13:45 - Drake Bay to see Hawksbill turtles",
+          "14:00 - Snorkeling (tropical fish, coral reefs)",
+          "15:00 - Lunch",
+          "15:30 - Return to Puerto López",
+          "17:00 - Arrival"
+        ],
+        "fr": [
+          "09h00 - Départ de Puerto López",
+          "Pendant le trajet : Observation des baleines à bosse",
+          "11h00 - Arrivée à Isla de la Plata",
+          "11h15 - Randonnée guidée observation oiseaux marins",
+          "13h45 - Baie Drake pour voir tortues imbriquées",
+          "14h00 - Snorkeling (poissons tropicaux, récifs coralliens)",
+          "15h00 - Déjeuner",
+          "15h30 - Retour à Puerto López",
+          "17h00 - Arrivée"
+        ]
+      },
+      "highlights": {
+        "es": [
+          "Piqueros de patas azules, rojas y nazca",
+          "Fragatas y pájaros tropicales",
+          "Tortugas Carey (reserva mundial)",
+          "Snorkel con peces tropicales",
+          "Arrecifes coralinos"
+        ],
+        "en": [
+          "Blue-footed, red-footed and Nazca boobies",
+          "Frigatebirds and tropical birds",
+          "Hawksbill turtles (world reserve)",
+          "Snorkeling with tropical fish",
+          "Coral reefs"
+        ],
+        "fr": [
+          "Fous à pieds bleus, rouges et de Nazca",
+          "Frégates et oiseaux tropicaux",
+          "Tortues imbriquées (réserve mondiale)",
+          "Snorkeling avec poissons tropicaux",
+          "Récifs coralliens"
+        ]
+      },
       "image": "/images/tours/avistamiento-ballenas-snorkel-puerto-lopez.webp"
     },
     {
       "id": "avistamiento-ballenas-snorkel",
-      "name": "Avistamiento de Ballenas + Snorkel Costa",
-      "season": "Junio - Octubre",
-      "subtitle": "Ballenas jorobadas y snorkel en el Parque Nacional Machalilla",
-      "description": "Tour de 3 horas para observar ballenas jorobadas y practicar snorkel en la Isla Salango. Perfecto para quienes buscan una experiencia más corta pero igualmente emocionante. Avistamiento garantizado al 100%.",
-      "duration": "3 horas",
-      "included": [
-        "Snacks y bebidas",
-        "Equipo de snorkel completo",
-        "Embarcación equipada con salvavidas",
-        "Guía certificado",
-        "Impuestos y transporte"
-      ],
-      "departures": [
-        "Salida mañana: 11:00 - 14:00",
-        "Salida tarde: 14:00 - 17:00"
-      ],
-      "highlights": [
-        "Observación garantizada de ballenas jorobadas",
-        "Snorkel en Isla Salango",
-        "Arrecifes coralinos",
-        "Tortugas marinas, morenas, estrellas de mar",
-        "Gran variedad de peces tropicales"
-      ],
-      "note": "Descuentos disponibles para grupos",
+      "name": {
+        "es": "Avistamiento de Ballenas + Snorkel Costa",
+        "en": "Whale Watching + Coastal Snorkeling",
+        "fr": "Observation Baleines + Snorkeling Côtier"
+      },
+      "season": {
+        "es": "Junio - Octubre",
+        "en": "June - October",
+        "fr": "Juin - Octobre"
+      },
+      "subtitle": {
+        "es": "Ballenas jorobadas y snorkel en el Parque Nacional Machalilla",
+        "en": "Humpback whales and snorkeling in Machalilla National Park",
+        "fr": "Baleines à bosse et snorkeling au Parc National Machalilla"
+      },
+      "description": {
+        "es": "Tour de 3 horas para observar ballenas jorobadas y practicar snorkel en la Isla Salango. Perfecto para quienes buscan una experiencia más corta pero igualmente emocionante. Avistamiento garantizado al 100%.",
+        "en": "3-hour tour to observe humpback whales and snorkel at Isla Salango. Perfect for those seeking a shorter but equally exciting experience. 100% guaranteed sighting.",
+        "fr": "Tour de 3 heures pour observer les baleines à bosse et faire du snorkeling à l'Isla Salango. Parfait pour ceux qui recherchent une expérience plus courte mais tout aussi excitante. Observation garantie à 100%."
+      },
+      "duration": {
+        "es": "3 horas",
+        "en": "3 hours",
+        "fr": "3 heures"
+      },
+      "included": {
+        "es": [
+          "Snacks y bebidas",
+          "Equipo de snorkel completo",
+          "Embarcación equipada con salvavidas",
+          "Guía certificado",
+          "Impuestos y transporte"
+        ],
+        "en": [
+          "Snacks and drinks",
+          "Complete snorkel equipment",
+          "Boat equipped with life jackets",
+          "Certified guide",
+          "Taxes and transport"
+        ],
+        "fr": [
+          "Snacks et boissons",
+          "Équipement de snorkeling complet",
+          "Embarcation équipée de gilets de sauvetage",
+          "Guide certifié",
+          "Taxes et transport"
+        ]
+      },
+      "departures": {
+        "es": [
+          "Salida mañana: 11:00 - 14:00",
+          "Salida tarde: 14:00 - 17:00"
+        ],
+        "en": [
+          "Morning departure: 11:00 - 14:00",
+          "Afternoon departure: 14:00 - 17:00"
+        ],
+        "fr": [
+          "Départ matin : 11h00 - 14h00",
+          "Départ après-midi : 14h00 - 17h00"
+        ]
+      },
+      "highlights": {
+        "es": [
+          "Observación garantizada de ballenas jorobadas",
+          "Snorkel en Isla Salango",
+          "Arrecifes coralinos",
+          "Tortugas marinas, morenas, estrellas de mar",
+          "Gran variedad de peces tropicales"
+        ],
+        "en": [
+          "Guaranteed humpback whale watching",
+          "Snorkeling at Isla Salango",
+          "Coral reefs",
+          "Sea turtles, moray eels, starfish",
+          "Wide variety of tropical fish"
+        ],
+        "fr": [
+          "Observation garantie des baleines à bosse",
+          "Snorkeling à Isla Salango",
+          "Récifs coralliens",
+          "Tortues marines, murènes, étoiles de mer",
+          "Grande variété de poissons tropicaux"
+        ]
+      },
+      "note": {
+        "es": "Descuentos disponibles para grupos",
+        "en": "Group discounts available",
+        "fr": "Réductions disponibles pour groupes"
+      },
       "image": "/images/tours/ballenas.webp"
     },
     {
       "id": "buceo-isla-plata",
-      "name": "Buceo Isla de la Plata + Ballenas(Junio - Octubre)",
-      "season": "Todo el año",
-      "subtitle": "Buceo profesional con avistamiento de ballenas jorobadas",
-      "description": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, combinado con avistamiento de ballenas jorobadas. Para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla.",
-      "duration": "Día completo",
-      "included": [
-        "Equipo completo de buceo profesional",
-        "Instructor certificado PADI",
-        "2 inmersiones profundas",
-        "Transporte marítimo",
-        "Lunch",
-        "Seguro de buceo",
-        "Avistamiento de ballenas jorobadas"
-      ],
-      "requirements": "Certificación de buceo PADI o equivalente requerida",
+      "name": {
+        "es": "Buceo Isla de la Plata + Ballenas",
+        "en": "Diving Isla de la Plata + Whales",
+        "fr": "Plongée Isla de la Plata + Baleines"
+      },
+      "season": {
+        "es": "Todo el año",
+        "en": "All year round",
+        "fr": "Toute l'année"
+      },
+      "subtitle": {
+        "es": "Buceo profesional con avistamiento de ballenas jorobadas",
+        "en": "Professional diving with humpback whale watching",
+        "fr": "Plongée professionnelle avec observation des baleines à bosse"
+      },
+      "description": {
+        "es": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, combinado con avistamiento de ballenas jorobadas. Para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla.",
+        "en": "Professional diving experience on the reefs of Isla de la Plata, combined with humpback whale watching. For certified divers. Explore the seabed of Machalilla National Park.",
+        "fr": "Expérience de plongée professionnelle sur les récifs de l'Isla de la Plata, combinée avec observation des baleines à bosse. Pour plongeurs certifiés. Explorez les fonds marins du Parc National Machalilla."
+      },
+      "duration": {
+        "es": "Día completo",
+        "en": "Full day",
+        "fr": "Journée complète"
+      },
+      "included": {
+        "es": [
+          "Equipo completo de buceo profesional",
+          "Instructor certificado PADI",
+          "2 inmersiones profundas",
+          "Transporte marítimo",
+          "Lunch",
+          "Seguro de buceo",
+          "Avistamiento de ballenas jorobadas"
+        ],
+        "en": [
+          "Complete professional diving equipment",
+          "PADI certified instructor",
+          "2 deep dives",
+          "Maritime transport",
+          "Lunch",
+          "Diving insurance",
+          "Humpback whale watching"
+        ],
+        "fr": [
+          "Équipement de plongée professionnel complet",
+          "Instructeur certifié PADI",
+          "2 plongées profondes",
+          "Transport maritime",
+          "Déjeuner",
+          "Assurance plongée",
+          "Observation des baleines à bosse"
+        ]
+      },
+      "requirements": {
+        "es": "Certificación de buceo PADI o equivalente requerida",
+        "en": "PADI diving certification or equivalent required",
+        "fr": "Certification de plongée PADI ou équivalente requise"
+      },
       "image": "/images/tours/buceo-isla-plata-parque-nacional-machalilla.webp"
     },
     {
       "id": "paseo-costero-salango",
-      "name": "Paseo Costero Isla Salango",
-      "season": "Noviembre - Mayo",
-      "subtitle": "Snorkel y naturaleza en temporada baja",
-      "description": "Tour costero 100% garantizado en los alrededores de la Isla de Salango. Ideal para la temporada sin ballenas. Snorkel, observación de aves marinas y lobos marinos, fauna marina y exploración costera con guías expertos del Parque Nacional Machalilla.",
-      "duration": "2 horas 30 minutos",
-      "included": [
-        "Snacks y bebidas",
-        "Equipo de snorkel completo",
-        "Embarcación equipada con salvavidas",
-        "Guía experimentado certificado"
-      ],
-      "highlights": [
-        "Observación de piqueros de patas azules",
-        "Lobos marinos y tortugas marinas",
-        "Tour por la costa de Isla Salango",
-        "Snorkel en aguas cristalinas",
-        "Buceo de superficie"
-      ],
-      "note": "Descuentos disponibles para grupos. Tours 100% garantizados todo el año.",
+      "name": {
+        "es": "Paseo Costero Isla Salango",
+        "en": "Coastal Tour Isla Salango",
+        "fr": "Tour Côtier Isla Salango"
+      },
+      "season": {
+        "es": "Noviembre - Mayo",
+        "en": "November - May",
+        "fr": "Novembre - Mai"
+      },
+      "subtitle": {
+        "es": "Snorkel y naturaleza en temporada baja",
+        "en": "Snorkeling and nature in low season",
+        "fr": "Snorkeling et nature en basse saison"
+      },
+      "description": {
+        "es": "Tour costero 100% garantizado en los alrededores de la Isla de Salango. Ideal para la temporada sin ballenas. Snorkel, observación de aves marinas y lobos marinos, fauna marina y exploración costera con guías expertos del Parque Nacional Machalilla.",
+        "en": "100% guaranteed coastal tour around Isla Salango. Ideal for the non-whale season. Snorkeling, seabird and sea lion watching, marine wildlife and coastal exploration with expert guides from Machalilla National Park.",
+        "fr": "Tour côtier 100% garanti autour de l'Isla de Salango. Idéal pour la saison sans baleines. Snorkeling, observation d'oiseaux marins et lions de mer, faune marine et exploration côtière avec guides experts du Parc National Machalilla."
+      },
+      "duration": {
+        "es": "2 horas 30 minutos",
+        "en": "2 hours 30 minutes",
+        "fr": "2 heures 30 minutes"
+      },
+      "included": {
+        "es": [
+          "Snacks y bebidas",
+          "Equipo de snorkel completo",
+          "Embarcación equipada con salvavidas",
+          "Guía experimentado certificado"
+        ],
+        "en": [
+          "Snacks and drinks",
+          "Complete snorkel equipment",
+          "Boat equipped with life jackets",
+          "Certified experienced guide"
+        ],
+        "fr": [
+          "Snacks et boissons",
+          "Équipement de snorkeling complet",
+          "Embarcation équipée de gilets de sauvetage",
+          "Guide expérimenté certifié"
+        ]
+      },
+      "highlights": {
+        "es": [
+          "Observación de piqueros de patas azules",
+          "Lobos marinos y tortugas marinas",
+          "Tour por la costa de Isla Salango",
+          "Snorkel en aguas cristalinas",
+          "Buceo de superficie"
+        ],
+        "en": [
+          "Blue-footed booby observation",
+          "Sea lions and sea turtles",
+          "Tour of Isla Salango coast",
+          "Snorkeling in crystal-clear waters",
+          "Surface diving"
+        ],
+        "fr": [
+          "Observation des fous à pieds bleus",
+          "Lions de mer et tortues marines",
+          "Tour de la côte d'Isla Salango",
+          "Snorkeling dans eaux cristallines",
+          "Plongée de surface"
+        ]
+      },
+      "note": {
+        "es": "Descuentos disponibles para grupos. Tours 100% garantizados todo el año.",
+        "en": "Group discounts available. 100% guaranteed tours all year round.",
+        "fr": "Réductions disponibles pour groupes. Tours 100% garantis toute l'année."
+      },
       "image": "/images/tours/paseo-costero-salango.webp"
     },
     {
       "id": "pesca-deportiva",
-      "name": "Pesca Deportiva de Marlín y Dorado",
-      "season": "Todo el año (especies varían)",
-      "subtitle": "Aventura de pesca en alta mar",
-      "description": "Experiencia de pesca deportiva en yate de 11 metros, navegando 45 millas de la costa de Puerto López. Captura marlín, dorado, wahoo y picudo según temporada. Peces de hasta 4.5 metros de longitud. Satisfacción y adrenalina garantizadas.",
-      "duration": "Día completo (05:00 - 17:00)",
-      "included": [
-        "Yate 11 metros con 2 motores ecológicos",
-        "Chalecos salvavidas certificados",
-        "Cañas de pesca profesionales",
-        "GPS y sonda de pesca",
-        "Cinturón y silla de pesca",
-        "Hielera para conservar capturas",
-        "Desayuno y almuerzo completo"
-      ],
-      "species": [
-        "Marlín/Picudo (Jun-Ago, Oct-Mar)",
-        "Dorado (Nov-Mar)",
-        "Wahoo (Jun-Oct)"
-      ],
-      "schedule": [
-        "05:00 - Salida desde Puerto López",
-        "06:30 - Inicio de pesca (navegación 1h30)",
-        "17:00 - Fin del tour"
-      ],
-      "boat": "Yate 11 metros, 3 metros de manga, 2 motores fuera de borda ecológicos 4 tiempos",
+      "name": {
+        "es": "Pesca Deportiva de Marlín y Dorado",
+        "en": "Sport Fishing for Marlin and Dorado",
+        "fr": "Pêche Sportive de Marlin et Dorade"
+      },
+      "season": {
+        "es": "Todo el año (especies varían)",
+        "en": "All year round (species vary)",
+        "fr": "Toute l'année (espèces varient)"
+      },
+      "subtitle": {
+        "es": "Aventura de pesca en alta mar",
+        "en": "Deep sea fishing adventure",
+        "fr": "Aventure de pêche en haute mer"
+      },
+      "description": {
+        "es": "Experiencia de pesca deportiva en yate de 11 metros, navegando 45 millas de la costa de Puerto López. Captura marlín, dorado, wahoo y picudo según temporada. Peces de hasta 4.5 metros de longitud. Satisfacción y adrenalina garantizadas.",
+        "en": "Sport fishing experience on an 11-meter yacht, sailing 45 miles off the coast of Puerto López. Catch marlin, dorado, wahoo and sailfish depending on season. Fish up to 4.5 meters long. Satisfaction and adrenaline guaranteed.",
+        "fr": "Expérience de pêche sportive sur yacht de 11 mètres, naviguant à 45 milles de la côte de Puerto López. Capturez marlin, dorade, wahoo et espadon selon la saison. Poissons jusqu'à 4,5 mètres de long. Satisfaction et adrénaline garanties."
+      },
+      "duration": {
+        "es": "Día completo (05:00 - 17:00)",
+        "en": "Full day (05:00 - 17:00)",
+        "fr": "Journée complète (05h00 - 17h00)"
+      },
+      "included": {
+        "es": [
+          "Yate 11 metros con 2 motores ecológicos",
+          "Chalecos salvavidas certificados",
+          "Cañas de pesca profesionales",
+          "GPS y sonda de pesca",
+          "Cinturón y silla de pesca",
+          "Hielera para conservar capturas",
+          "Desayuno y almuerzo completo"
+        ],
+        "en": [
+          "11-meter yacht with 2 eco-friendly engines",
+          "Certified life jackets",
+          "Professional fishing rods",
+          "GPS and fish finder",
+          "Fishing belt and chair",
+          "Cooler to preserve catches",
+          "Full breakfast and lunch"
+        ],
+        "fr": [
+          "Yacht de 11 mètres avec 2 moteurs écologiques",
+          "Gilets de sauvetage certifiés",
+          "Cannes à pêche professionnelles",
+          "GPS et sondeur de pêche",
+          "Ceinture et chaise de pêche",
+          "Glacière pour conserver prises",
+          "Petit-déjeuner et déjeuner complets"
+        ]
+      },
+      "species": {
+        "es": [
+          "Marlín/Picudo (Jun-Ago, Oct-Mar)",
+          "Dorado (Nov-Mar)",
+          "Wahoo (Jun-Oct)"
+        ],
+        "en": [
+          "Marlin/Sailfish (Jun-Aug, Oct-Mar)",
+          "Dorado (Nov-Mar)",
+          "Wahoo (Jun-Oct)"
+        ],
+        "fr": [
+          "Marlin/Espadon (Jui-Aoû, Oct-Mar)",
+          "Dorade (Nov-Mar)",
+          "Wahoo (Jui-Oct)"
+        ]
+      },
+      "schedule": {
+        "es": [
+          "05:00 - Salida desde Puerto López",
+          "06:30 - Inicio de pesca (navegación 1h30)",
+          "17:00 - Fin del tour"
+        ],
+        "en": [
+          "05:00 - Departure from Puerto López",
+          "06:30 - Start fishing (1h30 sailing)",
+          "17:00 - End of tour"
+        ],
+        "fr": [
+          "05h00 - Départ de Puerto López",
+          "06h30 - Début de la pêche (1h30 de navigation)",
+          "17h00 - Fin du tour"
+        ]
+      },
+      "boat": {
+        "es": "Yate 11 metros, 3 metros de manga, 2 motores fuera de borda ecológicos 4 tiempos",
+        "en": "11-meter yacht, 3-meter beam, 2 eco-friendly 4-stroke outboard motors",
+        "fr": "Yacht 11 mètres, 3 mètres de largeur, 2 moteurs hors-bord écologiques 4 temps"
+      },
       "image": "/images/tours/pesca-deportiva-marlin-puerto-lopez-ecuador.webp"
     },
     {
       "id": "guayacan-monos",
-      "name": "Cabalgata guayacán de los Monos ",
-      "season": "Todo el año",
-      "subtitle": "Trekking y observación de fauna silvestre",
-      "description": "Caminata ecológica para observar monos aulladores en su hábitat natural. Explora la vegetación nativa, mariposas tropicales y gran variedad de aves en un ambiente único del bosque ecuatoriano cerca de Puerto López.",
-      "duration": "08:30 - 14:30",
-      "included": [
-        "Guía especializado en fauna",
-        "Almuerzo típico ecuatoriano",
-        "Botas de trekking",
-        "Caballo (opcional)"
-      ],
-      "highlights": [
-        "Monos aulladores en estado silvestre",
-        "Vegetación nativa del bosque seco",
-        "Mariposas tropicales",
-        "Gran variedad de pájaros endémicos"
-      ],
-      "note": "NO incluye traslado desde Puerto López",
-      "departure": "08:30 desde Puerto López (mínimo 2 personas)",
+      "name": {
+        "es": "Cabalgata guayacán de los Monos",
+        "en": "Horseback Riding Guayacán de los Monos",
+        "fr": "Randonnée à Cheval Guayacán de los Monos"
+      },
+      "season": {
+        "es": "Todo el año",
+        "en": "All year round",
+        "fr": "Toute l'année"
+      },
+      "subtitle": {
+        "es": "Trekking y observación de fauna silvestre",
+        "en": "Trekking and wildlife observation",
+        "fr": "Trekking et observation de la faune"
+      },
+      "description": {
+        "es": "Caminata ecológica para observar monos aulladores en su hábitat natural. Explora la vegetación nativa, mariposas tropicales y gran variedad de aves en un ambiente único del bosque ecuatoriano cerca de Puerto López.",
+        "en": "Ecological walk to observe howler monkeys in their natural habitat. Explore native vegetation, tropical butterflies and a wide variety of birds in a unique Ecuadorian forest environment near Puerto López.",
+        "fr": "Randonnée écologique pour observer les singes hurleurs dans leur habitat naturel. Explorez la végétation native, papillons tropicaux et grande variété d'oiseaux dans un environnement unique de forêt équatorienne près de Puerto López."
+      },
+      "duration": {
+        "es": "08:30 - 14:30",
+        "en": "08:30 - 14:30",
+        "fr": "08h30 - 14h30"
+      },
+      "included": {
+        "es": [
+          "Guía especializado en fauna",
+          "Almuerzo típico ecuatoriano",
+          "Botas de trekking",
+          "Caballo (opcional)"
+        ],
+        "en": [
+          "Wildlife specialist guide",
+          "Typical Ecuadorian lunch",
+          "Trekking boots",
+          "Horse (optional)"
+        ],
+        "fr": [
+          "Guide spécialisé en faune",
+          "Déjeuner typique équatorien",
+          "Bottes de trekking",
+          "Cheval (optionnel)"
+        ]
+      },
+      "highlights": {
+        "es": [
+          "Monos aulladores en estado silvestre",
+          "Vegetación nativa del bosque seco",
+          "Mariposas tropicales",
+          "Gran variedad de pájaros endémicos"
+        ],
+        "en": [
+          "Wild howler monkeys",
+          "Native dry forest vegetation",
+          "Tropical butterflies",
+          "Wide variety of endemic birds"
+        ],
+        "fr": [
+          "Singes hurleurs sauvages",
+          "Végétation native de forêt sèche",
+          "Papillons tropicaux",
+          "Grande variété d'oiseaux endémiques"
+        ]
+      },
+      "note": {
+        "es": "NO incluye traslado desde Puerto López",
+        "en": "Does NOT include transfer from Puerto López",
+        "fr": "N'inclut PAS le transfert depuis Puerto López"
+      },
+      "departure": {
+        "es": "08:30 desde Puerto López (mínimo 2 personas)",
+        "en": "08:30 from Puerto López (minimum 2 people)",
+        "fr": "08h30 depuis Puerto López (minimum 2 personnes)"
+      },
       "image": "/images/tours/guayacan-monos.webp"
     },
     {
       "id": "agua-blanca",
-      "name": "Comunidad Agua Blanca",
-      "season": "Todo el año",
-      "subtitle": "Cultura ancestral Manteña y aguas termales curativas",
-      "description": "Sumérgete en la historia precolombina visitando el museo arqueológico de la cultura Manteña. Recorre senderos entre tumbas ancestrales de más de 3000 años de antigüedad, relájate en las piscinas de aguas azufradas naturales y rejuvenece tu piel con los poderes curativos del lodo volcánico. Una experiencia única que combina cultura, historia y bienestar natural en el corazón del Parque Nacional Machalilla.",
-      "duration": "Medio día (4-5 horas)",
-      "included": [
-        "Visita guiada al museo arqueológico Manteña",
-        "Recorrido por senderos de tumbas ancestrales",
-        "Acceso a piscinas de agua azufrada natural",
-        "Tratamiento con lodo volcánico termal",
-        "Guía comunitario experto en historia local",
-        "Entrada a la comunidad Agua Blanca"
-      ],
-      "highlights": [
-        "Museo arqueológico con piezas de la cultura Manteña",
-        "Tumbas ancestrales de más de 3000 años",
-        "Piscinas termales de agua azufrada (propiedades curativas)",
-        "Lodo volcánico rejuvenecedor para la piel",
-        "Bosque seco tropical único",
-        "Turismo comunitario sostenible"
-      ],
-      "note": "Tour operado por la comunidad local. Apoya directamente a las familias de Agua Blanca.",
+      "name": {
+        "es": "Comunidad Agua Blanca",
+        "en": "Agua Blanca Community",
+        "fr": "Communauté Agua Blanca"
+      },
+      "season": {
+        "es": "Todo el año",
+        "en": "All year round",
+        "fr": "Toute l'année"
+      },
+      "subtitle": {
+        "es": "Cultura ancestral Manteña y aguas termales curativas",
+        "en": "Ancestral Manteña culture and healing thermal waters",
+        "fr": "Culture ancestrale Manteña et eaux thermales curatives"
+      },
+      "description": {
+        "es": "Sumérgete en la historia precolombina visitando el museo arqueológico de la cultura Manteña. Recorre senderos entre tumbas ancestrales de más de 3000 años de antigüedad, relájate en las piscinas de aguas azufradas naturales y rejuvenece tu piel con los poderes curativos del lodo volcánico. Una experiencia única que combina cultura, historia y bienestar natural en el corazón del Parque Nacional Machalilla.",
+        "en": "Immerse yourself in pre-Columbian history by visiting the archaeological museum of the Manteña culture. Walk trails among ancestral tombs over 3000 years old, relax in natural sulfur water pools and rejuvenate your skin with the healing powers of volcanic mud. A unique experience combining culture, history and natural wellness in the heart of Machalilla National Park.",
+        "fr": "Plongez dans l'histoire précolombienne en visitant le musée archéologique de la culture Manteña. Parcourez des sentiers entre tombes ancestrales de plus de 3000 ans, détendez-vous dans les piscines d'eaux sulfureuses naturelles et rajeunissez votre peau avec les pouvoirs curatifs de la boue volcanique. Une expérience unique qui combine culture, histoire et bien-être naturel au cœur du Parc National Machalilla."
+      },
+      "duration": {
+        "es": "Medio día (4-5 horas)",
+        "en": "Half day (4-5 hours)",
+        "fr": "Demi-journée (4-5 heures)"
+      },
+      "included": {
+        "es": [
+          "Visita guiada al museo arqueológico Manteña",
+          "Recorrido por senderos de tumbas ancestrales",
+          "Acceso a piscinas de agua azufrada natural",
+          "Tratamiento con lodo volcánico termal",
+          "Guía comunitario experto en historia local",
+          "Entrada a la comunidad Agua Blanca"
+        ],
+        "en": [
+          "Guided visit to Manteña archaeological museum",
+          "Tour of ancestral tomb trails",
+          "Access to natural sulfur water pools",
+          "Thermal volcanic mud treatment",
+          "Community guide expert in local history",
+          "Entrance to Agua Blanca community"
+        ],
+        "fr": [
+          "Visite guidée du musée archéologique Manteña",
+          "Parcours des sentiers de tombes ancestrales",
+          "Accès aux piscines d'eau sulfureuse naturelle",
+          "Traitement à la boue volcanique thermale",
+          "Guide communautaire expert en histoire locale",
+          "Entrée à la communauté Agua Blanca"
+        ]
+      },
+      "highlights": {
+        "es": [
+          "Museo arqueológico con piezas de la cultura Manteña",
+          "Tumbas ancestrales de más de 3000 años",
+          "Piscinas termales de agua azufrada (propiedades curativas)",
+          "Lodo volcánico rejuvenecedor para la piel",
+          "Bosque seco tropical único",
+          "Turismo comunitario sostenible"
+        ],
+        "en": [
+          "Archaeological museum with Manteña culture artifacts",
+          "Ancestral tombs over 3000 years old",
+          "Sulfur water thermal pools (healing properties)",
+          "Rejuvenating volcanic mud for skin",
+          "Unique tropical dry forest",
+          "Sustainable community tourism"
+        ],
+        "fr": [
+          "Musée archéologique avec pièces de la culture Manteña",
+          "Tombes ancestrales de plus de 3000 ans",
+          "Piscines thermales d'eau sulfureuse (propriétés curatives)",
+          "Boue volcanique rajeunissante pour la peau",
+          "Forêt sèche tropicale unique",
+          "Tourisme communautaire durable"
+        ]
+      },
+      "note": {
+        "es": "Tour operado por la comunidad local. Apoya directamente a las familias de Agua Blanca.",
+        "en": "Tour operated by local community. Directly supports Agua Blanca families.",
+        "fr": "Tour opéré par la communauté locale. Soutient directement les familles d'Agua Blanca."
+      },
       "image": "/images/tours/Cultura_ancestral_Mantena-aguas_termales_curativas.webp"
     },
     {
       "id": "playa-los-frailes",
-      "name": "Playa Los Frailes",
-      "subtitle": "Una de las playas más bellas de Ecuador",
-      "description": "Arena blanca, aguas cristalinas y senderos naturales del Parque Nacional Machalilla. Perfecta para relajarse y conectar con la naturaleza en estado puro. Considerada una de las joyas del litoral ecuatoriano y playa más limpia del país.",
-      "duration": "Medio día (4-5 horas)",
-      "included": [
-        "Transporte desde Puerto López",
-        "Entrada al Parque Nacional Machalilla",
-        "Guía naturalista (opcional)"
-      ],
+      "name": {
+        "es": "Playa Los Frailes",
+        "en": "Los Frailes Beach",
+        "fr": "Plage Los Frailes"
+      },
+      "subtitle": {
+        "es": "Una de las playas más bellas de Ecuador",
+        "en": "One of the most beautiful beaches in Ecuador",
+        "fr": "Une des plus belles plages d'Équateur"
+      },
+      "description": {
+        "es": "Arena blanca, aguas cristalinas y senderos naturales del Parque Nacional Machalilla. Perfecta para relajarse y conectar con la naturaleza en estado puro. Considerada una de las joyas del litoral ecuatoriano y playa más limpia del país.",
+        "en": "White sand, crystal-clear waters and natural trails of Machalilla National Park. Perfect for relaxing and connecting with nature in its pure state. Considered one of the jewels of the Ecuadorian coast and the cleanest beach in the country.",
+        "fr": "Sable blanc, eaux cristallines et sentiers naturels du Parc National Machalilla. Parfaite pour se détendre et se connecter avec la nature dans son état pur. Considérée comme l'un des joyaux du littoral équatorien et la plage la plus propre du pays."
+      },
+      "duration": {
+        "es": "Medio día (4-5 horas)",
+        "en": "Half day (4-5 hours)",
+        "fr": "Demi-journée (4-5 heures)"
+      },
+      "included": {
+        "es": [
+          "Transporte desde Puerto López",
+          "Entrada al Parque Nacional Machalilla",
+          "Guía naturalista (opcional)"
+        ],
+        "en": [
+          "Transport from Puerto López",
+          "Entrance to Machalilla National Park",
+          "Naturalist guide (optional)"
+        ],
+        "fr": [
+          "Transport depuis Puerto López",
+          "Entrée au Parc National Machalilla",
+          "Guide naturaliste (optionnel)"
+        ]
+      },
       "image": "/images/tours/playa-los-frailes-puerto-lopez-ecuador-mejores-playas.webp"
     },
     {
       "id": "tour-personalizado",
-      "name": "Tour Personalizado",
-      "subtitle": "Diseñamos tu aventura ideal en Puerto López",
-      "description": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única en Puerto López y el Parque Nacional Machalilla.",
-      "duration": "Según tus necesidades",
-      "included": [
-        "Itinerario personalizado",
-        "Guía exclusivo certificado",
-        "Transporte privado",
-        "Actividades a tu medida"
-      ],
+      "name": {
+        "es": "Tour Personalizado",
+        "en": "Customized Tour",
+        "fr": "Tour Personnalisé"
+      },
+      "subtitle": {
+        "es": "Diseñamos tu aventura ideal en Puerto López",
+        "en": "We design your ideal adventure in Puerto López",
+        "fr": "Nous concevons votre aventure idéale à Puerto López"
+      },
+      "description": {
+        "es": "Cuéntanos tus intereses y crearemos un tour exclusivo para ti. Combinamos actividades, horarios y lugares según tus preferencias. Perfecto para grupos, familias o quienes buscan una experiencia única en Puerto López y el Parque Nacional Machalilla.",
+        "en": "Tell us your interests and we'll create an exclusive tour for you. We combine activities, schedules and places according to your preferences. Perfect for groups, families or those seeking a unique experience in Puerto López and Machalilla National Park.",
+        "fr": "Dites-nous vos intérêts et nous créerons un tour exclusif pour vous. Nous combinons activités, horaires et lieux selon vos préférences. Parfait pour groupes, familles ou ceux qui recherchent une expérience unique à Puerto López et au Parc National Machalilla."
+      },
+      "duration": {
+        "es": "Según tus necesidades",
+        "en": "According to your needs",
+        "fr": "Selon vos besoins"
+      },
+      "included": {
+        "es": [
+          "Itinerario personalizado",
+          "Guía exclusivo certificado",
+          "Transporte privado",
+          "Actividades a tu medida"
+        ],
+        "en": [
+          "Personalized itinerary",
+          "Exclusive certified guide",
+          "Private transport",
+          "Activities tailored to you"
+        ],
+        "fr": [
+          "Itinéraire personnalisé",
+          "Guide exclusif certifié",
+          "Transport privé",
+          "Activités sur mesure"
+        ]
+      },
       "image": "/images/tours/tour-personalizado-puerto-lopez.webp"
     }
   ],
   "localGuide": {
-    "title": "Parque Nacional Machalilla",
-    "description": "Ubicados en el corazón de la zona turística de Puerto López, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla y todas sus maravillas naturales. Operadores certificados con guías experimentados.",
-    "hours": "Horarios: 09:00 - 15:00",
-    "tips": [
-      "Llega temprano para aprovechar al máximo tu visita y evitar las horas de más calor",
-      "Lleva protector solar biodegradable, sombrero y agua suficiente",
-      "Respeta la flora y fauna local - no toques ni alimentes a los animales",
-      "Contrata guías certificados para una experiencia más enriquecedora y segura",
-      "La temporada de ballenas jorobadas (Jun-Oct) requiere reserva anticipada",
-      "Descuentos disponibles para grupos en la mayoría de tours"
-    ]
+    "title": {
+      "es": "Parque Nacional Machalilla",
+      "en": "Machalilla National Park",
+      "fr": "Parc National Machalilla"
+    },
+    "description": {
+      "es": "Ubicados en el corazón de la zona turística de Puerto López, somos tu punto de partida ideal para explorar el Parque Nacional Machalilla y todas sus maravillas naturales. Operadores certificados con guías experimentados.",
+      "en": "Located in the heart of Puerto López's tourist area, we are your ideal starting point to explore Machalilla National Park and all its natural wonders. Certified operators with experienced guides.",
+      "fr": "Situés au cœur de la zone touristique de Puerto López, nous sommes votre point de départ idéal pour explorer le Parc National Machalilla et toutes ses merveilles naturelles. Opérateurs certifiés avec guides expérimentés."
+    },
+    "hours": {
+      "es": "Horarios: 09:00 - 15:00",
+      "en": "Hours: 09:00 - 15:00",
+      "fr": "Horaires : 09h00 - 15h00"
+    },
+    "tips": {
+      "es": [
+        "Llega temprano para aprovechar al máximo tu visita y evitar las horas de más calor",
+        "Lleva protector solar biodegradable, sombrero y agua suficiente",
+        "Respeta la flora y fauna local - no toques ni alimentes a los animales",
+        "Contrata guías certificados para una experiencia más enriquecedora y segura",
+        "La temporada de ballenas jorobadas (Jun-Oct) requiere reserva anticipada",
+        "Descuentos disponibles para grupos en la mayoría de tours"
+      ],
+      "en": [
+        "Arrive early to make the most of your visit and avoid the hottest hours",
+        "Bring biodegradable sunscreen, hat and enough water",
+        "Respect local flora and fauna - don't touch or feed the animals",
+        "Hire certified guides for a more enriching and safe experience",
+        "Humpback whale season (Jun-Oct) requires advance booking",
+        "Group discounts available on most tours"
+      ],
+      "fr": [
+        "Arrivez tôt pour profiter au maximum de votre visite et éviter les heures les plus chaudes",
+        "Apportez crème solaire biodégradable, chapeau et eau suffisante",
+        "Respectez la flore et faune locales - ne touchez ni ne nourrissez les animaux",
+        "Engagez des guides certifiés pour une expérience plus enrichissante et sûre",
+        "La saison des baleines à bosse (Jui-Oct) nécessite réservation anticipée",
+        "Réductions disponibles pour groupes sur la plupart des tours"
+      ]
+    }
   },
   "testimonials": [
     {
       "id": 1,
       "name": "Gabriel",
-      "country": "Ecuador",
+      "country": {
+        "es": "Ecuador",
+        "en": "Ecuador",
+        "fr": "Équateur"
+      },
       "rating": 5,
-      "text": "Todo estaba impecable, muy limpio y cómodo. Los anfitriones Oswaldo y María son de una amabilidad excepcional.",
+      "text": {
+        "es": "Todo estaba impecable, muy limpio y cómodo. Los anfitriones Oswaldo y María son de una amabilidad excepcional.",
+        "en": "Everything was impeccable, very clean and comfortable. The hosts Oswaldo and María are exceptionally kind.",
+        "fr": "Tout était impeccable, très propre et confortable. Les hôtes Oswaldo et María sont d'une gentillesse exceptionnelle."
+      },
       "image": "G"
     },
     {
       "id": 2,
       "name": "Isabella",
-      "country": "Reino Unido",
+      "country": {
+        "es": "Reino Unido",
+        "en": "United Kingdom",
+        "fr": "Royaume-Uni"
+      },
       "rating": 5,
-      "text": "Vista magnífica desde el techo y las hamacas. Me ayudaron a reservar el tour de ballenas, fue increíble.",
+      "text": {
+        "es": "Vista magnífica desde el techo y las hamacas. Me ayudaron a reservar el tour de ballenas, fue increíble.",
+        "en": "Magnificent view from the roof and hammocks. They helped me book the whale tour, it was incredible.",
+        "fr": "Vue magnifique depuis le toit et les hamacs. Ils m'ont aidé à réserver le tour des baleines, c'était incroyable."
+      },
       "image": "I"
     },
     {
       "id": 3,
       "name": "Lucas",
-      "country": "Francia",
+      "country": {
+        "es": "Francia",
+        "en": "France",
+        "fr": "France"
+      },
       "rating": 5,
-      "text": "Habitación con vista al mar espectacular. La cocina común es muy funcional y el recibimiento es cálido.",
+      "text": {
+        "es": "Habitación con vista al mar espectacular. La cocina común es muy funcional y el recibimiento es cálido.",
+        "en": "Room with spectacular ocean view. The shared kitchen is very functional and the welcome is warm.",
+        "fr": "Chambre avec vue spectaculaire sur la mer. La cuisine commune est très fonctionnelle et l'accueil est chaleureux."
+      },
       "image": "L"
     },
     {
       "id": 4,
       "name": "Charline",
-      "country": "Bélgica",
+      "country": {
+        "es": "Bélgica",
+        "en": "Belgium",
+        "fr": "Belgique"
+      },
       "rating": 5,
-      "text": "Anfitriones súper disponibles. Nos organizaron todos los tours perfectamente. Uno se siente realmente bien aquí, calma garantizada.",
+      "text": {
+        "es": "Anfitriones súper disponibles. Nos organizaron todos los tours perfectamente. Uno se siente realmente bien aquí, calma garantizada.",
+        "en": "Super available hosts. They organized all our tours perfectly. You really feel good here, calm guaranteed.",
+        "fr": "Hôtes super disponibles. Ils nous ont organisé tous les tours parfaitement. On se sent vraiment bien ici, calme garanti."
+      },
       "image": "C"
     },
     {
       "id": 5,
       "name": "Guillermo",
-      "country": "Canadá",
+      "country": {
+        "es": "Canadá",
+        "en": "Canada",
+        "fr": "Canada"
+      },
       "rating": 5,
-      "text": "Anfitriones muy acogedores, nos ayudaron con nuestras excursiones. Muy limpio y bien ubicado.",
+      "text": {
+        "es": "Anfitriones muy acogedores, nos ayudaron con nuestras excursiones. Muy limpio y bien ubicado.",
+        "en": "Very welcoming hosts, they helped us with our excursions. Very clean and well located.",
+        "fr": "Hôtes très accueillants, ils nous ont aidés avec nos excursions. Très propre et bien situé."
+      },
       "image": "G"
     },
     {
       "id": 6,
       "name": "Jorge",
-      "country": "Ecuador",
+      "country": {
+        "es": "Ecuador",
+        "en": "Ecuador",
+        "fr": "Équateur"
+      },
       "rating": 5,
-      "text": "Tranquilidad absoluta y simpatía de los propietarios. Conocen perfectamente la región y sus secretos.",
+      "text": {
+        "es": "Tranquilidad absoluta y simpatía de los propietarios. Conocen perfectamente la región y sus secretos.",
+        "en": "Absolute tranquility and friendliness of the owners. They know the region and its secrets perfectly.",
+        "fr": "Tranquillité absolue et sympathie des propriétaires. Ils connaissent parfaitement la région et ses secrets."
+      },
       "image": "J"
     }
   ],
   "faq": [
     {
       "id": 1,
-      "question": "¿Tienen habitaciones con accesibilidad para personas con movilidad reducida?",
-      "answer": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida (PMR), con rampas de acceso, baños adaptados con ducha sin escalón y ubicadas en planta baja."
+      "question": {
+        "es": "¿Tienen habitaciones con accesibilidad para personas con movilidad reducida?",
+        "en": "Do you have accessible rooms for people with reduced mobility?",
+        "fr": "Avez-vous des chambres accessibles pour personnes à mobilité réduite ?"
+      },
+      "answer": {
+        "es": "¡Por supuesto! Contamos con habitaciones especialmente diseñadas para personas con movilidad reducida (PMR), con rampas de acceso, baños adaptados con ducha sin escalón y ubicadas en planta baja.",
+        "en": "Of course! We have rooms specially designed for people with reduced mobility (PMR), with access ramps, adapted bathrooms with step-free shower and located on the ground floor.",
+        "fr": "Bien sûr ! Nous avons des chambres spécialement conçues pour les personnes à mobilité réduite (PMR), avec rampes d'accès, salles de bains adaptées avec douche sans marche et situées au rez-de-chaussée."
+      }
     },
     {
       "id": 2,
-      "question": "¿Puedo cocinar mis propias comidas?",
-      "answer": "Sí, tenemos una cocina compartida completamente equipada y gratuita para todos nuestros huéspedes. Incluye refrigerador, estufa, microondas y todos los utensilios necesarios. El departamento también tiene cocina privada completa."
+      "question": {
+        "es": "¿Puedo cocinar mis propias comidas?",
+        "en": "Can I cook my own meals?",
+        "fr": "Puis-je cuisiner mes propres repas ?"
+      },
+      "answer": {
+        "es": "Sí, tenemos una cocina compartida completamente equipada y gratuita para todos nuestros huéspedes. Incluye refrigerador, estufa, microondas y todos los utensilios necesarios. El departamento también tiene cocina privada completa.",
+        "en": "Yes, we have a fully equipped shared kitchen free for all our guests. It includes refrigerator, stove, microwave and all necessary utensils. The apartment also has a full private kitchen.",
+        "fr": "Oui, nous avons une cuisine partagée entièrement équipée et gratuite pour tous nos clients. Elle comprend réfrigérateur, cuisinière, micro-ondes et tous les ustensiles nécessaires. L'appartement dispose également d'une cuisine privée complète."
+      }
     },
     {
       "id": 3,
-      "question": "¿Tienen estacionamiento gratuito?",
-      "answer": "Sí, contamos con estacionamiento gratuito y seguro dentro de la residencia para todos nuestros huéspedes. No necesitas reservar espacio, siempre hay disponibilidad."
+      "question": {
+        "es": "¿Tienen estacionamiento gratuito?",
+        "en": "Do you have free parking?",
+        "fr": "Avez-vous un parking gratuit ?"
+      },
+      "answer": {
+        "es": "Sí, contamos con estacionamiento gratuito y seguro dentro de la residencia para todos nuestros huéspedes. No necesitas reservar espacio, siempre hay disponibilidad.",
+        "en": "Yes, we have free and secure parking inside the residence for all our guests. You don't need to reserve space, there's always availability.",
+        "fr": "Oui, nous avons un parking gratuit et sécurisé à l'intérieur de la résidence pour tous nos clients. Vous n'avez pas besoin de réserver d'espace, il y a toujours de la disponibilité."
+      }
     },
     {
       "id": 4,
-      "question": "¿Cómo llego desde el terminal de buses de Puerto López?",
-      "answer": "Estamos a 5 minutos del terminal en vehículo. Nuestra ubicación en San Francisco y Rogerio Figueroa es fácil de encontrar. También podemos enviarte la ubicación exacta por WhatsApp o coordinar recogida si llegas de noche."
+      "question": {
+        "es": "¿Cómo llego desde el terminal de buses de Puerto López?",
+        "en": "How do I get here from the Puerto López bus terminal?",
+        "fr": "Comment puis-je arriver depuis la gare routière de Puerto López ?"
+      },
+      "answer": {
+        "es": "Estamos a 5 minutos del terminal en vehículo. Nuestra ubicación en San Francisco y Rogerio Figueroa es fácil de encontrar. También podemos enviarte la ubicación exacta por WhatsApp o coordinar recogida si llegas de noche.",
+        "en": "We are 5 minutes from the terminal by vehicle. Our location at San Francisco and Rogerio Figueroa is easy to find. We can also send you the exact location via WhatsApp or arrange pickup if you arrive at night.",
+        "fr": "Nous sommes à 5 minutes du terminal en véhicule. Notre emplacement à San Francisco et Rogerio Figueroa est facile à trouver. Nous pouvons également vous envoyer l'emplacement exact par WhatsApp ou organiser un ramassage si vous arrivez de nuit."
+      }
     },
     {
       "id": 5,
-      "question": "¿Organizan tours a la Isla de la Plata y observación de ballenas?",
-      "answer": "Sí, somos operadores certificados con Tours Lobo Marino. Organizamos todos los tours: observación de ballenas jorobadas (Jun-Oct), Isla de la Plata, buceo, pesca deportiva, Playa Los Frailes y más. Descuentos disponibles para grupos."
+      "question": {
+        "es": "¿Organizan tours a la Isla de la Plata y observación de ballenas?",
+        "en": "Do you organize tours to Isla de la Plata and whale watching?",
+        "fr": "Organisez-vous des tours à l'Isla de la Plata et observation des baleines ?"
+      },
+      "answer": {
+        "es": "Sí, somos operadores certificados con Tours Lobo Marino. Organizamos todos los tours: observación de ballenas jorobadas (Jun-Oct), Isla de la Plata, buceo, pesca deportiva, Playa Los Frailes y más. Descuentos disponibles para grupos.",
+        "en": "Yes, we are certified operators with Tours Lobo Marino. We organize all tours: humpback whale watching (Jun-Oct), Isla de la Plata, diving, sport fishing, Los Frailes Beach and more. Group discounts available.",
+        "fr": "Oui, nous sommes opérateurs certifiés avec Tours Lobo Marino. Nous organisons tous les tours : observation des baleines à bosse (Jui-Oct), Isla de la Plata, plongée, pêche sportive, Plage Los Frailes et plus. Réductions disponibles pour groupes."
+      }
     },
     {
       "id": 6,
-      "question": "¿Cuál es la mejor temporada para ver ballenas jorobadas en Puerto López?",
-      "answer": "La temporada de ballenas jorobadas es de junio a octubre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas. Las ballenas vienen desde la Antártica para reproducirse en las aguas cálidas del Parque Nacional Machalilla. ¡Recomendamos reservar con anticipación!"
+      "question": {
+        "es": "¿Cuál es la mejor temporada para ver ballenas jorobadas en Puerto López?",
+        "en": "What is the best season to see humpback whales in Puerto López?",
+        "fr": "Quelle est la meilleure saison pour voir les baleines à bosse à Puerto López ?"
+      },
+      "answer": {
+        "es": "La temporada de ballenas jorobadas es de junio a octubre. Es un espectáculo natural increíble que no te puedes perder si visitas en esas fechas. Las ballenas vienen desde la Antártica para reproducirse en las aguas cálidas del Parque Nacional Machalilla. ¡Recomendamos reservar con anticipación!",
+        "en": "The humpback whale season is from June to October. It's an incredible natural spectacle you can't miss if you visit during these dates. The whales come from Antarctica to breed in the warm waters of Machalilla National Park. We recommend booking in advance!",
+        "fr": "La saison des baleines à bosse est de juin à octobre. C'est un spectacle naturel incroyable à ne pas manquer si vous visitez à ces dates. Les baleines viennent de l'Antarctique pour se reproduire dans les eaux chaudes du Parc National Machalilla. Nous recommandons de réserver à l'avance !"
+      }
     },
     {
       "id": 7,
-      "question": "¿Cuáles son los horarios de check-in y check-out?",
-      "answer": "Check-in: 14:00 - 22:00 | Check-out: 05:00 - 12:00. Por seguridad, las puertas se cierran de 22:30 a 05:00. Si llegas fuera de horario, contáctanos por WhatsApp para coordinar."
+      "question": {
+        "es": "¿Cuáles son los horarios de check-in y check-out?",
+        "en": "What are the check-in and check-out times?",
+        "fr": "Quels sont les horaires d'arrivée et de départ ?"
+      },
+      "answer": {
+        "es": "Check-in: 14:00 - 22:00 | Check-out: 05:00 - 12:00. Por seguridad, las puertas se cierran de 22:30 a 05:00. Si llegas fuera de horario, contáctanos por WhatsApp para coordinar.",
+        "en": "Check-in: 14:00 - 22:00 | Check-out: 05:00 - 12:00. For security, doors close from 22:30 to 05:00. If you arrive outside these hours, contact us via WhatsApp to coordinate.",
+        "fr": "Arrivée : 14h00 - 22h00 | Départ : 05h00 - 12h00. Pour des raisons de sécurité, les portes se ferment de 22h30 à 05h00. Si vous arrivez en dehors de ces horaires, contactez-nous par WhatsApp pour coordonner."
+      }
     },
     {
       "id": 8,
-      "question": "¿Hay descuentos para grupos en los tours?",
-      "answer": "Sí, ofrecemos descuentos especiales para grupos en la mayoría de nuestros tours al Parque Nacional Machalilla. Contáctanos por WhatsApp para obtener una cotización personalizada según el tamaño de tu grupo."
+      "question": {
+        "es": "¿Hay descuentos para grupos en los tours?",
+        "en": "Are there group discounts on tours?",
+        "fr": "Y a-t-il des réductions pour les groupes sur les tours ?"
+      },
+      "answer": {
+        "es": "Sí, ofrecemos descuentos especiales para grupos en la mayoría de nuestros tours al Parque Nacional Machalilla. Contáctanos por WhatsApp para obtener una cotización personalizada según el tamaño de tu grupo.",
+        "en": "Yes, we offer special discounts for groups on most of our tours to Machalilla National Park. Contact us via WhatsApp for a personalized quote based on your group size.",
+        "fr": "Oui, nous offrons des réductions spéciales pour les groupes sur la plupart de nos tours au Parc National Machalilla. Contactez-nous par WhatsApp pour obtenir un devis personnalisé selon la taille de votre groupe."
+      }
     }
   ],
   "amenities": {
-    "restaurant": "Restaurant Alcazaba en el lugar - cocina local auténtica",
-    "commonAreas": [
-      "Cocina compartida totalmente equipada (Microondas, frigo, estufa)",
-      "Jardín interior tropical",
-      "Terraza panorámica para el atardecer",
-      "Hamacas en el techo con vista al mar"
-    ],
-    "services": [
-      "Wi-Fi gratuito de alta velocidad",
-      "Estacionamiento gratuito",
-      "Recepción 24h/24",
-      "Operador de tours certificado (Lobo Marino)",
-      "Información turística personalizada"
-    ]
+    "restaurant": {
+      "es": "Restaurant Alcazaba en el lugar - cocina local auténtica",
+      "en": "On-site Restaurant Alcazaba - authentic local cuisine",
+      "fr": "Restaurant Alcazaba sur place - cuisine locale authentique"
+    },
+    "commonAreas": {
+      "es": [
+        "Cocina compartida totalmente equipada (Microondas, frigo, estufa)",
+        "Jardín interior tropical",
+        "Terraza panorámica para el atardecer",
+        "Hamacas en el techo con vista al mar"
+      ],
+      "en": [
+        "Fully equipped shared kitchen (Microwave, fridge, stove)",
+        "Tropical indoor garden",
+        "Panoramic terrace for sunset",
+        "Rooftop hammocks with ocean view"
+      ],
+      "fr": [
+        "Cuisine partagée entièrement équipée (Micro-ondes, frigo, cuisinière)",
+        "Jardin intérieur tropical",
+        "Terrasse panoramique pour le coucher de soleil",
+        "Hamacs sur le toit avec vue sur la mer"
+      ]
+    },
+    "services": {
+      "es": [
+        "Wi-Fi gratuito de alta velocidad",
+        "Estacionamiento gratuito",
+        "Recepción 24h/24",
+        "Operador de tours certificado (Lobo Marino)",
+        "Información turística personalizada"
+      ],
+      "en": [
+        "Free high-speed Wi-Fi",
+        "Free parking",
+        "24h reception",
+        "Certified tour operator (Lobo Marino)",
+        "Personalized tourist information"
+      ],
+      "fr": [
+        "Wi-Fi gratuit haut débit",
+        "Parking gratuit",
+        "Réception 24h/24",
+        "Opérateur de tours certifié (Lobo Marino)",
+        "Information touristique personnalisée"
+      ]
+    }
   },
   "policies": {
-    "pets": "Se aceptan mascotas bajo solicitud",
-    "smoking": "Prohibido fumar en las habitaciones",
-    "parties": "Fiestas no permitidas - zona tranquila"
+    "pets": {
+      "es": "Se aceptan mascotas bajo solicitud",
+      "en": "Pets accepted upon request",
+      "fr": "Animaux acceptés sur demande"
+    },
+    "smoking": {
+      "es": "Prohibido fumar en las habitaciones",
+      "en": "No smoking in rooms",
+      "fr": "Interdit de fumer dans les chambres"
+    },
+    "parties": {
+      "es": "Fiestas no permitidas - zona tranquila",
+      "en": "No parties allowed - quiet area",
+      "fr": "Fêtes non autorisées - zone calme"
+    }
   }
 }

@@ -1,7 +1,10 @@
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const handleWhatsApp = (phoneNumber: string) => {
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodeURIComponent(hotelData.contact.whatsappMessage)}`,
@@ -30,21 +33,21 @@ export default function Footer() {
               Hostal Alcazaba
               <span className="block text-[#C28E5E]">& Lobo Marino</span>
             </h3>
-                <img 
-                  src="/images/LoDi-logos.png" 
-                  alt="Hostal Alcazaba & Lobo Marino" 
-                  className="h-16 sm:h-20 mb-4"
-                />
+            <img 
+              src="/images/LoDi-logos.png" 
+              alt="Hostal Alcazaba & Lobo Marino" 
+              className="h-16 sm:h-20 mb-4"
+            />
             <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
-              {hotelData.branding.tagline}
+              {t('branding.tagline')}
             </p>
             <p className="text-lg sm:text-xl italic text-[#C28E5E] font-semibold mb-8">
-              {hotelData.branding.slogan}
+              {t('branding.slogan')}
             </p>
 
-            {/* Social Links - PROMINENTLY DISPLAYED */}
+            {/* Social Links */}
             <div>
-              <h4 className="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wide">Síguenos</h4>
+              <h4 className="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wide">{t('footer.followUs')}</h4>
               <div className="flex items-center space-x-4">
                 <a 
                   href={hotelData.contact.facebook}
@@ -74,7 +77,7 @@ export default function Footer() {
           <div className="sm:col-span-1">
             <h4 className="text-base sm:text-lg font-bold mb-4 flex items-center space-x-2">
               <span className="w-1 h-6 bg-[#C28E5E] rounded-full"></span>
-              <span>Navegación</span>
+              <span>{t('footer.navigation')}</span>
             </h4>
             <ul className="space-y-3">
               <li>
@@ -82,7 +85,7 @@ export default function Footer() {
                   href="#inicio"
                   className="text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 font-['Lato'] text-sm sm:text-base"
                 >
-                  Inicio
+                  {t('nav.rooms')}
                 </a>
               </li>
               <li>
@@ -90,7 +93,7 @@ export default function Footer() {
                   href="#habitaciones"
                   className="text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 font-['Lato'] text-sm sm:text-base"
                 >
-                  Habitaciones
+                  {t('nav.rooms')}
                 </a>
               </li>
               <li>
@@ -98,7 +101,7 @@ export default function Footer() {
                   href="#tours"
                   className="text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 font-['Lato'] text-sm sm:text-base"
                 >
-                  Tours
+                  {t('nav.tours')}
                 </a>
               </li>
               <li>
@@ -106,7 +109,7 @@ export default function Footer() {
                   href="#contacto"
                   className="text-gray-300 hover:text-[#C28E5E] transition-colors duration-200 font-['Lato'] text-sm sm:text-base"
                 >
-                  Contacto
+                  {t('nav.contact')}
                 </a>
               </li>
             </ul>
@@ -116,7 +119,7 @@ export default function Footer() {
           <div className="sm:col-span-1">
             <h4 className="text-base sm:text-lg font-bold mb-4 flex items-center space-x-2">
               <span className="w-1 h-6 bg-[#C28E5E] rounded-full"></span>
-              <span>Contacto</span>
+              <span>{t('footer.contact')}</span>
             </h4>
             <ul className="space-y-4">
               <li>
@@ -174,13 +177,13 @@ export default function Footer() {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
             <p className="text-gray-400 text-center md:text-left">
-              © {new Date().getFullYear()} Hostal Alcazaba & Lobo Marino. Todos los derechos reservados.
+              © {new Date().getFullYear()} Hostal Alcazaba & Lobo Marino. {t('footer.rights')}
             </p>
             
-            {/* OPTIMIZED DEVELOPER CREDIT - 100% SEO FRIENDLY */}
+            {/* Developer Credit */}
             <div className="flex items-center space-x-2 text-gray-400">
-              <span className="hidden sm:inline">Desarrollo web por</span>
-              <span className="sm:hidden">Diseño por</span>
+              <span className="hidden sm:inline">{t('footer.devBy')}</span>
+              <span className="sm:hidden">{t('footer.devByMobile')}</span>
               <a 
                 href="https://neuraweb.tech" 
                 target="_blank" 
@@ -201,20 +204,19 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* NATURAL SEO FOOTER - Visible & Adds Real Value */}
+          {/* SEO Footer */}
           <div className="mt-6 pt-6 border-t border-white/10 text-center">
             <p className="text-xs text-gray-400 leading-relaxed max-w-4xl mx-auto">
-              Sitio web diseñado y optimizado para convertir visitantes en huéspedes. 
-              ¿Necesitas un sitio web profesional para tu hotel o negocio turístico?{' '}
+              {t('footer.devText')}{' '}
               <a 
                 href="https://neuraweb.tech" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#C28E5E] hover:text-[#C28E5E]/80 transition-colors duration-200 font-medium underline"
               >
-                Conoce NeuraWeb
+                {t('footer.devLink')}
               </a>
-              {' '}— Especialistas en desarrollo web para el sector turístico en Ecuador.
+              {' '}{t('footer.devTextEnd')}
             </p>
           </div>
         </div>

@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import hotelData from '../data/hotelData.json';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Features() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,15 +32,15 @@ export default function Features() {
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
           <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A2F4B] mb-3 sm:mb-4">
-            ¿Por Qué Elegimos?
+            {t('features.title')}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full mx-auto mb-6"></div>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
-            Comodidades pensadas para hacer de tu estadía una experiencia inolvidable
+            {t('features.subtitle')}
           </p>
         </div>
 
-        {/* Grid Layout - 3 Cartes Centrées */}
+        {/* Grid Layout */}
         <div className="max-w-5xl mx-auto mb-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {hotelData.usp.map((feature, index) => {
@@ -53,31 +55,34 @@ export default function Features() {
                   }`}
                   style={{ transitionDelay: `${delay}ms`, animationDelay: `${delay}ms` }}
                 >
-                  {/* Image Container */}
-                  <div className="relative overflow-hidden h-48 sm:h-56 lg:h-64">
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 via-[#1A2F4B]/40 to-transparent"></div>
-                    
-                    {/* Title on Image */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
-                        {feature.title}
-                      </h3>
+                  {/* Inner container */}
+                  <div className="bg-white rounded-[20px] sm:rounded-[26px] overflow-hidden h-full flex flex-col">
+                    {/* Image Container */}
+                    <div className="relative overflow-hidden h-48 sm:h-56 lg:h-64">
+                      <img
+                        src={feature.image}
+                        alt={feature.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/90 via-[#1A2F4B]/40 to-transparent"></div>
+                      
+                      {/* Title on Image */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+                          {feature.title}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="p-5 sm:p-6 lg:p-8 flex flex-col">
-                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed flex-grow">
-                      {feature.description}
-                    </p>
+                    {/* Content */}
+                    <div className="p-5 sm:p-6 lg:p-8 flex flex-col">
+                      <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed flex-grow">
+                        {feature.description}
+                      </p>
 
-                    <div className="pt-4 mt-auto">
-                      <div className="w-12 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-20 transition-all duration-300"></div>
+                      <div className="pt-4 mt-auto">
+                        <div className="w-12 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-20 transition-all duration-300"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -90,10 +95,10 @@ export default function Features() {
         <div className={`bg-gradient-to-r from-[#1A2F4B] to-[#C28E5E] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
             <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl md:text-4xl font-bold">
-              ¿Listo para tu próxima aventura?
+              {t('features.cta.title')}
             </h3>
             <p className="text-base sm:text-lg opacity-95 px-2">
-              Reserva ahora y disfruta de la mejor hospitalidad en Puerto López
+              {t('features.cta.subtitle')}
             </p>
             <button
               onClick={() => {
@@ -104,7 +109,7 @@ export default function Features() {
               }}
               className="bg-white text-[#1A2F4B] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-['Lato'] font-bold text-base sm:text-lg hover:bg-[#F9F7F2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-block mt-2"
             >
-              RESERVAR AHORA
+              {t('features.cta.button')}
             </button>
           </div>
         </div>
