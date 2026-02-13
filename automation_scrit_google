@@ -1,0 +1,585 @@
+// ============================================
+// CONFIGURATION
+// ============================================
+
+const CONFIG = {
+  REVIEW_LINK: "https://search.google.com/local/writereview?placeid=ChIJryVBK4sgX5ER7FgBTTJOcnk",
+  
+  // 📅 POUR PRODUCTION: 24
+  DELAY_HOURS: 24, // ← Changer ici pour tester
+  
+  SHEET_NAME: "Respuestas de formulario 1",
+  HOTEL_EMAIL: "tourslobomarino@gmail.com"
+};
+
+// ============================================
+// TEMPLATES HTML (3 LANGUES)
+// ============================================
+
+const EMAIL_TEMPLATES = {
+  '🇪🇸 Español': {
+    subject: '¡Gracias por tu estadía en La Casa de Teresita! 🏡',
+    getHtml: (name, link) => `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias por tu visita</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Container Principal -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+          
+          <!-- Header con degradado -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
+                La Casa de Teresita
+              </h1>
+              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
+                Hotel Boutique & Museo
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Contenido Principal -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+                ¡Hola ${name}! 👋
+              </h2>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                Esperamos que hayas disfrutado tu tiempo en nuestro museo-hotel histórico.
+              </p>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
+                Tu opinión es muy valiosa para nosotros y ayuda a otros viajeros a descubrir este lugar especial que construimos con tanto cariño.
+              </p>
+              
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="padding: 20px 0;">
+                    <a href="${link}" 
+                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                      ⭐ Dejar Mi Reseña en Google
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
+                Solo toma 2 minutos y nos ayuda mucho a seguir mejorando ❤️
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Decorative Separator -->
+          <tr>
+            <td style="padding: 0 30px;">
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
+              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Con cariño, el equipo de La Casa de Teresita
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
+                📍 Av. Arce 2995, San Jorge, La Paz, Bolivia
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0;">
+                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `
+  },
+  
+  '🇬🇧 English': {
+    subject: 'Thank you for staying at La Casa de Teresita! 🏡',
+    getHtml: (name, link) => `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you for your visit</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+          
+          <!-- Header with gradient -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
+                La Casa de Teresita
+              </h1>
+              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
+                Boutique Hotel & Museum
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Hi ${name}! 👋
+              </h2>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                We hope you enjoyed your time at our historic museum-hotel.
+              </p>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
+                Your opinion is very valuable to us and helps other travelers discover this special place we've built with so much care.
+              </p>
+              
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="padding: 20px 0;">
+                    <a href="${link}" 
+                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                      ⭐ Leave My Google Review
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
+                It only takes 2 minutes and helps us a lot to keep improving ❤️
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Decorative Separator -->
+          <tr>
+            <td style="padding: 0 30px;">
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
+              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Warmly, The La Casa de Teresita Team
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
+                📍 Av. Arce 2995, San Jorge, La Paz, Bolivia
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0;">
+                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `
+  },
+  
+  '🇫🇷 Français': {
+    subject: 'Merci pour votre séjour à La Casa de Teresita ! 🏡',
+    getHtml: (name, link) => `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci pour votre visite</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Conteneur Principal -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+          
+          <!-- En-tête avec dégradé -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
+                La Casa de Teresita
+              </h1>
+              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
+                Hôtel Boutique & Musée
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Contenu Principal -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Bonjour ${name} ! 👋
+              </h2>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                Nous espérons que vous avez apprécié votre séjour dans notre musée-hôtel historique.
+              </p>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
+                Votre avis est très précieux pour nous et aide d'autres voyageurs à découvrir ce lieu unique que nous avons construit avec tant de soin.
+              </p>
+              
+              <!-- Bouton CTA -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="padding: 20px 0;">
+                    <a href="${link}" 
+                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                      ⭐ Laisser Mon Avis sur Google
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
+                Cela ne prend que 2 minutes et nous aide beaucoup à continuer de nous améliorer ❤️
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Séparateur Décoratif -->
+          <tr>
+            <td style="padding: 0 30px;">
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+            </td>
+          </tr>
+          
+          <!-- Pied de page -->
+          <tr>
+            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
+              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Chaleureusement, L'équipe de La Casa de Teresita
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
+                📍 Av. Arce 2995, San Jorge, La Paz, Bolivie
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0;">
+                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `
+  },
+  
+  '🇩🇪 Deutsch': {
+    subject: 'Vielen Dank für Ihren Aufenthalt in La Casa de Teresita! 🏡',
+    getHtml: (name, link) => `
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vielen Dank für Ihren Besuch</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Hauptcontainer -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+          
+          <!-- Header mit Farbverlauf -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
+                La Casa de Teresita
+              </h1>
+              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
+                Boutique-Hotel & Museum
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Hauptinhalt -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Hallo ${name}! 👋
+              </h2>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                Wir hoffen, dass Sie Ihre Zeit in unserem historischen Museums-Hotel genossen haben.
+              </p>
+              
+              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
+                Ihre Meinung ist uns sehr wichtig und hilft anderen Reisenden, diesen besonderen Ort zu entdecken, den wir mit so viel Sorgfalt aufgebaut haben.
+              </p>
+              
+              <!-- CTA-Button -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="padding: 20px 0;">
+                    <a href="${link}" 
+                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                      ⭐ Meine Google-Bewertung Abgeben
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
+                Es dauert nur 2 Minuten und hilft uns sehr, uns weiter zu verbessern ❤️
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Dekorative Trennlinie -->
+          <tr>
+            <td style="padding: 0 30px;">
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+            </td>
+          </tr>
+          
+          <!-- Fußzeile -->
+          <tr>
+            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
+              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Herzliche Grüße, Das Team von La Casa de Teresita
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
+                📍 Av. Arce 2995, San Jorge, La Paz, Bolivien
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0;">
+                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `
+  }
+};
+
+// ============================================
+// FONCTION PRINCIPALE
+// ============================================
+
+function sendScheduledEmails() {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(CONFIG.SHEET_NAME);
+    
+    if (!sheet) {
+      Logger.log('❌ Erreur : Feuille non trouvée. Vérifie le nom dans CONFIG.SHEET_NAME');
+      return;
+    }
+    
+    const data = sheet.getDataRange().getValues();
+    const headers = data[0];
+    
+    // Trouver les indices des colonnes
+    const nameCol = findColumnIndex(headers, ['Nombre completo', 'Full name', 'Nom']);
+    const emailCol = findColumnIndex(headers, ['Correo electrónico', 'Email', 'Adresse']);
+    const checkoutCol = findColumnIndex(headers, ['Fecha de salida', 'Check-out', 'Départ']);
+    const langCol = findColumnIndex(headers, ['Idioma', 'Language', 'Langue']);
+    const sentCol = findColumnIndex(headers, ['Email envoyé', 'Email sent']);
+    const dateSentCol = sentCol + 1;
+    
+    if (nameCol === -1 || emailCol === -1 || checkoutCol === -1) {
+      Logger.log('❌ Erreur : Colonnes manquantes dans le formulaire');
+      return;
+    }
+    
+    const now = new Date();
+    let emailsSent = 0;
+    
+    // Parcourir chaque ligne (sauf l'en-tête)
+    for (let i = 1; i < data.length; i++) {
+      const row = data[i];
+      const name = row[nameCol] || 'Estimado cliente';
+      const email = row[emailCol];
+      const checkoutDate = new Date(row[checkoutCol]);
+      const language = row[langCol] || '🇪🇸 Español';
+      const emailSent = row[sentCol];
+      
+      // Vérifier si l'email est valide
+      if (!email || !validateEmail(email)) {
+        continue;
+      }
+      
+      // Calculer les heures depuis le départ
+      const hoursSinceCheckout = (now - checkoutDate) / (1000 * 60 * 60);
+      
+      // Vérifier si la date de départ est dans le futur
+      if (checkoutDate > now) {
+        continue;
+      }
+      
+      // Envoyer si : délai respecté ET email pas encore envoyé
+      if (hoursSinceCheckout >= CONFIG.DELAY_HOURS && !emailSent) {
+        try {
+          const template = EMAIL_TEMPLATES[language] || EMAIL_TEMPLATES['🇪🇸 Español'];
+          
+          // Générer le HTML avec les données
+          const htmlBody = template.getHtml(name, CONFIG.REVIEW_LINK);
+          
+          // Envoyer l'email HTML
+          MailApp.sendEmail({
+            to: email,
+            subject: template.subject,
+            htmlBody: htmlBody
+          });
+          
+          // Marquer comme envoyé
+          sheet.getRange(i + 1, sentCol + 1).setValue('✅ Oui');
+          sheet.getRange(i + 1, dateSentCol + 1).setValue(now);
+          
+          emailsSent++;
+          Logger.log(`✅ Email HTML envoyé à ${email} (${name})`);
+          
+          // Pause de 1 seconde entre chaque email
+          Utilities.sleep(1000);
+          
+        } catch (error) {
+          Logger.log(`❌ Erreur envoi à ${email}: ${error}`);
+          sheet.getRange(i + 1, sentCol + 1).setValue('❌ Erreur');
+          sheet.getRange(i + 1, dateSentCol + 1).setValue(error.toString());
+        }
+      }
+    }
+    
+    if (emailsSent > 0) {
+      Logger.log(`\n🎉 ${emailsSent} email(s) HTML envoyé(s) avec succès!`);
+    } else {
+      Logger.log('ℹ️  Aucun email à envoyer pour le moment.');
+    }
+    
+  } catch (error) {
+    Logger.log(`❌ Erreur globale: ${error}`);
+  }
+}
+
+// ============================================
+// FONCTIONS UTILITAIRES
+// ============================================
+
+function findColumnIndex(headers, possibleNames) {
+  for (let name of possibleNames) {
+    const index = headers.findIndex(h => h.toString().toLowerCase().includes(name.toLowerCase()));
+    if (index !== -1) return index;
+  }
+  return -1;
+}
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+// ============================================
+// FONCTION DE CONFIGURATION
+// ============================================
+
+function setupAutomation() {
+  // Supprimer les anciens triggers
+  const triggers = ScriptApp.getProjectTriggers();
+  triggers.forEach(trigger => ScriptApp.deleteTrigger(trigger));
+  
+  // Créer un nouveau trigger : toutes les heures
+  ScriptApp.newTrigger('sendScheduledEmails')
+    .timeBased()
+    .everyHours(1)
+    .create();
+  
+  Logger.log('✅ Automation configurée!');
+  Logger.log('📧 Le script vérifiera toutes les heures s\'il y a des emails à envoyer.');
+  Logger.log(`⏰ Délai configuré: ${CONFIG.DELAY_HOURS}h après le check-out`);
+  
+  // Envoyer email de confirmation
+  try {
+    MailApp.sendEmail({
+      to: CONFIG.HOTEL_EMAIL,
+      subject: '✅ Système Automatique d\'Avis Activé - La Casa de Teresita',
+      htmlBody: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #2D5A4A;">Système Activé ✅</h2>
+          <p>Le système automatique d'envoi d'emails pour les avis Google a été configuré avec succès!</p>
+          
+          <div style="background-color: #F8F5F2; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #A85C32; margin-top: 0;">Configuration actuelle:</h3>
+            <ul style="line-height: 1.8;">
+              <li>⏰ Fréquence de vérification: <strong>Toutes les heures</strong></li>
+              <li>📅 Délai d'envoi: <strong>${CONFIG.DELAY_HOURS}h après le départ</strong></li>
+              <li>🌍 Langues supportées: <strong>Español, English, Français</strong></li>
+              <li>📧 Format: <strong>HTML professionnel</strong></li>
+            </ul>
+          </div>
+          
+          <p>Le système est maintenant actif et fonctionnera automatiquement 24/7.</p>
+          
+          <p style="color: #666; font-size: 14px; margin-top: 30px;">
+            La Casa de Teresita - Système Automatisé
+          </p>
+        </div>
+      `
+    });
+  } catch (e) {
+    Logger.log('⚠️  Impossible d\'envoyer l\'email de confirmation: ' + e);
+  }
+}
+
+// ============================================
+// FONCTION DE TEST
+// ============================================
+
+function testEmail() {
+  const testEmail = "san3neb@gmail.com"; 
+  
+  Logger.log('🧪 Test d\'envoi d\'email HTML...');
+  
+  try {
+    const template = EMAIL_TEMPLATES['🇪🇸 Español'];
+    const htmlBody = template.getHtml('Cliente Test', CONFIG.REVIEW_LINK);
+    
+    MailApp.sendEmail({
+      to: testEmail,
+      subject: '🧪 TEST - ' + template.subject,
+      htmlBody: htmlBody
+    });
+    
+    Logger.log('✅ Email HTML de test envoyé à ' + testEmail);
+    Logger.log('📧 Vérifie ta boîte de réception !');
+    
+  } catch (error) {
+    Logger.log('❌ Erreur lors du test : ' + error);
+  }
+}

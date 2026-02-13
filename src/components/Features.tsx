@@ -151,7 +151,7 @@ export default function Features() {
 
           {/* Carousel Container */}
           <div 
-            className="overflow-hidden"
+            className="overflow-hidden pb-8 sm:pb-12"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -169,13 +169,13 @@ export default function Features() {
                 return (
                   <div
                     key={`${feature.id}-${index}`}
-                    className={`flex-shrink-0 px-3 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                    className={`flex-shrink-0 px-3 pb-4 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                     style={{ width: `${100 / itemsToShow}%` }}
                   >
-                    <div className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full">
+                    <div className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer flex flex-col">
                       
-                      {/* Image Container - Plus grande */}
-                      <div className="relative overflow-hidden h-72 sm:h-80 md:h-96">
+                      {/* Image Container - Hauteur réduite en mobile */}
+                      <div className="relative overflow-hidden h-56 sm:h-72 md:h-80 lg:h-96 flex-shrink-0">
                         <img
                           src={feature.image}
                           alt={featureTitle}
@@ -184,20 +184,20 @@ export default function Features() {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F4B]/80 via-[#1A2F4B]/20 to-transparent"></div>
                         
                         {/* Title on Image */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                          <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-lg">
                             {featureTitle}
                           </h3>
                         </div>
                       </div>
 
-                      {/* Content */}
-                      <div className="p-6 sm:p-8">
-                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                      {/* Content - Padding réduit en mobile */}
+                      <div className="p-4 sm:p-6 md:p-8 flex-grow flex flex-col">
+                        <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed flex-grow">
                           {featureDescription}
                         </p>
 
-                        <div className="pt-6 mt-6 border-t border-gray-200">
+                        <div className="pt-4 mt-4 sm:pt-6 sm:mt-6 border-t border-gray-200">
                           <div className="w-16 h-1 bg-gradient-to-r from-[#C28E5E] to-[#1A2F4B] rounded-full group-hover:w-24 transition-all duration-300"></div>
                         </div>
                       </div>
