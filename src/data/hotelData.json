@@ -637,9 +637,9 @@
     {
       "id": "buceo-isla-plata",
       "name": {
-        "es": "Buceo Isla de la Plata + Ballenas (Junio-Octubre)",
-        "en": "Diving Isla de la Plata + Whales (June-October)",
-        "fr": "Plongée Isla de la Plata + Baleines (Juin-Octobre)"
+        "es": "Tour de Buceo Isla de la Plata",
+        "en": "Diving Tour Isla de la Plata",
+        "fr": "Tour de Plongée Isla de la Plata"
       },
       "season": {
         "es": "Todo el año",
@@ -647,124 +647,102 @@
         "fr": "Toute l'année"
       },
       "subtitle": {
-        "es": "Buceo profesional para principiantes y certificados",
-        "en": "Professional diving for beginners and certified divers",
-        "fr": "Plongée professionnelle pour débutants et confirmés"
+        "es": "De nivel principiante a confirmado",
+        "en": "From beginner to advanced level",
+        "fr": "De niveau débutant à confirmé"
       },
       "description": {
-        "es": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, apto tanto para principiantes como para buceadores certificados. Explora el fondo marino del Parque Nacional Machalilla. Durante la temporada de ballenas (junio a octubre), podrás avistar ballenas jorobadas y rayas mantas gigantes (Mobula birostris).",
-        "en": "Professional diving experience on the reefs of Isla de la Plata, suitable for both beginners and certified divers. Explore the seabed of Machalilla National Park. During whale season (June to October), you can spot humpback whales and giant manta rays (Mobula birostris).",
-        "fr": "Expérience de plongée professionnelle sur les récifs de l'Isla de la Plata, adaptée aux débutants comme aux plongeurs confirmés. Explorez les fonds marins du Parc National Machalilla. Pendant la saison des baleines (juin à octobre), vous pourrez apercevoir des baleines à bosse et des raies mantas géantes (Mobula birostris)."
+        "es": "Experiencia de buceo profesional en los arrecifes de la Isla de la Plata, apto para todos los niveles. Explora el fondo marino del Parque Nacional Machalilla con 2 inmersiones profundas. En temporada alta (junio a octubre), podrás avistar rayas mantas gigantes (Mobula birostris), ballenas jorobadas durante el trayecto y una rica fauna marina.",
+        "en": "Professional diving experience on the reefs of Isla de la Plata, suitable for all levels. Explore the seabed of Machalilla National Park with 2 deep dives. During high season (June to October), you can spot giant manta rays (Mobula birostris), humpback whales during the journey and rich marine wildlife.",
+        "fr": "Expérience de plongée professionnelle sur les récifs de l'Isla de la Plata, adaptée à tous les niveaux. Explorez les fonds marins du Parc National Machalilla avec 2 plongées profondes. En haute saison (juin à octobre), vous pourrez apercevoir des raies mantas géantes (Mobula birostris), des baleines à bosse durant le trajet et une riche faune marine."
       },
       "duration": {
-        "es": "Día completo (07:45 - 16:00)",
-        "en": "Full day (07:45 - 16:00)",
-        "fr": "Journée complète (07h45 - 16h00)"
+        "es": "07:45 - 16:00",
+        "en": "07:45 - 16:00",
+        "fr": "07h45 - 16h00"
       },
       "included": {
         "es": [
-          "Equipo completo de buceo profesional",
-          "Guías de plongée bilingües (Anglais-Espagnol)",
+          "Guías de plongée bilingües (Inglés-Español)",
           "2 inmersiones profundas",
+          "Equipo completo de buceo profesional",
           "Embarcación con sistema de seguridad",
           "Personal formado en primeros auxilios",
           "Kit de primeros auxilios y oxígeno de emergencia",
           "Lunch y snacks (bebidas frías y calientes)",
-          "Seguro de buceo",
-          "Avistamiento de ballenas jorobadas (Jun-Oct)"
+          "Seguro de buceo"
         ],
         "en": [
-          "Complete professional diving equipment",
           "Bilingual diving guides (English-Spanish)",
           "2 deep dives",
+          "Complete professional diving equipment",
           "Boat with safety system",
           "First aid trained personnel",
           "First aid kit and emergency oxygen",
           "Lunch and snacks (cold and hot drinks)",
-          "Diving insurance",
-          "Humpback whale watching (Jun-Oct)"
+          "Diving insurance"
         ],
         "fr": [
-          "Équipement de plongée professionnel complet",
           "Guides de plongée bilingues (Anglais-Espagnol)",
           "2 plongées profondes",
+          "Équipement de plongée professionnel complet",
           "Embarcation avec système de sécurité",
           "Personnel formé aux premiers secours",
           "Kit de premiers soins et oxygène d'urgence",
           "Déjeuner et snacks (boissons froides et chaudes)",
-          "Assurance plongée",
-          "Observation des baleines à bosse (Jui-Oct)"
+          "Assurance plongée"
         ]
       },
-      "itinerary": {
+      "highlights": {
         "es": [
-          "07:45 - Reunión en la oficina para finalizar pagos, firmar documentos y probar equipo si es necesario",
-          "08:00 - Salida de la oficina hacia el muelle turístico de Puerto López",
-          "10:00 - Llegada a Isla de la Plata (durante temporada de ballenas Jun-Oct: parada para observarlas)",
-          "10:30 - Briefing, equipamiento y primera inmersión",
-          "11:30 - Snacks, bebidas frías y calientes",
-          "12:30 - Segunda inmersión",
-          "13:30 - Almuerzo (Lunch)",
-          "14:30 - Salida hacia Puerto López",
-          "16:00 - Llegada a Puerto López"
+          "2 inmersiones profundas en arrecifes de coral",
+          "Temporada alta (Jun-Oct): Rayas mantas gigantes (Mobula birostris)",
+          "Avistamiento de ballenas jorobadas durante el trayecto (Jun-Oct)",
+          "Rica fauna marina: peces tropicales, tortugas, estrellas de mar",
+          "Apto para todos los niveles: de principiante a confirmado",
+          "Entrenamiento básico incluido para principiantes"
         ],
         "en": [
-          "07:45 - Meeting at office to finalize payments, sign documents and try equipment if necessary",
-          "08:00 - Departure from office to Puerto López tourist pier",
-          "10:00 - Arrival at Isla de la Plata (during whale season Jun-Oct: stop to observe them)",
-          "10:30 - Briefing, equipment and first dive",
-          "11:30 - Snacks, cold and hot drinks",
-          "12:30 - Second dive",
-          "13:30 - Lunch",
-          "14:30 - Departure to Puerto López",
-          "16:00 - Arrival at Puerto López"
+          "2 deep dives on coral reefs",
+          "High season (Jun-Oct): Giant manta rays (Mobula birostris)",
+          "Humpback whale watching during the journey (Jun-Oct)",
+          "Rich marine wildlife: tropical fish, turtles, starfish",
+          "Suitable for all levels: from beginner to advanced",
+          "Basic training included for beginners"
         ],
         "fr": [
-          "07h45 - Réunion au bureau pour finaliser les paiements, signer les documents et essayer l'équipement si nécessaire",
-          "08h00 - Départ du bureau vers le quai touristique de Puerto López",
-          "10h00 - Arrivée à Isla de la Plata (pendant la saison des baleines Jui-Oct : arrêt pour les observer)",
-          "10h30 - Briefing, équipement et première plongée",
-          "11h30 - Snacks, boissons froides et chaudes",
-          "12h30 - Deuxième plongée",
-          "13h30 - Déjeuner (Lunch)",
-          "14h30 - Départ vers Puerto López",
-          "16h00 - Arrivée à Puerto López"
+          "2 plongées profondes sur récifs coralliens",
+          "Haute saison (Jui-Oct) : Raies mantas géantes (Mobula birostris)",
+          "Observation des baleines à bosse durant le trajet (Jui-Oct)",
+          "Riche faune marine : poissons tropicaux, tortues, étoiles de mer",
+          "Adapté à tous les niveaux : de débutant à confirmé",
+          "Formation de base incluse pour débutants"
         ]
-      },
-      "seasonalHighlights": {
-        "es": "Junio a Octubre: Temporada de rayas mantas gigantes (Mobula birostris) y ballenas jorobadas",
-        "en": "June to October: Season of giant manta rays (Mobula birostris) and humpback whales",
-        "fr": "Juin à Octobre : Saison des raies mantas géantes (Mobula birostris) et baleines à bosse"
-      },
-      "requirements": {
-        "es": "Apto para principiantes y buceadores certificados. Para principiantes se proporcionará entrenamiento básico.",
-        "en": "Suitable for beginners and certified divers. Basic training will be provided for beginners.",
-        "fr": "Adapté aux débutants et plongeurs confirmés. Formation de base fournie pour les débutants."
       },
       "recommendations": {
         "es": [
           "Traer traje de baño",
           "Cortavientos",
           "Toalla",
-          "Protector solar"
+          "Protector solar biodegradable"
         ],
         "en": [
           "Bring swimsuit",
           "Windbreaker",
           "Towel",
-          "Sunscreen"
+          "Biodegradable sunscreen"
         ],
         "fr": [
           "Apporter maillot de bain",
           "Coupe-vent",
           "Serviette",
-          "Crème solaire"
+          "Crème solaire biodégradable"
         ]
       },
       "note": {
-        "es": "Los horarios están sujetos a cambios según condiciones climáticas y marítimas",
-        "en": "Schedules are subject to change according to weather and maritime conditions",
-        "fr": "Les horaires sont susceptibles de changer selon les conditions météorologiques et maritimes"
+        "es": "Actividad disponible todo el año. Los horarios están sujetos a cambios según condiciones climáticas y marítimas.",
+        "en": "Activity available all year round. Schedules are subject to change according to weather and maritime conditions.",
+        "fr": "Activité disponible toute l'année. Les horaires sont susceptibles de changer selon les conditions météorologiques et maritimes."
       },
       "image": "/images/tours/buceo-isla-plata-parque-nacional-machalilla.webp"
     },

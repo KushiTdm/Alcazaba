@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Clock, Check, Calendar, ArrowLeft, Users } from 'lucide-react';
+import { X, Clock, Check, Calendar, ArrowLeft, Users, Star } from 'lucide-react';
 import hotelData from '../data/hotelData.json';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from '../hooks/useTranslation';
@@ -43,6 +43,9 @@ export default function TourDetail({ tourId, onClose }: TourDetailProps) {
   const tourDescription = tr(tour.description, lang);
   const tourDuration = tr(tour.duration, lang);
   const tourIncluded = trArr(tour.included, lang);
+  const tourHighlights = trArr((tour as any).highlights, lang);
+  const tourRecommendations = trArr((tour as any).recommendations, lang);
+  const tourNote = tr((tour as any).note, lang);
 
   const handleWhatsAppReservation = () => {
     const lines = [
@@ -135,6 +138,25 @@ export default function TourDetail({ tourId, onClose }: TourDetailProps) {
                     </p>
                   </div>
 
+                  {/* Highlights Section - Pour le tour de plongée */}
+                  {tourHighlights && tourHighlights.length > 0 && (
+                    <div>
+                      <h2 className="font-['Playfair_Display'] text-2xl font-bold text-[#1A2F4B] mb-6 flex items-center space-x-2">
+                        <Star className="text-[#C28E5E]" size={28} />
+                        <span>Points Forts</span>
+                      </h2>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        {tourHighlights.map((highlight, index) => (
+                          <div key={index} className="flex items-start space-x-3 bg-gradient-to-br from-[#F9F7F2] to-white p-4 rounded-xl border border-[#C28E5E]/10">
+                            <Check size={20} className="text-[#C28E5E] flex-shrink-0 mt-1" />
+                            <span className="font-['Lato'] text-gray-800 leading-relaxed">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Included Section */}
                   <div>
                     <h2 className="font-['Playfair_Display'] text-2xl font-bold text-[#1A2F4B] mb-6">
                       {t('tourDetail.included')}
@@ -149,24 +171,31 @@ export default function TourDetail({ tourId, onClose }: TourDetailProps) {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-[#F9F7F2] to-white p-8 rounded-2xl border-2 border-[#C28E5E]/20">
-                    <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#1A2F4B] mb-4">
-                      {t('tourDetail.recommendations')}
-                    </h3>
-                    <ul className="space-y-3 font-['Lato'] text-gray-700">
-                      {[
-                        t('tourDetail.rec1'),
-                        t('tourDetail.rec2'),
-                        t('tourDetail.rec3'),
-                        t('tourDetail.rec4'),
-                      ].map((rec, i) => (
-                        <li key={i} className="flex items-start space-x-2">
-                          <Check size={18} className="text-[#C28E5E] flex-shrink-0 mt-1" />
-                          <span>{rec}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {/* Recommendations Section */}
+                  {tourRecommendations && tourRecommendations.length > 0 && (
+                    <div className="bg-gradient-to-br from-[#F9F7F2] to-white p-8 rounded-2xl border-2 border-[#C28E5E]/20">
+                      <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#1A2F4B] mb-4">
+                        {t('tourDetail.recommendations')}
+                      </h3>
+                      <ul className="space-y-3 font-['Lato'] text-gray-700">
+                        {tourRecommendations.map((rec, i) => (
+                          <li key={i} className="flex items-start space-x-2">
+                            <Check size={18} className="text-[#C28E5E] flex-shrink-0 mt-1" />
+                            <span>{rec}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Note Section */}
+                  {tourNote && (
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-xl">
+                      <p className="font-['Lato'] text-gray-700 leading-relaxed">
+                        <strong className="text-blue-700">Note:</strong> {tourNote}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Right Column - Booking */}
