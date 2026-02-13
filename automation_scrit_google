@@ -3,7 +3,7 @@
 // ============================================
 
 const CONFIG = {
-  REVIEW_LINK: "https://search.google.com/local/writereview?placeid=ChIJryVBK4sgX5ER7FgBTTJOcnk",
+  REVIEW_LINK: "https://search.google.com/local/writereview?placeid=ChIJ9Q-BpJ4gLJARUILi3sYKQaE",
   
   // 📅 POUR PRODUCTION: 24
   DELAY_HOURS: 24, // ← Changer ici pour tester
@@ -13,12 +13,12 @@ const CONFIG = {
 };
 
 // ============================================
-// TEMPLATES HTML (3 LANGUES)
+// TEMPLATES HTML (4 LANGUES)
 // ============================================
 
 const EMAIL_TEMPLATES = {
   '🇪🇸 Español': {
-    subject: '¡Gracias por tu estadía en La Casa de Teresita! 🏡',
+    subject: '¡Gracias por tu estadía en Hostal Alcazaba & Lobo Marino! 🏡',
     getHtml: (name, link) => `
 <!DOCTYPE html>
 <html lang="es">
@@ -27,21 +27,24 @@ const EMAIL_TEMPLATES = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gracias por tu visita</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F9F7F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F9F7F2; padding: 40px 20px;">
     <tr>
       <td align="center">
         <!-- Container Principal -->
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(26, 47, 75, 0.15);">
           
           <!-- Header con degradado -->
           <tr>
-            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
-                La Casa de Teresita
+            <td style="background: linear-gradient(135deg, #1A2F4B 0%, #C28E5E 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #ffffff; font-size: 32px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Hostal Alcazaba
               </h1>
-              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
-                Hotel Boutique & Museo
+              <p style="color: #F9F7F2; font-size: 18px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
+                & Lobo Marino
+              </p>
+              <p style="color: #ffffff; font-size: 14px; margin: 0; opacity: 0.9;">
+                Puerto López, Ecuador
               </p>
             </td>
           </tr>
@@ -49,16 +52,16 @@ const EMAIL_TEMPLATES = {
           <!-- Contenido Principal -->
           <tr>
             <td style="padding: 40px 30px;">
-              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+              <h2 style="color: #1A2F4B; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
                 ¡Hola ${name}! 👋
               </h2>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                Esperamos que hayas disfrutado tu tiempo en nuestro museo-hotel histórico.
+                Fue un placer recibirte en nuestro hostal familiar. Esperamos que hayas disfrutado de la hospitalidad auténtica y el ambiente acogedor que María y Oswaldo crearon con tanto cariño.
               </p>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-                Tu opinión es muy valiosa para nosotros y ayuda a otros viajeros a descubrir este lugar especial que construimos con tanto cariño.
+                Tu opinión es muy valiosa para nuestra familia y ayuda a otros viajeros a descubrir la magia de Puerto López y el Parque Nacional Machalilla. 🌊
               </p>
               
               <!-- CTA Button -->
@@ -66,7 +69,7 @@ const EMAIL_TEMPLATES = {
                 <tr>
                   <td align="center" style="padding: 20px 0;">
                     <a href="${link}" 
-                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                       style="display: inline-block; background: linear-gradient(135deg, #C28E5E 0%, #1A2F4B 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(194, 142, 94, 0.3);">
                       ⭐ Dejar Mi Reseña en Google
                     </a>
                   </td>
@@ -74,7 +77,7 @@ const EMAIL_TEMPLATES = {
               </table>
               
               <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
-                Solo toma 2 minutos y nos ayuda mucho a seguir mejorando ❤️
+                Solo toma 2 minutos y nos ayuda mucho a seguir compartiendo nuestra hospitalidad ❤️
               </p>
             </td>
           </tr>
@@ -82,21 +85,27 @@ const EMAIL_TEMPLATES = {
           <!-- Decorative Separator -->
           <tr>
             <td style="padding: 0 30px;">
-              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C28E5E, transparent);"></div>
             </td>
           </tr>
           
           <!-- Footer -->
           <tr>
-            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
-              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
-                Con cariño, el equipo de La Casa de Teresita
+            <td style="padding: 30px; text-align: center; background-color: #F9F7F2;">
+              <p style="color: #1A2F4B; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Con cariño, María, Oswaldo y toda la familia de Alcazaba 💙
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 5px 0;">
+                📍 San Francisco y Rogerio Figueroa, Puerto López
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
-                📍 Av. Arce 2995, San Jorge, La Paz, Bolivia
+                📞 WhatsApp: +593 99 033 3411
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0;">
-                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+                🌐 <a href="https://hotelpuertolopez.com" style="color: #C28E5E; text-decoration: none;">www.hotelpuertolopez.com</a>
+              </p>
+              <p style="color: #C28E5E; font-size: 11px; margin: 15px 0 0 0; font-style: italic;">
+                "Tu experiencia está garantizada"
               </p>
             </td>
           </tr>
@@ -111,7 +120,7 @@ const EMAIL_TEMPLATES = {
   },
   
   '🇬🇧 English': {
-    subject: 'Thank you for staying at La Casa de Teresita! 🏡',
+    subject: 'Thank you for staying at Hostal Alcazaba & Lobo Marino! 🏡',
     getHtml: (name, link) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -120,21 +129,24 @@ const EMAIL_TEMPLATES = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank you for your visit</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F9F7F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F9F7F2; padding: 40px 20px;">
     <tr>
       <td align="center">
         <!-- Main Container -->
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(26, 47, 75, 0.15);">
           
           <!-- Header with gradient -->
           <tr>
-            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
-                La Casa de Teresita
+            <td style="background: linear-gradient(135deg, #1A2F4B 0%, #C28E5E 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #ffffff; font-size: 32px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Hostal Alcazaba
               </h1>
-              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
-                Boutique Hotel & Museum
+              <p style="color: #F9F7F2; font-size: 18px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
+                & Lobo Marino
+              </p>
+              <p style="color: #ffffff; font-size: 14px; margin: 0; opacity: 0.9;">
+                Puerto López, Ecuador
               </p>
             </td>
           </tr>
@@ -142,16 +154,16 @@ const EMAIL_TEMPLATES = {
           <!-- Main Content -->
           <tr>
             <td style="padding: 40px 30px;">
-              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+              <h2 style="color: #1A2F4B; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
                 Hi ${name}! 👋
               </h2>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                We hope you enjoyed your time at our historic museum-hotel.
+                It was a pleasure to welcome you to our family hostel. We hope you enjoyed the authentic hospitality and cozy atmosphere that María and Oswaldo created with so much love.
               </p>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-                Your opinion is very valuable to us and helps other travelers discover this special place we've built with so much care.
+                Your opinion is very valuable to our family and helps other travelers discover the magic of Puerto López and Machalilla National Park. 🌊
               </p>
               
               <!-- CTA Button -->
@@ -159,7 +171,7 @@ const EMAIL_TEMPLATES = {
                 <tr>
                   <td align="center" style="padding: 20px 0;">
                     <a href="${link}" 
-                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                       style="display: inline-block; background: linear-gradient(135deg, #C28E5E 0%, #1A2F4B 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(194, 142, 94, 0.3);">
                       ⭐ Leave My Google Review
                     </a>
                   </td>
@@ -167,7 +179,7 @@ const EMAIL_TEMPLATES = {
               </table>
               
               <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
-                It only takes 2 minutes and helps us a lot to keep improving ❤️
+                It only takes 2 minutes and helps us a lot to keep sharing our hospitality ❤️
               </p>
             </td>
           </tr>
@@ -175,21 +187,27 @@ const EMAIL_TEMPLATES = {
           <!-- Decorative Separator -->
           <tr>
             <td style="padding: 0 30px;">
-              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C28E5E, transparent);"></div>
             </td>
           </tr>
           
           <!-- Footer -->
           <tr>
-            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
-              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
-                Warmly, The La Casa de Teresita Team
+            <td style="padding: 30px; text-align: center; background-color: #F9F7F2;">
+              <p style="color: #1A2F4B; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Warmly, María, Oswaldo and the entire Alcazaba family 💙
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 5px 0;">
+                📍 San Francisco y Rogerio Figueroa, Puerto López
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
-                📍 Av. Arce 2995, San Jorge, La Paz, Bolivia
+                📞 WhatsApp: +593 99 033 3411
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0;">
-                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+                🌐 <a href="https://hotelpuertolopez.com" style="color: #C28E5E; text-decoration: none;">www.hotelpuertolopez.com</a>
+              </p>
+              <p style="color: #C28E5E; font-size: 11px; margin: 15px 0 0 0; font-style: italic;">
+                "Your experience is guaranteed"
               </p>
             </td>
           </tr>
@@ -204,7 +222,7 @@ const EMAIL_TEMPLATES = {
   },
   
   '🇫🇷 Français': {
-    subject: 'Merci pour votre séjour à La Casa de Teresita ! 🏡',
+    subject: 'Merci pour votre séjour à Hostal Alcazaba & Lobo Marino ! 🏡',
     getHtml: (name, link) => `
 <!DOCTYPE html>
 <html lang="fr">
@@ -213,21 +231,24 @@ const EMAIL_TEMPLATES = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merci pour votre visite</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F9F7F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F9F7F2; padding: 40px 20px;">
     <tr>
       <td align="center">
         <!-- Conteneur Principal -->
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(26, 47, 75, 0.15);">
           
           <!-- En-tête avec dégradé -->
           <tr>
-            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
-                La Casa de Teresita
+            <td style="background: linear-gradient(135deg, #1A2F4B 0%, #C28E5E 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #ffffff; font-size: 32px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Hostal Alcazaba
               </h1>
-              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
-                Hôtel Boutique & Musée
+              <p style="color: #F9F7F2; font-size: 18px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
+                & Lobo Marino
+              </p>
+              <p style="color: #ffffff; font-size: 14px; margin: 0; opacity: 0.9;">
+                Puerto López, Équateur
               </p>
             </td>
           </tr>
@@ -235,16 +256,16 @@ const EMAIL_TEMPLATES = {
           <!-- Contenu Principal -->
           <tr>
             <td style="padding: 40px 30px;">
-              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+              <h2 style="color: #1A2F4B; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
                 Bonjour ${name} ! 👋
               </h2>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                Nous espérons que vous avez apprécié votre séjour dans notre musée-hôtel historique.
+                Ce fut un plaisir de vous accueillir dans notre auberge familiale. Nous espérons que vous avez apprécié l'hospitalité authentique et l'atmosphère chaleureuse que María et Oswaldo ont créée avec tant d'amour.
               </p>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-                Votre avis est très précieux pour nous et aide d'autres voyageurs à découvrir ce lieu unique que nous avons construit avec tant de soin.
+                Votre avis est très précieux pour notre famille et aide d'autres voyageurs à découvrir la magie de Puerto López et du Parc National Machalilla. 🌊
               </p>
               
               <!-- Bouton CTA -->
@@ -252,7 +273,7 @@ const EMAIL_TEMPLATES = {
                 <tr>
                   <td align="center" style="padding: 20px 0;">
                     <a href="${link}" 
-                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                       style="display: inline-block; background: linear-gradient(135deg, #C28E5E 0%, #1A2F4B 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(194, 142, 94, 0.3);">
                       ⭐ Laisser Mon Avis sur Google
                     </a>
                   </td>
@@ -260,7 +281,7 @@ const EMAIL_TEMPLATES = {
               </table>
               
               <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
-                Cela ne prend que 2 minutes et nous aide beaucoup à continuer de nous améliorer ❤️
+                Cela ne prend que 2 minutes et nous aide beaucoup à continuer de partager notre hospitalité ❤️
               </p>
             </td>
           </tr>
@@ -268,21 +289,27 @@ const EMAIL_TEMPLATES = {
           <!-- Séparateur Décoratif -->
           <tr>
             <td style="padding: 0 30px;">
-              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C28E5E, transparent);"></div>
             </td>
           </tr>
           
           <!-- Pied de page -->
           <tr>
-            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
-              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
-                Chaleureusement, L'équipe de La Casa de Teresita
+            <td style="padding: 30px; text-align: center; background-color: #F9F7F2;">
+              <p style="color: #1A2F4B; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Chaleureusement, María, Oswaldo et toute la famille Alcazaba 💙
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 5px 0;">
+                📍 San Francisco y Rogerio Figueroa, Puerto López
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
-                📍 Av. Arce 2995, San Jorge, La Paz, Bolivie
+                📞 WhatsApp : +593 99 033 3411
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0;">
-                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+                🌐 <a href="https://hotelpuertolopez.com" style="color: #C28E5E; text-decoration: none;">www.hotelpuertolopez.com</a>
+              </p>
+              <p style="color: #C28E5E; font-size: 11px; margin: 15px 0 0 0; font-style: italic;">
+                "Votre expérience est garantie"
               </p>
             </td>
           </tr>
@@ -297,7 +324,7 @@ const EMAIL_TEMPLATES = {
   },
   
   '🇩🇪 Deutsch': {
-    subject: 'Vielen Dank für Ihren Aufenthalt in La Casa de Teresita! 🏡',
+    subject: 'Vielen Dank für Ihren Aufenthalt im Hostal Alcazaba & Lobo Marino! 🏡',
     getHtml: (name, link) => `
 <!DOCTYPE html>
 <html lang="de">
@@ -306,21 +333,24 @@ const EMAIL_TEMPLATES = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vielen Dank für Ihren Besuch</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F8F5F2;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8F5F2; padding: 40px 20px;">
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F9F7F2;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #F9F7F2; padding: 40px 20px;">
     <tr>
       <td align="center">
         <!-- Hauptcontainer -->
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.15);">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(26, 47, 75, 0.15);">
           
           <!-- Header mit Farbverlauf -->
           <tr>
-            <td style="background: linear-gradient(135deg, #2D5A4A 0%, #A85C32 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="color: #C4A96A; font-size: 32px; margin: 0 0 10px 0; font-family: 'Playfair Display', Georgia, serif;">
-                La Casa de Teresita
+            <td style="background: linear-gradient(135deg, #1A2F4B 0%, #C28E5E 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="color: #ffffff; font-size: 32px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif;">
+                Hostal Alcazaba
               </h1>
-              <p style="color: #ffffff; font-size: 16px; margin: 0; opacity: 0.95;">
-                Boutique-Hotel & Museum
+              <p style="color: #F9F7F2; font-size: 18px; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
+                & Lobo Marino
+              </p>
+              <p style="color: #ffffff; font-size: 14px; margin: 0; opacity: 0.9;">
+                Puerto López, Ecuador
               </p>
             </td>
           </tr>
@@ -328,16 +358,16 @@ const EMAIL_TEMPLATES = {
           <!-- Hauptinhalt -->
           <tr>
             <td style="padding: 40px 30px;">
-              <h2 style="color: #2D5A4A; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
+              <h2 style="color: #1A2F4B; font-size: 24px; margin: 0 0 20px 0; font-family: 'Playfair Display', Georgia, serif;">
                 Hallo ${name}! 👋
               </h2>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                Wir hoffen, dass Sie Ihre Zeit in unserem historischen Museums-Hotel genossen haben.
+                Es war uns eine Freude, Sie in unserer Familienpension willkommen zu heißen. Wir hoffen, dass Sie die authentische Gastfreundschaft und die gemütliche Atmosphäre genossen haben, die María und Oswaldo mit so viel Liebe geschaffen haben.
               </p>
               
               <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-                Ihre Meinung ist uns sehr wichtig und hilft anderen Reisenden, diesen besonderen Ort zu entdecken, den wir mit so viel Sorgfalt aufgebaut haben.
+                Ihre Meinung ist für unsere Familie sehr wertvoll und hilft anderen Reisenden, die Magie von Puerto López und dem Machalilla Nationalpark zu entdecken. 🌊
               </p>
               
               <!-- CTA-Button -->
@@ -345,7 +375,7 @@ const EMAIL_TEMPLATES = {
                 <tr>
                   <td align="center" style="padding: 20px 0;">
                     <a href="${link}" 
-                       style="display: inline-block; background: linear-gradient(135deg, #A85C32 0%, #2D5A4A 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(168, 92, 50, 0.3);">
+                       style="display: inline-block; background: linear-gradient(135deg, #C28E5E 0%, #1A2F4B 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(194, 142, 94, 0.3);">
                       ⭐ Meine Google-Bewertung Abgeben
                     </a>
                   </td>
@@ -353,7 +383,7 @@ const EMAIL_TEMPLATES = {
               </table>
               
               <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
-                Es dauert nur 2 Minuten und hilft uns sehr, uns weiter zu verbessern ❤️
+                Es dauert nur 2 Minuten und hilft uns sehr, unsere Gastfreundschaft weiter zu teilen ❤️
               </p>
             </td>
           </tr>
@@ -361,21 +391,27 @@ const EMAIL_TEMPLATES = {
           <!-- Dekorative Trennlinie -->
           <tr>
             <td style="padding: 0 30px;">
-              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C4A96A, transparent);"></div>
+              <div style="height: 1px; background: linear-gradient(90deg, transparent, #C28E5E, transparent);"></div>
             </td>
           </tr>
           
           <!-- Fußzeile -->
           <tr>
-            <td style="padding: 30px; text-align: center; background-color: #F8F5F2;">
-              <p style="color: #2D5A4A; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
-                Herzliche Grüße, Das Team von La Casa de Teresita
+            <td style="padding: 30px; text-align: center; background-color: #F9F7F2;">
+              <p style="color: #1A2F4B; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                Herzliche Grüße, María, Oswaldo und die gesamte Alcazaba-Familie 💙
+              </p>
+              <p style="color: #666666; font-size: 12px; margin: 0 0 5px 0;">
+                📍 San Francisco y Rogerio Figueroa, Puerto López
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0 0 15px 0;">
-                📍 Av. Arce 2995, San Jorge, La Paz, Bolivien
+                📞 WhatsApp: +593 99 033 3411
               </p>
               <p style="color: #666666; font-size: 12px; margin: 0;">
-                🌐 <a href="https://www.lacasadeteresita.com" style="color: #A85C32; text-decoration: none;">www.lacasadeteresita.com</a>
+                🌐 <a href="https://hotelpuertolopez.com" style="color: #C28E5E; text-decoration: none;">www.hotelpuertolopez.com</a>
+              </p>
+              <p style="color: #C28E5E; font-size: 11px; margin: 15px 0 0 0; font-style: italic;">
+                "Ihre Erfahrung ist garantiert"
               </p>
             </td>
           </tr>
@@ -407,11 +443,11 @@ function sendScheduledEmails() {
     const headers = data[0];
     
     // Trouver les indices des colonnes
-    const nameCol = findColumnIndex(headers, ['Nombre completo', 'Full name', 'Nom']);
-    const emailCol = findColumnIndex(headers, ['Correo electrónico', 'Email', 'Adresse']);
-    const checkoutCol = findColumnIndex(headers, ['Fecha de salida', 'Check-out', 'Départ']);
-    const langCol = findColumnIndex(headers, ['Idioma', 'Language', 'Langue']);
-    const sentCol = findColumnIndex(headers, ['Email envoyé', 'Email sent']);
+    const nameCol = findColumnIndex(headers, ['Nombre completo', 'Full name', 'Nom', 'Name']);
+    const emailCol = findColumnIndex(headers, ['Correo electrónico', 'Email', 'Adresse', 'E-Mail']);
+    const checkoutCol = findColumnIndex(headers, ['Fecha de salida', 'Check-out', 'Départ', 'Abreise']);
+    const langCol = findColumnIndex(headers, ['Idioma', 'Language', 'Langue', 'Sprache']);
+    const sentCol = findColumnIndex(headers, ['Email envoyé', 'Email sent', 'Email gesendet']);
     const dateSentCol = sentCol + 1;
     
     if (nameCol === -1 || emailCol === -1 || checkoutCol === -1) {
@@ -425,7 +461,7 @@ function sendScheduledEmails() {
     // Parcourir chaque ligne (sauf l'en-tête)
     for (let i = 1; i < data.length; i++) {
       const row = data[i];
-      const name = row[nameCol] || 'Estimado cliente';
+      const name = row[nameCol] || 'Estimado huésped';
       const email = row[emailCol];
       const checkoutDate = new Date(row[checkoutCol]);
       const language = row[langCol] || '🇪🇸 Español';
@@ -528,27 +564,44 @@ function setupAutomation() {
   try {
     MailApp.sendEmail({
       to: CONFIG.HOTEL_EMAIL,
-      subject: '✅ Système Automatique d\'Avis Activé - La Casa de Teresita',
+      subject: '✅ Système Automatique d\'Avis Activé - Hostal Alcazaba & Lobo Marino',
       htmlBody: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2D5A4A;">Système Activé ✅</h2>
-          <p>Le système automatique d'envoi d'emails pour les avis Google a été configuré avec succès!</p>
-          
-          <div style="background-color: #F8F5F2; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #A85C32; margin-top: 0;">Configuration actuelle:</h3>
-            <ul style="line-height: 1.8;">
-              <li>⏰ Fréquence de vérification: <strong>Toutes les heures</strong></li>
-              <li>📅 Délai d'envoi: <strong>${CONFIG.DELAY_HOURS}h après le départ</strong></li>
-              <li>🌍 Langues supportées: <strong>Español, English, Français</strong></li>
-              <li>📧 Format: <strong>HTML professionnel</strong></li>
-            </ul>
+          <div style="background: linear-gradient(135deg, #1A2F4B 0%, #C28E5E 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+            <h1 style="color: white; margin: 0 0 5px 0; font-family: 'Playfair Display', Georgia, serif;">
+              Hostal Alcazaba & Lobo Marino
+            </h1>
+            <p style="color: #F9F7F2; margin: 0; font-size: 14px;">Puerto López, Ecuador</p>
           </div>
           
-          <p>Le système est maintenant actif et fonctionnera automatiquement 24/7.</p>
-          
-          <p style="color: #666; font-size: 14px; margin-top: 30px;">
-            La Casa de Teresita - Système Automatisé
-          </p>
+          <div style="padding: 30px; background-color: #ffffff; border: 1px solid #e0e0e0; border-top: none;">
+            <h2 style="color: #1A2F4B; margin-top: 0;">Système Activé ✅</h2>
+            <p>Le système automatique d'envoi d'emails pour les avis Google a été configuré avec succès!</p>
+            
+            <div style="background-color: #F9F7F2; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #C28E5E;">
+              <h3 style="color: #1A2F4B; margin-top: 0;">Configuration actuelle:</h3>
+              <ul style="line-height: 1.8;">
+                <li>⏰ Fréquence de vérification: <strong>Toutes les heures</strong></li>
+                <li>📅 Délai d'envoi: <strong>${CONFIG.DELAY_HOURS}h après le départ</strong></li>
+                <li>🌍 Langues supportées: <strong>Español, English, Français, Deutsch</strong></li>
+                <li>📧 Format: <strong>HTML professionnel avec branding Alcazaba</strong></li>
+                <li>🔗 Lien Google Review: <strong>Configuré</strong></li>
+              </ul>
+            </div>
+            
+            <p>Le système est maintenant actif et fonctionnera automatiquement 24/7.</p>
+            
+            <div style="background-color: #e3f2fd; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <p style="margin: 0; color: #1565c0;">
+                <strong>💡 Rappel:</strong> Assurez-vous de remplir le Google Form après chaque check-out pour que le système puisse envoyer les emails automatiquement.
+              </p>
+            </div>
+            
+            <p style="color: #666; font-size: 14px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              Hostal Alcazaba & Lobo Marino - Système Automatisé<br>
+              <span style="color: #C28E5E; font-style: italic;">"Tu experiencia está garantizada"</span>
+            </p>
+          </div>
         </div>
       `
     });
@@ -562,7 +615,7 @@ function setupAutomation() {
 // ============================================
 
 function testEmail() {
-  const testEmail = "san3neb@gmail.com"; 
+  const testEmail = "san3neb@gmail.com"; // ← CHANGE TON EMAIL ICI POUR TESTER
   
   Logger.log('🧪 Test d\'envoi d\'email HTML...');
   
