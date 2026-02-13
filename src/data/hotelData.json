@@ -1474,6 +1474,32 @@
         "en": "Yes, we are located in a safe area outside tsunami or flood risk. The hostel has permanently secure access and doors that close from 22:30 to 05:00 for the peace of mind of our guests.",
         "fr": "Oui, nous sommes situés dans une zone de sécurité hors risque de tsunami ou d'inondation. L'auberge dispose d'accès sécurisés en permanence et de portes qui se ferment de 22h30 à 05h00 pour la tranquillité d'esprit de nos clients."
       }
+    },
+    {
+      "id": 12,
+      "question": {
+        "es": "¿Cual es la capacidad total del hostal ?",
+        "en": "What is the total capacity of the hostal ?",
+        "fr": "Quelle est la capacité totale de l'hostal ?"
+      },
+      "answer": {
+        "es": "La capacidad total del hostal es de 45 personas",
+        "en": "The hotel's total capacity is 45 people",
+        "fr": "La capacité totale de l'hostal est de 45 personnes"
+      }
+    },
+    {
+      "id": 13,
+      "question": {
+        "es": "¿Tienen servicio de desayuno ?",
+        "en": "Is breakfast available ?",
+        "fr": "Proposez-vous un service de petit-déjeuner ?"
+      },
+      "answer": {
+        "es": "Desayuno continental y tradicional de la localidad (con costo adicional)",
+        "en": "Continental and traditional local breakfast (additional cost)",
+        "fr": "Petit-déjeuner continental et traditionnel local (avec supplément)"
+      }
     }
   ],
   "amenities": {
